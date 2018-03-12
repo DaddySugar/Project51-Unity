@@ -11,23 +11,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="PlayerMotor.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerMotor.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMotor.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
+            <state relative-caret-position="950">
               <caret line="52" column="34" lean-forward="false" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerSetup.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerSetup.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
               <folding>
-                <marker date="1520790057946" expanded="true" signature="6:78" ph="..." />
-                <marker date="1520790057946" expanded="true" signature="157:1023" ph="{...}" />
-                <marker date="1520790057946" expanded="true" signature="368:408" ph="{...}" />
-                <marker date="1520790057946" expanded="true" signature="446:476" ph="{...}" />
-                <marker date="1520790057946" expanded="true" signature="516:546" ph="{...}" />
-                <marker date="1520790057946" expanded="true" signature="598:640" ph="{...}" />
-                <marker date="1520790057946" expanded="true" signature="670:721" ph="{...}" />
-                <marker date="1520790057946" expanded="true" signature="746:858" ph="{...}" />
-                <marker date="1520790057946" expanded="true" signature="781:855" ph="{...}" />
-                <marker date="1520790057946" expanded="true" signature="883:1019" ph="{...}" />
-                <marker date="1520790057946" expanded="true" signature="966:1016" ph="{...}" />
+                <marker date="1520867088074" expanded="false" signature="7:49" ph="..." />
+                <marker date="1520867088074" expanded="true" signature="95:901" ph="{...}" />
+                <marker date="1520867088074" expanded="true" signature="187:554" ph="{...}" />
+                <marker date="1520867088074" expanded="true" signature="193:276" ph="/* Disable components that should only be ... */" />
+                <marker date="1520867088074" expanded="true" signature="299:419" ph="{...}" />
+                <marker date="1520867088074" expanded="true" signature="360:415" ph="{...}" />
+                <marker date="1520867088074" expanded="true" signature="428:551" ph="{...}" />
+                <marker date="1520867088074" expanded="true" signature="491:547" ph="{...}" />
+                <marker date="1520867088074" expanded="true" signature="573:659" ph="{...}" />
+                <marker date="1520867088074" expanded="true" signature="604:656" ph="{...}" />
+                <marker date="1520867088074" expanded="true" signature="661:899" ph="/* void AssignRemoteLayer () ... */" />
               </folding>
             </state>
           </provider>
@@ -36,14 +46,9 @@
       <file leaf-file-name="PlayerController.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
+            <state relative-caret-position="855">
               <caret line="45" column="42" lean-forward="false" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-              <folding>
-                <marker date="1520789815210" expanded="false" signature="6:78" ph="..." />
-                <marker date="1520789815210" expanded="true" signature="164:1125" ph="{...}" />
-                <marker date="1520789815210" expanded="true" signature="343:388" ph="{...}" />
-                <marker date="1520789815210" expanded="true" signature="442:1123" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -51,14 +56,17 @@
     </leaf>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMotor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerSetup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMotor.cs" />
+        <option value="$PROJECT_DIR$/Assets/PlayerSetup.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerSetup.cs" />
       </list>
     </option>
   </component>
@@ -68,9 +76,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="419" />
-    <option name="y" value="180" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2576" />
+    <option name="y" value="198" />
     <option name="width" value="1214" />
     <option name="height" value="775" />
   </component>
@@ -89,7 +97,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -102,25 +109,13 @@
               <item name="Project61-sout (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Project61-sout (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="Project61-sout (2 projects)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Scripts" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-file-system" value="false" />
         <option name="show-all-items" value="false" />
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -138,11 +133,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Unity Debug.Attach to Unity Editor">
+  <component name="RunManager">
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -153,11 +151,12 @@
       <updated>1520786713372</updated>
       <workItem from="1520786716873" duration="592000" />
       <workItem from="1520787360670" duration="3337000" />
+      <workItem from="1520864922436" duration="1096000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3929000" />
+    <option name="totallyTimeSpent" value="5025000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -169,17 +168,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="419" y="180" width="1214" height="775" extended-state="0" />
+    <frame x="2391" y="-9" width="1618" height="1018" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23771429" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Unit Tests" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4013378" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -204,7 +204,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Move.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMotor.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -212,43 +212,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Move.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+        <state relative-caret-position="855">
+          <caret line="45" column="42" lean-forward="false" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Move.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Move.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
+        <state relative-caret-position="855">
           <caret line="45" column="42" lean-forward="false" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-          <folding>
-            <marker date="1520789815210" expanded="false" signature="6:78" ph="..." />
-            <marker date="1520789815210" expanded="true" signature="164:1125" ph="{...}" />
-            <marker date="1520789815210" expanded="true" signature="343:388" ph="{...}" />
-            <marker date="1520789815210" expanded="true" signature="442:1123" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerMotor.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
+        <state relative-caret-position="950">
           <caret line="52" column="34" lean-forward="false" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/PlayerSetup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="20" lean-forward="true" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerSetup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
           <folding>
-            <marker date="1520790057946" expanded="true" signature="6:78" ph="..." />
-            <marker date="1520790057946" expanded="true" signature="157:1023" ph="{...}" />
-            <marker date="1520790057946" expanded="true" signature="368:408" ph="{...}" />
-            <marker date="1520790057946" expanded="true" signature="446:476" ph="{...}" />
-            <marker date="1520790057946" expanded="true" signature="516:546" ph="{...}" />
-            <marker date="1520790057946" expanded="true" signature="598:640" ph="{...}" />
-            <marker date="1520790057946" expanded="true" signature="670:721" ph="{...}" />
-            <marker date="1520790057946" expanded="true" signature="746:858" ph="{...}" />
-            <marker date="1520790057946" expanded="true" signature="781:855" ph="{...}" />
-            <marker date="1520790057946" expanded="true" signature="883:1019" ph="{...}" />
-            <marker date="1520790057946" expanded="true" signature="966:1016" ph="{...}" />
+            <marker date="1520867088074" expanded="false" signature="7:49" ph="..." />
+            <marker date="1520867088074" expanded="true" signature="95:901" ph="{...}" />
+            <marker date="1520867088074" expanded="true" signature="187:554" ph="{...}" />
+            <marker date="1520867088074" expanded="true" signature="193:276" ph="/* Disable components that should only be ... */" />
+            <marker date="1520867088074" expanded="true" signature="299:419" ph="{...}" />
+            <marker date="1520867088074" expanded="true" signature="360:415" ph="{...}" />
+            <marker date="1520867088074" expanded="true" signature="428:551" ph="{...}" />
+            <marker date="1520867088074" expanded="true" signature="491:547" ph="{...}" />
+            <marker date="1520867088074" expanded="true" signature="573:659" ph="{...}" />
+            <marker date="1520867088074" expanded="true" signature="604:656" ph="{...}" />
+            <marker date="1520867088074" expanded="true" signature="661:899" ph="/* void AssignRemoteLayer () ... */" />
           </folding>
         </state>
       </provider>
