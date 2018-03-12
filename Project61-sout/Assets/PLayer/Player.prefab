@@ -2646,22 +2646,22 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 152
-    i1: 121
-    i2: 250
-    i3: 74
-    i4: 81
-    i5: 133
-    i6: 171
-    i7: 148
-    i8: 234
-    i9: 22
-    i10: 26
-    i11: 88
-    i12: 63
-    i13: 8
-    i14: 220
-    i15: 132
+    i0: 185
+    i1: 218
+    i2: 171
+    i3: 53
+    i4: 225
+    i5: 220
+    i6: 97
+    i7: 4
+    i8: 171
+    i9: 31
+    i10: 219
+    i11: 213
+    i12: 164
+    i13: 208
+    i14: 230
+    i15: 119
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
 --- !u!114 &114174495928390502
@@ -2676,6 +2676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 20137187682846558}
+  cameraRotationLimit: 85
 --- !u!114 &114255840331984676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2688,7 +2689,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  sprintSpeed: 10
   lookSensitivity: 3
+  jumpForce: 5
 --- !u!124 &124868749168115820
 Behaviour:
   m_ObjectHideFlags: 1
