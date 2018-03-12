@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Permissions;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMotor : MonoBehaviour
@@ -8,6 +9,7 @@ public class PlayerMotor : MonoBehaviour
 	private Vector3 velocity = Vector3.zero;
 	private Vector3 rotation = Vector3.zero;
 	private Vector3 cameraRotation = Vector3.zero;
+	private Vector3 jump = new Vector3(0.0f, 2.0f, 0.0f);
 	private Rigidbody rb;
 
 	void Start ()
@@ -29,12 +31,17 @@ public class PlayerMotor : MonoBehaviour
 	{
 		cameraRotation = _cameraRotation;
 	}
+
+	public void Jump(float jumpForce)
+	{
+		rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+	}
 	
 	private void FixedUpdate()
 	{
 		PerformMovement();
 		PerformRotation();
-		
+
 	}
 
 	void PerformMovement()
@@ -54,4 +61,5 @@ public class PlayerMotor : MonoBehaviour
 		}
 	}
 	
+
 }
