@@ -58,10 +58,10 @@ public class PlayerController : MonoBehaviour
         // Calculate camera rotations
         float _xRot = Input.GetAxisRaw("Mouse Y");
 
-        Vector3 _cameraRotation = new Vector3(_xRot, 0f, 0f) * lookSensitivity;
+        float _cameraRotationX = _xRot * lookSensitivity;
 		
 
-        motor.RotateCamera(_cameraRotation);
+        motor.RotateCamera(_cameraRotationX);
 
         // apply force for jump
 		
