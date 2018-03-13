@@ -48,7 +48,6 @@ public class PlayerController : MonoBehaviour
             _velocity = (_moveHorizontal + _moveVertical).normalized * speed;
         }
         anim.SetFloat("Speed", _velocity.magnitude);
-        Debug.Log(_velocity.magnitude);
 		
         motor.Move(_velocity);
 		

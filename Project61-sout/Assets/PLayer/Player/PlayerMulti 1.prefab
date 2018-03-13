@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 95958729886101948}
   - component: {fileID: 114426755594324380}
   - component: {fileID: 114487735329758628}
+  - component: {fileID: 114508573337047518}
   m_Layer: 0
   m_Name: PlayerMulti 1
   m_TagString: Untagged
@@ -2693,6 +2694,25 @@ MonoBehaviour:
   m_MovementThreshold: 0.001
   m_InterpolateRotation: 0.2
   m_InterpolateMovement: 0
+--- !u!114 &114508573337047518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1383370801824894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1590678366, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Animator: {fileID: 95958729886101948}
+  m_ParameterSendBits: 0
+  param0: 
+  param1: 
+  param2: 
+  param3: 
+  param4: 
+  param5: 
 --- !u!114 &114519338720265188
 MonoBehaviour:
   m_ObjectHideFlags: 1
