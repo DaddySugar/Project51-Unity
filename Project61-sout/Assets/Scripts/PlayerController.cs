@@ -1,5 +1,6 @@
 ﻿
 using UnityEngine;
+using UnityEngine.Networking;
 [RequireComponent(typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour
 {
@@ -10,13 +11,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 5f;
     private bool isGrounded = true;
     private Vector3 _velocity = new Vector3(0f, 0f, 0f);
-	
+    private Animator anim;
     private PlayerMotor motor;
     // Use this for initialization
 	
     void Start ()
     {
         motor = GetComponent<PlayerMotor>();
+        anim = GetComponent<Animator>();
     }
 	
     void OnCollisionStay()
@@ -27,6 +29,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
+        
+        
         float _xMov = Input.GetAxisRaw("Horizontal");
         float _zMov = Input.GetAxisRaw("Vertical");
 
@@ -43,10 +47,12 @@ public class PlayerController : MonoBehaviour
         {
             _velocity = (_moveHorizontal + _moveVertical).normalized * speed;
         }
-		
+        anim.SetFloat("Speed", _velocity.magnitude);
+        Debug.Log(_velocity.magnitude);
 		
         motor.Move(_velocity);
 		
+        
         //calculate rotations
 
         float _yRot = Input.GetAxisRaw("Mouse X");
