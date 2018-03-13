@@ -1650,7 +1650,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760753102044408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.27, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0.039, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4834877424789244}
@@ -2127,7 +2127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1358186002207912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.118, z: 0}
+  m_LocalPosition: {x: 0, y: -0.353, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4806806683741592}
@@ -2400,7 +2400,7 @@ Transform:
   m_GameObject: {fileID: 1383370801824894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 28.043541, y: 1.24, z: 29.173132}
-  m_LocalScale: {x: 0.5630408, y: 1.0566633, z: 0.42759237}
+  m_LocalScale: {x: 0.703801, y: 1.3208288, z: 0.5344905}
   m_Children:
   - {fileID: 4621313832251116}
   - {fileID: 4198555097324948}
@@ -2755,7 +2755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 20426871713770910}
-  cameraRotationLimit: 85
+  cameraRotationLimit: 60
 --- !u!114 &114824476126831210
 MonoBehaviour:
   m_ObjectHideFlags: 1

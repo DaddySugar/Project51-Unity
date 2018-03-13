@@ -629,7 +629,7 @@ GameObject:
   - component: {fileID: 136449430463296396}
   - component: {fileID: 114174495928390502}
   - component: {fileID: 114255840331984676}
-  - component: {fileID: 114028141348603322}
+  - component: {fileID: 95858273198077078}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -2606,7 +2606,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!81 &81541140007445268
 AudioListener:
@@ -2632,38 +2632,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114028141348603322
-MonoBehaviour:
+--- !u!95 &95858273198077078
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1466840169419382}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 185
-    i1: 218
-    i2: 171
-    i3: 53
-    i4: 225
-    i5: 220
-    i6: 97
-    i7: 4
-    i8: 171
-    i9: 31
-    i10: 219
-    i11: 213
-    i12: 164
-    i13: 208
-    i14: 230
-    i15: 119
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 1
+  m_Avatar: {fileID: 9000000, guid: b42620238b2872b4cab5c2a016702b9d, type: 3}
+  m_Controller: {fileID: 9100000, guid: 656cb51896de89145a1a129f69c2c965, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114174495928390502
 MonoBehaviour:
   m_ObjectHideFlags: 1
