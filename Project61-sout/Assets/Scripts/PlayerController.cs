@@ -76,7 +76,11 @@ public class PlayerController : MonoBehaviour
             motor.Jump(jumpForce);
             isGrounded = false;
         }
-		
-		
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            motor.Reset();
+        }
+
     }
 }
