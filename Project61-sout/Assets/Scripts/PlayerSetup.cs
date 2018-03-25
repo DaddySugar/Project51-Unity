@@ -17,7 +17,8 @@ public class PlayerSetup : NetworkBehaviour {
 		{
 			for (int i = 0; i < componentsToDisable.Length; i++) 
 			{
-				componentsToDisable [i].enabled = false;
+				AssignRemoteLayer();
+				DisableComponents();
 			}
 		} 
 		else 
@@ -38,7 +39,7 @@ public class PlayerSetup : NetworkBehaviour {
 			sceneCamera.gameObject.SetActive (true);
 		}
 	}
-	/*
+	
 	void AssignRemoteLayer ()
 	{
 		gameObject.layer = LayerMask.NameToLayer(remoteLayerName);
@@ -50,6 +51,6 @@ public class PlayerSetup : NetworkBehaviour {
 		{
 			componentsToDisable[i].enabled = false;
 		}
-	}*/
+	}
 }
 
