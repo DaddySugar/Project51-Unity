@@ -453,7 +453,6 @@ GameObject:
   - component: {fileID: 114426755594324380}
   - component: {fileID: 114487735329758628}
   - component: {fileID: 114508573337047518}
-  - component: {fileID: 81603709883415504}
   m_Layer: 8
   m_Name: PlayerMulti 1
   m_TagString: Untagged
@@ -2623,13 +2622,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1760753102044408}
   m_Enabled: 1
---- !u!81 &81603709883415504
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1383370801824894}
-  m_Enabled: 1
 --- !u!95 &95898831076561420
 Animator:
   serializedVersion: 3
@@ -2763,7 +2755,7 @@ MonoBehaviour:
   - {fileID: 114640741285771722}
   - {fileID: 20426871713770910}
   - {fileID: 114005666916140424}
-  - {fileID: 81603709883415504}
+  - {fileID: 0}
   remoteLayerName: RemotePlayer
 --- !u!114 &114631730605381194
 MonoBehaviour:
