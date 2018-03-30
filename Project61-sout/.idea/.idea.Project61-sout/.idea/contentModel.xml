@@ -37,6 +37,8 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="GameManager.cs" t="Include" />
+          <e p="Player.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="PlayerMotor.cs" t="Include" />
           <e p="PlayerSetup.cs" t="Include" />
