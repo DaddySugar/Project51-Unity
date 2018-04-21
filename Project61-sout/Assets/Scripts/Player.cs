@@ -6,6 +6,15 @@ using UnityEngine.Networking;
 public class Player : NetworkBehaviour
 {
 
+	[SyncVar]
+	private bool _isDead = false;
+	public bool isDead
+	{
+		
+		get { return _isDead; }
+		protected set { _isDead = value; }
+	}
+	
 	[SerializeField] private int maxHealth = 100;
 	
 	[SyncVar]
@@ -20,10 +29,31 @@ public class Player : NetworkBehaviour
 	{
 		currentHealth = maxHealth;
 	}
-
-	public void TakeDamage(int ammount)
+	
+	
+	[ClientRpc]
+	public void RpcTakeDamage(int ammount)
 	{
+		if (isDead)
+		{
+				return;
+		}
 		currentHealth -= ammount;
 		Debug.Log(transform.name + currentHealth);
+		if (currentHealth <= 0)
+		{
+			Die();
+		}
 	}
+
+	private void Die()
+	{
+		isDead = true;
+		
+		// disable comp 
+		
+		
+		//	call respawn 
+	}
+	
 }
