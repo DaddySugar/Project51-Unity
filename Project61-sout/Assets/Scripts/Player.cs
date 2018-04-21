@@ -57,13 +57,15 @@ public class Player : NetworkBehaviour
 	[ClientRpc]
 	public void RpcTakeDamage(int ammount)
 	{
-		if (isDead)
+		if (_isDead)
 		{
 				return;
 		}
 		currentHealth -= ammount;
+		
 		Debug.Log(transform.name + currentHealth);
-		if (currentHealth <= 0)
+		
+		if (currentHealth <= 1)
 		{
 			Die();
 		}
@@ -84,7 +86,32 @@ public class Player : NetworkBehaviour
 		if (_col != null)
 			_col.enabled = false;
 		
+		Debug.Log(transform.name + "dead");
+		
+		
 		//	call respawn 
+		StartCoroutine(Respawn());
 	}
-	
+
+	private IEnumerator Respawn()
+	{
+		yield return new WaitForSeconds(3f);
+		SetDefaults();
+		Transform _spawPosition = NetworkManager.singleton.GetStartPosition();
+		transform.position = _spawPosition.position;
+		transform.rotation = _spawPosition.rotation;
+	}
+
+
+	void Update()
+	{
+		if (!isLocalPlayer)
+			return;
+
+		if (Input.GetKeyDown(KeyCode.K))
+		{
+			RpcTakeDamage(99999);
+		}
+	}
+
 }

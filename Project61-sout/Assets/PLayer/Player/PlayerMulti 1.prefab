@@ -2688,6 +2688,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69fdf0de8817c8f4db588eb6fcceed37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disableOnDeath:
+  - {fileID: 114725407090989566}
+  - {fileID: 114631451548672376}
   maxHealth: 100
 --- !u!114 &114631451548672376
 MonoBehaviour:
