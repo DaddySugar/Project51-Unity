@@ -95,11 +95,13 @@ public class Player : NetworkBehaviour
 
 	private IEnumerator Respawn()
 	{
-		yield return new WaitForSeconds(3f);
+		// respawn time set to 3 seconds look in match settings and game manager
+		yield return new WaitForSeconds(GameManager.instance._MatchSettings.respawnTime);
 		SetDefaults();
 		Transform _spawPosition = NetworkManager.singleton.GetStartPosition();
 		transform.position = _spawPosition.position;
 		transform.rotation = _spawPosition.rotation;
+		Debug.Log(transform.name + "  player respawn");
 	}
 
 

@@ -5,6 +5,26 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
+    public static GameManager instance;
+    
+    public MatchSettings _MatchSettings;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.Log("more than 1 game manager");
+        }
+        else
+            instance = this;
+    }
+
+
+    #region PlayerTracking 
+
+    
+
+    
     private static Dictionary<string, Player> players= new Dictionary<string, Player>();
     private const string PLAYER_ID_PREFIX = "Player ";
 
@@ -24,4 +44,9 @@ public class GameManager : MonoBehaviour
     {
         return players[playerid];
     }
+    
+    #endregion 
+    
+    
+    
 }
