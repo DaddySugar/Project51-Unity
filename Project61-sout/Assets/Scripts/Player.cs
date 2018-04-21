@@ -15,19 +15,42 @@ public class Player : NetworkBehaviour
 		protected set { _isDead = value; }
 	}
 	
+	[SerializeField]
+	private Behaviour[] disableOnDeath;
+	private bool[] wasEnabled;
+	
+	
+	
 	[SerializeField] private int maxHealth = 100;
 	
 	[SyncVar]
 	private int currentHealth;
 
-	private void Awake()
+	public void Setup()
 	{
+		wasEnabled = new bool[disableOnDeath.Length];
+		for (int i = 0; i < wasEnabled.Length; i++)
+		{
+			wasEnabled[i] = disableOnDeath[i].enabled;
+		}
 		SetDefaults();
 	}
 
 	public void SetDefaults()
 	{
+		isDead = false;
 		currentHealth = maxHealth;
+		
+		//Enable the components
+		for (int i = 0; i < disableOnDeath.Length; i++)
+		{
+			disableOnDeath[i].enabled = wasEnabled[i];
+		}
+
+		//Enable the collider
+		Collider _col = GetComponent<Collider>();
+		if (_col != null)
+			_col.enabled = true;	
 	}
 	
 	
@@ -51,7 +74,15 @@ public class Player : NetworkBehaviour
 		isDead = true;
 		
 		// disable comp 
+		for (int i = 0; i < disableOnDeath.Length; i++)
+		{
+			disableOnDeath[i].enabled = false;
+		}
 		
+		//Disable the collider
+		Collider _col = GetComponent<Collider>();
+		if (_col != null)
+			_col.enabled = false;
 		
 		//	call respawn 
 	}
