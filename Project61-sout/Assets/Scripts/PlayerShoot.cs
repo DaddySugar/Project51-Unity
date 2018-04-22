@@ -35,7 +35,7 @@ public class PlayerShoot : NetworkBehaviour
 		if (Physics.Raycast(cam.transform.position, cam.transform.forward, out _hit, Weapon.range, mask ))
 		{
 			//we hit smth 
-			Debug.Log("we ghit " + _hit.collider.name);
+			//Debug.Log("we ghit " + _hit.collider.name);
 			
 			if (_hit.collider.tag == PLAYER_TAG)
 			{
