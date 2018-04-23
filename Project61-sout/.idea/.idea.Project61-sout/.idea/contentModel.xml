@@ -49,6 +49,7 @@
         <e p="Scripts" t="Include">
           <e p="GameManager.cs" t="Include" />
           <e p="HostGame.cs" t="Include" />
+          <e p="JoinGame.cs" t="Include" />
           <e p="MatchSettings.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
