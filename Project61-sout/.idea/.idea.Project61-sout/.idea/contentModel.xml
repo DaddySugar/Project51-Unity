@@ -57,6 +57,7 @@
           <e p="PlayerSetup.cs" t="Include" />
           <e p="PlayerShoot.cs" t="Include" />
           <e p="PlayerWeapon.cs" t="Include" />
+          <e p="RoomListItem.cs" t="Include" />
         </e>
         <e p="Standard Assets" t="Include">
           <e p="Characters" t="Include">

@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 222659313464141648}
   - component: {fileID: 114487056915408878}
   - component: {fileID: 114800999696932214}
+  - component: {fileID: 114457579476992872}
   - component: {fileID: 114202492416975140}
   m_Layer: 5
   m_Name: RoomListItem
@@ -149,6 +150,18 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &114457579476992872
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1015325698878520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 062dfd7a094c2ab4298383230c69a97e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomNameText: {fileID: 0}
 --- !u!114 &114487056915408878
 MonoBehaviour:
   m_ObjectHideFlags: 1
