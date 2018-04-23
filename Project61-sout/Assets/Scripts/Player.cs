@@ -63,7 +63,7 @@ public class Player : NetworkBehaviour
 		}
 		currentHealth -= ammount;
 		
-		Debug.Log(transform.name + currentHealth);
+		Debug.Log(transform.name + " " + currentHealth);
 		
 		if (currentHealth <= 1)
 		{
@@ -87,7 +87,6 @@ public class Player : NetworkBehaviour
 			_col.enabled = false;
 		
 		Debug.Log(transform.name + "dead");
-		
 		
 		//	call respawn 
 		StartCoroutine(Respawn());
