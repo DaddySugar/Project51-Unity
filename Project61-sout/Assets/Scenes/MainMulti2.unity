@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.75648624, g: 0.7337862, b: 0.58848715, a: 1}
+  m_IndirectSpecularColor: {r: 0.7565578, g: 0.73375547, b: 0.58850163, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -5395,9 +5395,39 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.6870291
       objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 2c57d46bcf753ad44b9fac863ee06d14, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 2c57d46bcf753ad44b9fac863ee06d14, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 2c57d46bcf753ad44b9fac863ee06d14, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2c57d46bcf753ad44b9fac863ee06d14, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &289281376 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100006, guid: 2c57d46bcf753ad44b9fac863ee06d14, type: 3}
+  m_PrefabInternal: {fileID: 289281375}
+--- !u!64 &289281377
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 289281376}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300010, guid: 2c57d46bcf753ad44b9fac863ee06d14, type: 3}
 --- !u!1 &290156231
 GameObject:
   m_ObjectHideFlags: 0
@@ -10702,6 +10732,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14ebd28e9f7cafe4fa16712460effe54, type: 3}
   m_IsPrefabParent: 0
+--- !u!1 &615510771 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 14ebd28e9f7cafe4fa16712460effe54, type: 3}
+  m_PrefabInternal: {fileID: 615510770}
+--- !u!64 &615510772
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 615510771}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 14ebd28e9f7cafe4fa16712460effe54, type: 3}
 --- !u!1 &615559675
 GameObject:
   m_ObjectHideFlags: 0
