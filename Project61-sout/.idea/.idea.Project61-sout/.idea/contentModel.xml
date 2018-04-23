@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Guilaume\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_Project61-sout.1532501896.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Guilaume\Documents\Souten\Project61-sout" t="IncludeRecursive">
+    <e p="C:\Users\walid\.Rider2017.3\system\resharper-host\local\Transient\ReSharperHost\v11\SolutionCaches\_Project61-sout.223618511.00" t="ExcludeRecursive" />
+    <e p="D:\walid\Documents\Unity\Sout\Souten\Project61-sout" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -29,6 +29,7 @@
             </e>
           </e>
         </e>
+        <e p="PauseMenu.cs" t="Include" />
         <e p="PLayer" t="Include">
           <e p="Human" t="Include">
             <e p="M4A1" t="Include">
@@ -47,6 +48,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="GameManager.cs" t="Include" />
+          <e p="HostGame.cs" t="Include" />
           <e p="MatchSettings.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
