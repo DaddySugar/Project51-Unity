@@ -667,6 +667,26 @@ ModelImporter:
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
+    - name: Goggles_LP
+      parentName: Soldier_Rigged(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.000000021855694, y: -1.1102232e-16, z: 1.1102232e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Helmet_LP
+      parentName: Soldier_Rigged(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.000000021855694, y: -1.1102232e-16, z: 1.1102232e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Helmet_Strap_LP
+      parentName: Soldier_Rigged(Clone)
+      position: {x: -2.28577e-19, y: 2.904299e-10, z: 0.0010294188}
+      rotation: {x: 0.000000021855698, y: -2.2204463e-16, z: 2.2204466e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Soldier_LP
+      parentName: Soldier_Rigged(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.000000021855694, y: -1.1102232e-16, z: 1.1102232e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     - name: Armature
       parentName: Soldier_Rigged(Clone)
       position: {x: -0, y: 0, z: 0}
@@ -1066,26 +1086,6 @@ ModelImporter:
       parentName: mixamorig_RightToe_End
       position: {x: -0, y: 0.007404612, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Goggles_LP
-      parentName: Soldier_Rigged(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0.000000021855694, y: -1.1102232e-16, z: 1.1102232e-16, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Helmet_LP
-      parentName: Soldier_Rigged(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0.000000021855694, y: -1.1102232e-16, z: 1.1102232e-16, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Helmet_Strap_LP
-      parentName: Soldier_Rigged(Clone)
-      position: {x: -2.28577e-19, y: 2.904299e-10, z: 0.0010294188}
-      rotation: {x: 0.000000021855698, y: -2.2204463e-16, z: 2.2204466e-16, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: Soldier_LP
-      parentName: Soldier_Rigged(Clone)
-      position: {x: -0, y: 0, z: 0}
-      rotation: {x: 0.000000021855694, y: -1.1102232e-16, z: 1.1102232e-16, w: 1}
       scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5

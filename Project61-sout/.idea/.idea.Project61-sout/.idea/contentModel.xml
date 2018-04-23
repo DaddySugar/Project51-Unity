@@ -29,6 +29,15 @@
             </e>
           </e>
         </e>
+        <e p="PLayer" t="Include">
+          <e p="Human" t="Include">
+            <e p="M4A1" t="Include">
+              <e p="Shaders" t="Include">
+                <e p="BumpedSpecular2.shader" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="Plugins" t="Include">
           <e p="Editor" t="Include">
             <e p="JetBrains" t="Include">

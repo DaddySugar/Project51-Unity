@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float sprintSpeed = 10f;
     [SerializeField] private float lookSensitivity = 3f;
     [SerializeField] private float jumpForce = 5f;
+
     private bool isGrounded = true;
     private Vector3 _velocity = new Vector3(0f, 0f, 0f);
     private Animator anim;
