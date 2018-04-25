@@ -7,9 +7,10 @@ public class PlayerShoot : NetworkBehaviour
 	private const string PLAYER_TAG = "Player";
 	public PlayerWeapon Weapon;
 	[SerializeField] private Camera cam;
-	[SerializeField] private GameObject weaponPrefab;//
+	[SerializeField] private GameObject weaponPrefab;
 	[SerializeField] private LayerMask mask;
-	private Animation _animation;//
+	public ParticleSystem muzzleFlash;
+	private Animation _animation;
 
 	void Start()
 	{
@@ -19,6 +20,7 @@ public class PlayerShoot : NetworkBehaviour
 			this.enabled = false;
 		}
 		_animation = weaponPrefab.GetComponent<Animation>();
+		
 	}
 
 	void Update()
@@ -38,11 +40,13 @@ public class PlayerShoot : NetworkBehaviour
 			
 		}
 		
+
 	}
 
 	[Client]
 	void Shoot()
 	{
+		muzzleFlash.Play();
 		RaycastHit _hit;
 		if (Physics.Raycast(cam.transform.position, cam.transform.forward, out _hit, Weapon.range, mask ))
 		{
