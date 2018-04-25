@@ -4,8 +4,8 @@ using UnityEngine.Networking.Match;
 
 public class RoomListItem : MonoBehaviour {
 
-    //public delegate void JoinRoomDelegate(MatchInfoSnapshot _match);
-   // private JoinRoomDelegate joinRoomCallback;
+    public delegate void JoinRoomDelegate(MatchInfoSnapshot _match);
+    private JoinRoomDelegate joinRoomCallback;
     
 
     [SerializeField]
@@ -13,26 +13,27 @@ public class RoomListItem : MonoBehaviour {
 
     private MatchInfoSnapshot match;
 
-   /* public void Setup (MatchInfoSnapshot _match, JoinRoomDelegate _joinRoomCallback)
+    public void Setup (MatchInfoSnapshot _match, JoinRoomDelegate _joinRoomCallback)
     {
         match = _match;
         joinRoomCallback = _joinRoomCallback;
 
         roomNameText.text = match.name + " (" + match.currentSize + "/" + match.maxSize + ")";
-    }*/
+    }
     
-    public void Setup (MatchInfoSnapshot _match)
+    /*public void Setup (MatchInfoSnapshot _match)
     {
+        Debug.Log("RoomSetup");
         match = _match;
         
 
         roomNameText.text = match.name + " (" + match.currentSize + "/" + match.maxSize + ")";
-    }
+    }*/
 
-    /*public void JoinRoom ()
+    public void JoinRoom ()
     {
         joinRoomCallback.Invoke(match);
-    }*/
+    }
     
 
 }

@@ -87,7 +87,8 @@ public class JoinGame : MonoBehaviour {
     }
     */
     
-    	List<GameObject> roomList = new List<GameObject>();
+    	
+	List<GameObject> roomList = new List<GameObject>();
 
 	[SerializeField]
 	private Text status;
@@ -142,7 +143,7 @@ public class JoinGame : MonoBehaviour {
 			RoomListItem _roomListItem = _roomListItemGO.GetComponent<RoomListItem>();
 			if (_roomListItem != null)
 			{
-				_roomListItem.Setup(match);
+				_roomListItem.Setup(match, JoinRoom);
 			}
 
 			
@@ -167,11 +168,14 @@ public class JoinGame : MonoBehaviour {
 		roomList.Clear();
 	}
 
-/*	public void JoinRoom (MatchInfoSnapshot _match)
+	public void JoinRoom (MatchInfoSnapshot _match)
 	{
+		Debug.Log("joining");
 		networkManager.matchMaker.JoinMatch(_match.networkId, "", "", "", 0, 0, networkManager.OnMatchJoined);
+		ClearRoomList();
+		status.text = "Joining game ... "; 
 		StartCoroutine(WaitForJoin());
-	}*/
+	}
 
 	IEnumerator WaitForJoin ()
 	{
