@@ -47,7 +47,6 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="AnimationWeapon.cs" t="Include" />
           <e p="CameraIgnore.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="HostGame.cs" t="Include" />

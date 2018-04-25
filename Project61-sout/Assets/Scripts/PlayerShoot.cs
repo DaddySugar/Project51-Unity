@@ -7,8 +7,9 @@ public class PlayerShoot : NetworkBehaviour
 	private const string PLAYER_TAG = "Player";
 	public PlayerWeapon Weapon;
 	[SerializeField] private Camera cam;
-
+	[SerializeField] private GameObject weaponPrefab;//
 	[SerializeField] private LayerMask mask;
+	private Animation _animation;//
 
 	void Start()
 	{
@@ -17,18 +18,26 @@ public class PlayerShoot : NetworkBehaviour
 		Debug.LogError("PlayerShoot: No camera");
 			this.enabled = false;
 		}
-		
-			
-		
+		_animation = weaponPrefab.GetComponent<Animation>();
 	}
 
 	void Update()
 	{
 		if (Input.GetButtonDown("Fire1"))
 		{
+			if (_animation.IsPlaying("reload"))
+			{
+				Debug.Log("The reload animation was playing");// the animation of reload has been interrupted, put here a boolean to say that it has been interrupted
+			}
 			Shoot();
+			_animation.Play("fire");
+		}
+		else if (Input.GetKey(KeyCode.T))//Reload, do not put the bullets in the gun yet, wait to see if the animation was interrupted
+		{
+			_animation.Play("reload");
 			
 		}
+		
 	}
 
 	[Client]
