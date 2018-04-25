@@ -17,6 +17,9 @@ public class PlayerShoot : NetworkBehaviour
 		Debug.LogError("PlayerShoot: No camera");
 			this.enabled = false;
 		}
+		
+			
+		
 	}
 
 	void Update()
