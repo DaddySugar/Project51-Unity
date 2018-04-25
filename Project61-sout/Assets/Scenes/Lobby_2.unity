@@ -914,7 +914,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1059957159}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1325,7 +1325,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0000022648496, y: -0.000012898426}
+  m_AnchoredPosition: {x: 0.0000022648496, y: 0.000014423383}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &838723143
@@ -2068,7 +2068,7 @@ MonoBehaviour:
   m_ScriptCRCCheck: 1
   m_MaxDelay: 0.01
   m_LogLevel: 2
-  m_PlayerPrefab: {fileID: 1470702314851144, guid: aaed17a9425e8e64b926d041bd7ce8b5,
+  m_PlayerPrefab: {fileID: 1178478903900902, guid: b31286c8a5d4ac145ba20b159559d20c,
     type: 2}
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 0
