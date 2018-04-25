@@ -22,6 +22,8 @@ public class HostGame : MonoBehaviour
 		{
 			_networkManager.StartMatchMaker();
 		}
+		
+		Debug.Log("start creating " + roomName);
 	}
 
 	public void SetRoomName (string _name)
