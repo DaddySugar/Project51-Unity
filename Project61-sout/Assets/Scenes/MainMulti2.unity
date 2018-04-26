@@ -1172,6 +1172,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1316753499}
+        m_MethodName: LeaveRoom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &44346112
@@ -3640,6 +3651,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1316753499}
+        m_MethodName: LeaveRoom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &168699425
@@ -5612,8 +5634,8 @@ GameObject:
   - component: {fileID: 290156235}
   - component: {fileID: 290156234}
   - component: {fileID: 290156233}
-  - component: {fileID: 290156232}
   - component: {fileID: 290156236}
+  - component: {fileID: 290156232}
   m_Layer: 0
   m_Name: SceneCamera
   m_TagString: MainCamera
@@ -22305,6 +22327,7 @@ GameObject:
   - component: {fileID: 1316753496}
   - component: {fileID: 1316753498}
   - component: {fileID: 1316753497}
+  - component: {fileID: 1316753499}
   m_Layer: 5
   m_Name: Pause
   m_TagString: Untagged
@@ -22368,6 +22391,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1316753495}
+--- !u!114 &1316753499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1316753495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 490fefecfe0ed2347b290fa4b9026bc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1319472104 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: e49051d879e30b14686916c18e113956, type: 3}
