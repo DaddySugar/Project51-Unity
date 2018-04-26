@@ -11,19 +11,18 @@ public class Player : NetworkBehaviour
 	public bool isDead
 	{
 		
-		get { return _isDead; }
+		get { return _isDead; } 
 		protected set { _isDead = value; }
 	}
 	
 	[SerializeField]
 	private Behaviour[] disableOnDeath;
 	private bool[] wasEnabled;
-	
-	
-	
+    private float health;
+    
 	[SerializeField] private int maxHealth = 100;
-	
-	[SyncVar]
+
+    [SyncVar]
 	private int currentHealth;
 
 	public void Setup()
@@ -52,9 +51,13 @@ public class Player : NetworkBehaviour
 		if (_col != null)
 			_col.enabled = true;	
 	}
-	
-	
-	[ClientRpc]
+
+    public float GetHealthPct()
+    {
+        return (float)currentHealth / maxHealth;
+    }
+
+    [ClientRpc]
 	public void RpcTakeDamage(int ammount)
 	{
 		if (_isDead)
@@ -62,6 +65,7 @@ public class Player : NetworkBehaviour
 				return;
 		}
 		currentHealth -= ammount;
+
 		
 		Debug.Log(transform.name + " " + currentHealth);
 		
