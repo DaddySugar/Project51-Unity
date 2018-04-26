@@ -11,6 +11,9 @@ public class PlayerShoot : NetworkBehaviour
 	[SerializeField] private LayerMask mask;
 	public ParticleSystem muzzleFlash;
 	private Animation _animation;
+	public GameObject impactEffect;
+	public float fireRate = 15f;
+	private float nextTimeToFire = 0f;	
 
 	void Start()
 	{
@@ -25,12 +28,13 @@ public class PlayerShoot : NetworkBehaviour
 
 	void Update()
 	{
-		if (Input.GetButtonDown("Fire1"))
+		if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
 		{
 			if (_animation.IsPlaying("reload"))
 			{
 				Debug.Log("The reload animation was playing");// the animation of reload has been interrupted, put here a boolean to say that it has been interrupted
 			}
+			nextTimeToFire = Time.time + 1f / fireRate;
 			Shoot();
 			_animation.Play("fire");
 		}
@@ -58,6 +62,8 @@ public class PlayerShoot : NetworkBehaviour
 				CmdPlayerShot(_hit.collider.name, Weapon.damage);
 				Debug.Log(transform.name + " shoot ");
 			}
+			GameObject impactGO = Instantiate(impactEffect, _hit.point, Quaternion.LookRotation(_hit.normal));
+			Destroy(impactGO, 2f);
 		}
 		
 	}
