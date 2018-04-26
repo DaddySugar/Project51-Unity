@@ -66,6 +66,7 @@
           <e p="PlayerUI.cs" t="Include" />
           <e p="PlayerWeapon.cs" t="Include" />
           <e p="RoomListItem.cs" t="Include" />
+          <e p="WaveSpawner.cs" t="Include" />
         </e>
         <e p="SFX" t="Include">
           <e p="SFX.cs" t="Include" />

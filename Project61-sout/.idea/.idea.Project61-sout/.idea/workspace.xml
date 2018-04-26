@@ -45,23 +45,25 @@
       <file leaf-file-name="PlayerSetup.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerSetup.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+            <state relative-caret-position="323">
+              <caret line="19" column="2" lean-forward="false" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
               <folding>
-                <marker date="1524765953784" expanded="false" signature="7:63" ph="..." />
-                <marker date="1524765953784" expanded="true" signature="144:1770" ph="{...}" />
-                <marker date="1524765953784" expanded="true" signature="402:1148" ph="{...}" />
-                <marker date="1524765953784" expanded="true" signature="408:491" ph="/* Disable components that should only be ... */" />
-                <marker date="1524765953784" expanded="true" signature="514:639" ph="{...}" />
-                <marker date="1524765953784" expanded="true" signature="575:635" ph="{...}" />
-                <marker date="1524765953784" expanded="true" signature="648:1108" ph="{...}" />
-                <marker date="1524765953784" expanded="true" signature="711:767" ph="{...}" />
-                <marker date="1524765953784" expanded="true" signature="1187:1377" ph="{...}" />
-                <marker date="1524765953784" expanded="true" signature="1397:1532" ph="{...}" />
-                <marker date="1524765953784" expanded="true" signature="1428:1480" ph="{...}" />
-                <marker date="1524765953784" expanded="true" signature="1561:1628" ph="{...}" />
-                <marker date="1524765953784" expanded="true" signature="1656:1768" ph="{...}" />
-                <marker date="1524765953784" expanded="true" signature="1714:1765" ph="{...}" />
+                <marker date="1524769088261" expanded="false" signature="7:63" ph="..." />
+                <marker date="1524769088261" expanded="true" signature="144:1790" ph="{...}" />
+                <marker date="1524769088261" expanded="true" signature="286:394" ph="/* [SerializeField] ... */" />
+                <marker date="1524769088261" expanded="true" signature="410:1168" ph="{...}" />
+                <marker date="1524769088261" expanded="true" signature="416:499" ph="/* Disable components that should only be ... */" />
+                <marker date="1524769088261" expanded="true" signature="522:647" ph="{...}" />
+                <marker date="1524769088261" expanded="true" signature="583:643" ph="{...}" />
+                <marker date="1524769088261" expanded="true" signature="656:1128" ph="{...}" />
+                <marker date="1524769088261" expanded="true" signature="719:775" ph="{...}" />
+                <marker date="1524769088261" expanded="true" signature="783:1123" ph="/* Create PlayerUI ... */" />
+                <marker date="1524769088261" expanded="true" signature="1207:1397" ph="{...}" />
+                <marker date="1524769088261" expanded="true" signature="1417:1552" ph="{...}" />
+                <marker date="1524769088261" expanded="true" signature="1448:1500" ph="{...}" />
+                <marker date="1524769088261" expanded="true" signature="1581:1648" ph="{...}" />
+                <marker date="1524769088261" expanded="true" signature="1676:1788" ph="{...}" />
+                <marker date="1524769088261" expanded="true" signature="1734:1785" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -196,12 +198,12 @@
       <workItem from="1524689778008" duration="426000" />
       <workItem from="1524745043783" duration="950000" />
       <workItem from="1524755097657" duration="643000" />
-      <workItem from="1524765231400" duration="720000" />
+      <workItem from="1524765231400" duration="2144000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9084000" />
+    <option name="totallyTimeSpent" value="10508000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -294,23 +296,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerSetup.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="40" column="12" lean-forward="false" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+        <state relative-caret-position="323">
+          <caret line="19" column="2" lean-forward="false" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
           <folding>
-            <marker date="1524765953784" expanded="false" signature="7:63" ph="..." />
-            <marker date="1524765953784" expanded="true" signature="144:1770" ph="{...}" />
-            <marker date="1524765953784" expanded="true" signature="402:1148" ph="{...}" />
-            <marker date="1524765953784" expanded="true" signature="408:491" ph="/* Disable components that should only be ... */" />
-            <marker date="1524765953784" expanded="true" signature="514:639" ph="{...}" />
-            <marker date="1524765953784" expanded="true" signature="575:635" ph="{...}" />
-            <marker date="1524765953784" expanded="true" signature="648:1108" ph="{...}" />
-            <marker date="1524765953784" expanded="true" signature="711:767" ph="{...}" />
-            <marker date="1524765953784" expanded="true" signature="1187:1377" ph="{...}" />
-            <marker date="1524765953784" expanded="true" signature="1397:1532" ph="{...}" />
-            <marker date="1524765953784" expanded="true" signature="1428:1480" ph="{...}" />
-            <marker date="1524765953784" expanded="true" signature="1561:1628" ph="{...}" />
-            <marker date="1524765953784" expanded="true" signature="1656:1768" ph="{...}" />
-            <marker date="1524765953784" expanded="true" signature="1714:1765" ph="{...}" />
+            <marker date="1524769088261" expanded="false" signature="7:63" ph="..." />
+            <marker date="1524769088261" expanded="true" signature="144:1790" ph="{...}" />
+            <marker date="1524769088261" expanded="true" signature="286:394" ph="/* [SerializeField] ... */" />
+            <marker date="1524769088261" expanded="true" signature="410:1168" ph="{...}" />
+            <marker date="1524769088261" expanded="true" signature="416:499" ph="/* Disable components that should only be ... */" />
+            <marker date="1524769088261" expanded="true" signature="522:647" ph="{...}" />
+            <marker date="1524769088261" expanded="true" signature="583:643" ph="{...}" />
+            <marker date="1524769088261" expanded="true" signature="656:1128" ph="{...}" />
+            <marker date="1524769088261" expanded="true" signature="719:775" ph="{...}" />
+            <marker date="1524769088261" expanded="true" signature="783:1123" ph="/* Create PlayerUI ... */" />
+            <marker date="1524769088261" expanded="true" signature="1207:1397" ph="{...}" />
+            <marker date="1524769088261" expanded="true" signature="1417:1552" ph="{...}" />
+            <marker date="1524769088261" expanded="true" signature="1448:1500" ph="{...}" />
+            <marker date="1524769088261" expanded="true" signature="1581:1648" ph="{...}" />
+            <marker date="1524769088261" expanded="true" signature="1676:1788" ph="{...}" />
+            <marker date="1524769088261" expanded="true" signature="1734:1785" ph="{...}" />
           </folding>
         </state>
       </provider>
