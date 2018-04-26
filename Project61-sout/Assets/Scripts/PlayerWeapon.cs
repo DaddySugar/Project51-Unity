@@ -8,11 +8,11 @@ public class PlayerWeapon {
 	public int damage = 10;
 	public float range = 100f;
 
-	//public float fireRate = 0f;
+	public float fireRate = 15f;
 
-	//public int maxBullets = 20;
-	//[HideInInspector]
-	//public int bullets;
+	public int maxBullets = 20;
+	[HideInInspector]
+	public int bullets = 20;
 
 	//public float reloadTime = 1f;
 

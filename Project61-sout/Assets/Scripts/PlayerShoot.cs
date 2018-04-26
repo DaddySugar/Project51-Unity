@@ -12,8 +12,10 @@ public class PlayerShoot : NetworkBehaviour
 	public ParticleSystem muzzleFlash;
 	private Animation _animation;
 	public GameObject impactEffect;
-	public float fireRate = 15f;
-	private float nextTimeToFire = 0f;	
+	public float fireRate;
+	private float nextTimeToFire = 0f;
+	private bool hasFinishedReloading = true;
+	private bool reloadInterrupted = true;
 
 	void Start()
 	{
@@ -23,16 +25,34 @@ public class PlayerShoot : NetworkBehaviour
 			this.enabled = false;
 		}
 		_animation = weaponPrefab.GetComponent<Animation>();
-		
+		fireRate = Weapon.fireRate;
+		Weapon.bullets = Weapon.maxBullets;
 	}
 
 	void Update()
 	{
-		if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+		if (!_animation.isPlaying && !reloadInterrupted)//reload successful
+		{
+			Weapon.bullets = Weapon.maxBullets;
+			reloadInterrupted = true;
+		}
+		if (Weapon.bullets == 0 && !_animation.isPlaying && !hasFinishedReloading)
+		{
+			Weapon.bullets = Weapon.maxBullets;
+			hasFinishedReloading = true;
+		}
+		else if (Weapon.bullets == 0 && !_animation.isPlaying)
+		{
+			_animation.Play("reload");
+			hasFinishedReloading = false;
+
+		}
+		else if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && Weapon.bullets != 0)
 		{
 			if (_animation.IsPlaying("reload"))
 			{
-				Debug.Log("The reload animation was playing");// the animation of reload has been interrupted, put here a boolean to say that it has been interrupted
+				reloadInterrupted = true;
+
 			}
 			nextTimeToFire = Time.time + 1f / fireRate;
 			Shoot();
@@ -41,7 +61,7 @@ public class PlayerShoot : NetworkBehaviour
 		else if (Input.GetKey(KeyCode.T))//Reload, do not put the bullets in the gun yet, wait to see if the animation was interrupted
 		{
 			_animation.Play("reload");
-			
+			reloadInterrupted = false;
 		}
 		
 
@@ -51,6 +71,7 @@ public class PlayerShoot : NetworkBehaviour
 	void Shoot()
 	{
 		muzzleFlash.Play();
+		Weapon.bullets -= 1;
 		RaycastHit _hit;
 		if (Physics.Raycast(cam.transform.position, cam.transform.forward, out _hit, Weapon.range, mask ))
 		{

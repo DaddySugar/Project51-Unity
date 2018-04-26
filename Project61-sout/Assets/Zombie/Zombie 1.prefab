@@ -207,8 +207,8 @@ GameObject:
   - component: {fileID: 95564727026495642}
   - component: {fileID: 54327673840052318}
   - component: {fileID: 136769848894575400}
-  - component: {fileID: 114096222904105554}
   - component: {fileID: 195698917164463380}
+  - component: {fileID: 114933918572228122}
   m_Layer: 0
   m_Name: Zombie 1
   m_TagString: Untagged
@@ -1254,7 +1254,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114096222904105554
+--- !u!114 &114933918572228122
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1262,10 +1262,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1313936271664704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e412034f5a06834c88546d157363335, type: 3}
+  m_Script: {fileID: 11500000, guid: 296dcf1215d97014aba54da96a866841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1850795815779904, guid: b31286c8a5d4ac145ba20b159559d20c, type: 2}
+  player: {fileID: 0}
+  agent: {fileID: 0}
+  anim: {fileID: 0}
+  AlienPosition: {fileID: 0}
 --- !u!136 &136769848894575400
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -3136,6 +3136,9 @@ MonoBehaviour:
     name: HandGun
     damage: 10
     range: 100
+    fireRate: 15
+    maxBullets: 40
+    bullets: 0
   cam: {fileID: 20359224695707916}
   weaponPrefab: {fileID: 1951827242857996}
   mask:
