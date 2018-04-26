@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using System.Threading;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class WaveSpawner : NetworkBehaviour {
 
@@ -8,7 +10,19 @@ public class WaveSpawner : NetworkBehaviour {
 
 	private NetworkManager networkManager;
 	
-	
+	/*
+	 * to spawn smth :
+	 * create a function
+	 * in the function create a local variable
+	 * ex : GameObject go = Instantiate(objct to spawn, spawn position, rotation);
+	 *NetworkServer.spawn(go)
+	 *
+	 *
+	 * To destroy object :
+	 * Destroy(object , time in sec)
+	 *
+	 * 	
+	 */
 	[System.Serializable]
 	public class Wave
 	{
@@ -18,14 +32,40 @@ public class WaveSpawner : NetworkBehaviour {
 		public float rate;
 	}
 
+	[SerializeField]
+	private Text wavenb;
+	[SerializeField]
+	private Text wavetxt;
+	
+	
+	
 	public Wave[] waves;
 	
 	private int nextWave = 0;
+
+	private void DisplayWaveCountDown()
+	{
+		wavenb.text = " " + (nextWave+1);
+		wavenb.GetComponent<Text>().enabled = true;
+		wavetxt.GetComponent<Text>().enabled = true;
+	}
 	
+	private void DisableWaveCountDownText()
+	{
+		
+		wavenb.GetComponent<Text>().enabled = false;
+		wavetxt.GetComponent<Text>().enabled = false;
+	}
 	
 	public int NextWave
 	{
-		get { return nextWave + 1; }
+		
+		get
+		{
+			DisplayWaveCountDown();
+		 	Thread.Sleep(1500);
+			DisableWaveCountDownText();
+			return nextWave + 1; }
 	}
 
 	public Transform[] spawnPoints;
@@ -47,6 +87,11 @@ public class WaveSpawner : NetworkBehaviour {
 
 	void Start()
 	{
+		DisplayWaveCountDown();
+		Thread.Sleep(1500);
+		Debug.Log("text");
+		DisableWaveCountDownText();
+		
 		networkManager = NetworkManager.singleton;
 		
 		if (spawnPoints.Length == 0)
