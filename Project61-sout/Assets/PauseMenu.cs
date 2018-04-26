@@ -8,21 +8,34 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
-
     void Update()
     {
 
+        if (!GameIsPaused)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
             {
                 Resume();   
+                //Cursor.lockState = CursorLockMode.Locked;
             }
             else
             {
                 Pause();
+                //Cursor.lockState = CursorLockMode.Confined;
             }
+            
         }
+        
+
     }
 
     public void Resume()
