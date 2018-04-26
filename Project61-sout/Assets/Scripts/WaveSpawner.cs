@@ -1,10 +1,14 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class WaveSpawner : MonoBehaviour {
+public class WaveSpawner : NetworkBehaviour {
 
 	public enum SpawnState { SPAWNING, WAITING, COUNTING };
 
+	private NetworkManager networkManager;
+	
+	
 	[System.Serializable]
 	public class Wave
 	{
@@ -15,7 +19,10 @@ public class WaveSpawner : MonoBehaviour {
 	}
 
 	public Wave[] waves;
+	
 	private int nextWave = 0;
+	
+	
 	public int NextWave
 	{
 		get { return nextWave + 1; }
@@ -40,6 +47,8 @@ public class WaveSpawner : MonoBehaviour {
 
 	void Start()
 	{
+		networkManager = NetworkManager.singleton;
+		
 		if (spawnPoints.Length == 0)
 		{
 			Debug.LogError("No spawn points referenced.");
