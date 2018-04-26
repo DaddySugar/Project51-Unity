@@ -1247,7 +1247,7 @@ Animator:
   m_GameObject: {fileID: 1982515859713806}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: fe2eb0b4e90413643a3ddc78c368140f, type: 3}
-  m_Controller: {fileID: 9100000, guid: eabf9e73d511a314f85d31073967b9c5, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1263,10 +1263,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1982515859713806}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47c75f3127efd444c9474350a8cf9b39, type: 3}
+  m_Script: {fileID: 11500000, guid: ff980b9932e7ad942b8e737633194f78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1116229745210546, guid: b31286c8a5d4ac145ba20b159559d20c, type: 2}
 --- !u!114 &114773188777268076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1281,22 +1281,22 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 0
-    i1: 62
-    i2: 223
-    i3: 100
-    i4: 56
-    i5: 26
-    i6: 17
-    i7: 84
-    i8: 186
-    i9: 105
-    i10: 78
-    i11: 205
-    i12: 216
-    i13: 92
-    i14: 6
-    i15: 86
+    i0: 171
+    i1: 74
+    i2: 114
+    i3: 243
+    i4: 127
+    i5: 134
+    i6: 154
+    i7: 196
+    i8: 123
+    i9: 208
+    i10: 70
+    i11: 254
+    i12: 16
+    i13: 39
+    i14: 46
+    i15: 180
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
 --- !u!136 &136597459525036712
