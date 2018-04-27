@@ -11764,9 +11764,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 675180393}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 490fefecfe0ed2347b290fa4b9026bc9, type: 3}
+  m_Script: {fileID: 11500000, guid: 153b668809edf914d8a1cd110b469b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 675180393}
 --- !u!114 &675180395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31745,8 +31746,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c86c239e3c2632e49aa8d2cc2f63a3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wavenb: {fileID: 0}
-  wavetxt: {fileID: 0}
   waves:
   - name: 1
     enemy: {fileID: 4690177065888660, guid: cdf58bd732e20d2419bbdfbb852e23f5, type: 2}

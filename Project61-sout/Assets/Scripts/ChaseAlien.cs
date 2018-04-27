@@ -1,6 +1,7 @@
 ﻿	using System;
 	using System.Collections;
 	using System.Collections.Generic;
+	using System.Security.Principal;
 	using UnityEngine;
 	using UnityEngine.AI;
 	using UnityEngine.Networking;
@@ -35,6 +36,29 @@ public class ChaseAlien : NetworkBehaviour
 		{
 			
 			agent.destination = targetTransform.transform.position;
+			if (NetworkManager.singleton == null)
+			{
+				Debug.Log("nt manager");
+			}
+			else if (NetworkManager.singleton.client == null)
+			{
+				Debug.Log("client");
+			}
+			else if(NetworkManager.singleton.client.connection == null)
+			{
+				Debug.Log("cnx");
+			}
+			else if (NetworkManager.singleton.client.connection.playerControllers == null)
+			{
+				Debug.Log("player ctr");
+			}
+			else if (NetworkManager.singleton.client.connection.playerControllers.Count == null)
+
+			{
+				Debug.Log("player count");
+			}
+			
+			
 			if (NetworkManager.singleton.client.connection.playerControllers.Count == 1)
 			{
 				fuckYouGame = NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -

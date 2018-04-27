@@ -11,17 +11,17 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
 
-       /* if (!GameIsPaused)
+        if (!GameIsPaused)
        {
             Cursor.lockState = CursorLockMode.Locked;
-        }
-        else
+       }
+       else
         {
             Cursor.lockState = CursorLockMode.Confined;
         }
-        */
         
-        if (Input.GetKeyDown(KeyCode.Escape))
+        
+       if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
             {
