@@ -3993,7 +3993,7 @@ MonoBehaviour:
   m_OfflineScene: 
   m_OnlineScene: 
   m_SpawnPrefabs:
-  - {fileID: 0}
+  - {fileID: 1840537947329578, guid: 003edf64381a1154ba694ecdd85c0656, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -31742,10 +31742,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1963723310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22a0e6d5b14aefa49aaa621fbc68abc3, type: 3}
+  m_Script: {fileID: 11500000, guid: d75359461949ba441bdc60ef98fd1ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombie: {fileID: 1840537947329578, guid: ab4a72f37f869ac47bd046fe10272eb4, type: 2}
+  zombie: {fileID: 1840537947329578, guid: 003edf64381a1154ba694ecdd85c0656, type: 2}
   spawnpos: {fileID: 2125128794}
 --- !u!4 &1963723313
 Transform:
@@ -33464,7 +33464,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 145fcb307c772e54091311308c771637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 675180393}
 --- !u!82 &2067309305
 AudioSource:
   m_ObjectHideFlags: 0

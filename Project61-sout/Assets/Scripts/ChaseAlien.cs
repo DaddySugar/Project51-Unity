@@ -22,23 +22,20 @@
 			anim = GetComponent<Animator>();
 			AlienPosition = GetComponent<Transform>();
 			raycastLayer = 2 << LayerMask.NameToLayer("LocalPlayer");
-			
-			//agent.destination =  NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position;
+		
 		}
 		
 		void Update () 
 		{
-			//SearchForTarget();
 			
 			agent.destination = targetTransform.transform.position;
-			if (NetworkManager.singleton.client.connection.playerControllers.Count != 0)
+			if (NetworkManager.singleton.client.connection.playerControllers.Count == 1)
 			{
 				agent.destination =  NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position;
 
 			}
-			Debug.Log(NetworkManager.singleton.client.connection.playerControllers.Count);
 
-			if ((AlienPosition.position - targetTransform.transform.position).magnitude < 3)
+			if ((AlienPosition.position - agent.destination).magnitude < 3)
 			{
 				anim.SetBool("isAttacking", true);
 			}
