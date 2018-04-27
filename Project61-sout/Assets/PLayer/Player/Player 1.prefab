@@ -3159,7 +3159,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967039
   muzzleFlash: {fileID: 198447666451807488}
-  impactEffect: {fileID: 1799641042682126, guid: b1439f8aeb3508b4ba933db1c83a1694,
+  impactEffect: {fileID: 1799641042682126, guid: 6e3ff5d1286da7c40a70d04ece64e313,
+    type: 2}
+  impactEffectBlood: {fileID: 1137192370727886, guid: de0ea5b8ed09c0148a48570a56e94e70,
     type: 2}
   fireRate: 15
 --- !u!114 &114944823305247644

@@ -69,7 +69,7 @@ public class AISearchPlayer : NetworkBehaviour {
     void SetNavDestination(Transform dest)
     {
         agent.SetDestination(dest.position);
-        Debug.Log(agent.name + dest.name);
+        Debug.Log(agent.name + dest.name    );
     }
 
     IEnumerator DoCheck()

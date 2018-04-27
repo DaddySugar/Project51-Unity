@@ -532,11 +532,12 @@ GameObject:
   - component: {fileID: 95750655453641930}
   - component: {fileID: 54008225586508574}
   - component: {fileID: 136088680682359800}
-  - component: {fileID: 114192265518982438}
   - component: {fileID: 195494562743813040}
   - component: {fileID: 114434879664975830}
-  - component: {fileID: 114086846852436232}
+  - component: {fileID: 114019510807165100}
   - component: {fileID: 114881153369149584}
+  - component: {fileID: 114301090995491920}
+  - component: {fileID: 114767120016753588}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Alien
@@ -670,8 +671,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1840537947329578}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.859924, y: 0, z: 57.931606}
+  m_LocalRotation: {x: 0.13186136, y: 0.58264464, z: -0.025239283, w: 0.80156153}
+  m_LocalPosition: {x: 33.9441, y: 0.049067736, z: 39.329765}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4583888505193384}
@@ -694,7 +695,7 @@ Transform:
   - {fileID: 4285143846916574}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 13.934001, y: 72.845, z: 6.6970005}
 --- !u!4 &4050481131616830
 Transform:
   m_ObjectHideFlags: 1
@@ -1249,7 +1250,7 @@ Animator:
   m_GameObject: {fileID: 1840537947329578}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: fe2eb0b4e90413643a3ddc78c368140f, type: 3}
-  m_Controller: {fileID: 9100000, guid: 579fa1d2304e2ad4f9e391471e178e6b, type: 2}
+  m_Controller: {fileID: 9100000, guid: a2a56239dab6f9345b4d0716a15f561d, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1257,7 +1258,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114086846852436232
+--- !u!114 &114019510807165100
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1265,10 +1266,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1840537947329578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 251d0e6d531dfcc47a1b4b3efb1ba804, type: 3}
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114192265518982438
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 2
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
+--- !u!114 &114301090995491920
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1276,11 +1287,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1840537947329578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47c75f3127efd444c9474350a8cf9b39, type: 3}
+  m_Script: {fileID: 11500000, guid: 61e7a95a384b11b4dabe5eaf6454207b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTransform: {fileID: 4482694287364066, guid: b31286c8a5d4ac145ba20b159559d20c,
-    type: 2}
+  zombieID: 
 --- !u!114 &114434879664975830
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1295,24 +1305,37 @@ MonoBehaviour:
   m_SceneId:
     m_Value: 0
   m_AssetId:
-    i0: 0
-    i1: 62
-    i2: 223
-    i3: 100
-    i4: 56
-    i5: 26
-    i6: 17
-    i7: 84
-    i8: 186
-    i9: 105
-    i10: 78
-    i11: 205
-    i12: 216
-    i13: 92
-    i14: 6
-    i15: 86
+    i0: 171
+    i1: 74
+    i2: 114
+    i3: 243
+    i4: 127
+    i5: 134
+    i6: 154
+    i7: 196
+    i8: 123
+    i9: 208
+    i10: 70
+    i11: 254
+    i12: 16
+    i13: 39
+    i14: 46
+    i15: 180
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &114767120016753588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1840537947329578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff980b9932e7ad942b8e737633194f78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTransform: {fileID: 4482694287364066, guid: b31286c8a5d4ac145ba20b159559d20c,
+    type: 2}
 --- !u!114 &114881153369149584
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1321,10 +1344,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1840537947329578}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fb59412c93b8c840ab6ed218555e2c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 46bd2513a34c35a4a9bd8c3c2e53db7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombieID: 
 --- !u!136 &136088680682359800
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -191,6 +191,7 @@ public class WaveSpawner : NetworkBehaviour {
 	
 	
 	[SerializeField] GameObject zombiePrefab;
+	[SerializeField] GameObject Zombiepawn ;
 	private GameObject[] zombieSpawns;
 	private int counter;
 	private int numberOfZombies = 20;
@@ -231,6 +232,7 @@ public class WaveSpawner : NetworkBehaviour {
 
 	void SpawnZombies(Vector3 spawnPos)
 	{
+		
 		counter++;
 		GameObject go = GameObject.Instantiate(zombiePrefab, spawnPos, Quaternion.identity) as GameObject;
 		go.GetComponent<Alien_ID>().zombieID = "Zombie " + counter;
