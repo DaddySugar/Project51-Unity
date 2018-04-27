@@ -153,7 +153,7 @@ public class WaveSpawner : NetworkBehaviour {
 		if (searchCountdown <= 0f)
 		{
 			searchCountdown = 1f;
-			if (GameObject.FindGameObjectWithTag("Enemy") == null)
+			if (GameObject.FindGameObjectWithTag("Alien") == null)
 			{
 				return false;
 			}

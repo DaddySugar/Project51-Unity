@@ -3994,7 +3994,7 @@ MonoBehaviour:
   m_OfflineScene: 
   m_OnlineScene: 
   m_SpawnPrefabs:
-  - {fileID: 1982515859713806, guid: ab4a72f37f869ac47bd046fe10272eb4, type: 2}
+  - {fileID: 1267745876899608, guid: ab4a72f37f869ac47bd046fe10272eb4, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -4069,20 +4069,20 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 218784929}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e3e5d171e659cd444a519c0e24b97bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wavenb: {fileID: 0}
-  wavetxt: {fileID: 0}
+  wavenb: {fileID: 114863581602736232, guid: cdd765fc5731aa74a8fff88b2a71bb4b, type: 2}
+  wavetxt: {fileID: 114454647254646580, guid: 7639e3dbffffbc14b839af6e85c31d50, type: 2}
   waves:
   - name: zombie
-    enemy: {fileID: 4218280604102308, guid: ab4a72f37f869ac47bd046fe10272eb4, type: 2}
+    enemy: {fileID: 4146263217500328, guid: ab4a72f37f869ac47bd046fe10272eb4, type: 2}
     count: 4
     rate: 1
   spawnPoints:
-  - {fileID: 0}
+  - {fileID: 4218053987226688, guid: 38c8f99c3dcadde49bea2f7f8a7fe80c, type: 2}
   timeBetweenWaves: 5
 --- !u!1 &220092430
 GameObject:
