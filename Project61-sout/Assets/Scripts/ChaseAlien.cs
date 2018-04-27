@@ -18,6 +18,7 @@ public class ChaseAlien : NetworkBehaviour
 		private LayerMask raycastLayer;
 		private Vector3 pos1;
 		private Vector3 pos2;
+		private Vector3 fuckYouGame;
 
 		
 		
@@ -36,10 +37,11 @@ public class ChaseAlien : NetworkBehaviour
 			agent.destination = targetTransform.transform.position;
 			if (NetworkManager.singleton.client.connection.playerControllers.Count == 1)
 			{
+				fuckYouGame = NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -
+				              AlienPosition.position;
 				agent.destination =  NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position;
-
 			}
-			else if (NetworkManager.singleton.client.connection.playerControllers.Count == 1)
+			else if (NetworkManager.singleton.client.connection.playerControllers.Count == 2)
 			{
 				pos1 = NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position;
 				pos2 = NetworkManager.singleton.client.connection.playerControllers[1].gameObject.transform.position;
@@ -47,14 +49,17 @@ public class ChaseAlien : NetworkBehaviour
 				if ((AlienPosition.position - pos1).magnitude < (AlienPosition.position - pos2).magnitude)
 				{
 					agent.destination = pos1;
+					fuckYouGame = pos1 - AlienPosition.position;
 				}
 				else
 				{
 					agent.destination = pos2;
-				}
-			}
+					fuckYouGame = pos2 - AlienPosition.position;
 
-			if ((AlienPosition.position - agent.destination).magnitude < 3)
+				}
+				
+			}
+			if (fuckYouGame.magnitude < 4)
 			{
 				anim.SetBool("isAttacking", true);
 			}
