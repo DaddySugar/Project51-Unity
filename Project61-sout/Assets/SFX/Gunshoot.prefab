@@ -9,48 +9,48 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1181699108063728}
+  m_RootGameObject: {fileID: 1766442469435170}
   m_IsPrefabParent: 1
---- !u!1 &1181699108063728
+--- !u!1 &1766442469435170
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4536078054173954}
-  - component: {fileID: 82994709369425468}
-  - component: {fileID: 114212422036964946}
+  - component: {fileID: 4187281838058722}
+  - component: {fileID: 82655894371098702}
+  - component: {fileID: 114783969666766824}
   m_Layer: 0
-  m_Name: GunShot
+  m_Name: Gunshoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4536078054173954
+--- !u!4 &4187281838058722
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1181699108063728}
+  m_GameObject: {fileID: 1766442469435170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 744.46185, y: 491.9807, z: 24.45722}
+  m_LocalPosition: {x: 123.85928, y: -0.1, z: 40.61821}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &82994709369425468
+--- !u!82 &82655894371098702
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1181699108063728}
+  m_GameObject: {fileID: 1766442469435170}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1c85f3061d0d90d459dae3b487a3c2d1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 632083fe4deb2e345b490c3d0684b272, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -58,7 +58,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 1
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -108,7 +108,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -121,14 +121,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114212422036964946
+--- !u!114 &114783969666766824
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1181699108063728}
+  m_GameObject: {fileID: 1766442469435170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6144c119db87d724e8d931f022daf32d, type: 3}
+  m_Script: {fileID: 11500000, guid: d076e4609e406794cbbf610c84d8aa51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
