@@ -5,7 +5,13 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cam: {instanceID: 0}
+  - weaponPrefab: {instanceID: 0}
+  - muzzleFlash: {instanceID: 0}
+  - impactEffect: {instanceID: 0}
+  - impactEffectBlood: {instanceID: 0}
+  - GunShot: {fileID: 1766442469435170, guid: a6e0ed91f0301ff49aa7bef75168c529, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
