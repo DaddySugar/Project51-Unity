@@ -70,6 +70,7 @@ GameObject:
   - component: {fileID: 136672493165720844}
   - component: {fileID: 195369096652828484}
   - component: {fileID: 114748047437701398}
+  - component: {fileID: 114567655015944428}
   - component: {fileID: 114924301340038432}
   - component: {fileID: 114680703884677906}
   m_Layer: 0
@@ -1256,6 +1257,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114567655015944428
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1070971150031598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b82c10eb5263754cb69feb0fbfdeb65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombieID: Zombe11
 --- !u!114 &114680703884677906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1310,7 +1323,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f3c3fd4aa473ef4984b686ea7f8147a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTransform: {fileID: 4073933585656324, guid: da98c7f592fafa1439bba1df5392aa4c,
+  targetTransform: {fileID: 4482694287364066, guid: b31286c8a5d4ac145ba20b159559d20c,
+    type: 2}
+  clientnetwoek: {fileID: 1988362113380948, guid: 303a2370de21afd4e8b1c5e06e8b35e3,
     type: 2}
 --- !u!136 &136672493165720844
 CapsuleCollider:

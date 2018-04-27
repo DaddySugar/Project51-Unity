@@ -2,6 +2,7 @@
 	using System.Collections;
 	using System.Collections.Generic;
 	using System.Security.Principal;
+	using UnityEditor.PackageManager;
 	using UnityEngine;
 	using UnityEngine.AI;
 	using UnityEngine.Networking;
@@ -21,6 +22,9 @@ public class ChaseAlien : NetworkBehaviour
 		private Vector3 pos2;
 		private Vector3 fuckYouGame;
 
+		public GameObject clientnetwoek;
+		
+
 		
 		
 		void Start ()
@@ -29,7 +33,7 @@ public class ChaseAlien : NetworkBehaviour
 			anim = GetComponent<Animator>();
 			AlienPosition = GetComponent<Transform>();
 			raycastLayer = 2 << LayerMask.NameToLayer("LocalPlayer");
-		
+			
 		}
 		
 		void Update () 
@@ -52,8 +56,7 @@ public class ChaseAlien : NetworkBehaviour
 			{
 				Debug.Log("player ctr");
 			}
-			else if (NetworkManager.singleton.client.connection.playerControllers.Count == null)
-
+			 if (NetworkManager.singleton.client.connection.playerControllers.Count == null)
 			{
 				Debug.Log("player count");
 			}
