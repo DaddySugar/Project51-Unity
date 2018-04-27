@@ -2,7 +2,7 @@
 	using System.Collections;
 	using System.Collections.Generic;
 	using System.Security.Principal;
-	using UnityEditor.PackageManager;
+//	using UnityEditor.PackageManager;
 	using UnityEngine;
 	using UnityEngine.AI;
 	using UnityEngine.Networking;
@@ -22,7 +22,7 @@ public class ChaseAlien : NetworkBehaviour
 		private Vector3 pos2;
 		private Vector3 fuckYouGame;
 
-		public GameObject clientnetwoek;
+		//public GameObject clientnetwoek;
 		
 
 		
@@ -55,10 +55,6 @@ public class ChaseAlien : NetworkBehaviour
 			else if (NetworkManager.singleton.client.connection.playerControllers == null)
 			{
 				Debug.Log("player ctr");
-			}
-			 if (NetworkManager.singleton.client.connection.playerControllers.Count == null)
-			{
-				Debug.Log("player count");
 			}
 			
 			

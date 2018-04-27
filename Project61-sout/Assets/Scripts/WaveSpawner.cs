@@ -92,7 +92,7 @@ public class WaveSpawner : NetworkBehaviour {
 	{
 		DisplayWaveCountDown();
 		Thread.Sleep(1500);
-		Debug.Log("text");
+//		Debug.Log("text");
 		DisableWaveCountDownText();
 		
 		networkManager = NetworkManager.singleton;

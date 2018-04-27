@@ -93,7 +93,7 @@ public class PlayerShoot : NetworkBehaviour
 			{
 				string uIdentity = _hit.transform.name;
 				CmdTellServerWhichZombieWasShot(uIdentity, Weapon.damage);
-				Debug.Log("One");
+				//Debug.Log("One");
 				impact = impactEffectBlood;
 			}
 			
@@ -115,7 +115,7 @@ public class PlayerShoot : NetworkBehaviour
 	[Command]
 	void CmdTellServerWhichZombieWasShot (string uniqueID, int dmg)
 	{
-		Debug.Log("kinda working");
+		Debug.Log("kinda working shooting aliens ");
 		GameObject go = GameObject.Find(uniqueID);
 		go.GetComponent<Alien_Health>().DeductHealth(dmg);
 	}

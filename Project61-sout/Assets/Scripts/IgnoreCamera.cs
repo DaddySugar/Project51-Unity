@@ -6,7 +6,7 @@ public class IgnoreCamera : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Camera camera = GetComponent<Camera>();
+		//Camera camera = GetComponent<Camera>();
 	}
 	
 	// Update is called once per frame
