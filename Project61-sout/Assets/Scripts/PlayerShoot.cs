@@ -12,6 +12,7 @@ public class PlayerShoot : NetworkBehaviour
 	public ParticleSystem muzzleFlash;
 	private Animation _animation;
 	public GameObject impactEffect;
+	public GameObject impactEffectBlood;
 	public float fireRate;
 	private float nextTimeToFire = 0f;
 	private bool hasFinishedReloading = true;
@@ -74,6 +75,7 @@ public class PlayerShoot : NetworkBehaviour
 		muzzleFlash.Play();
 		Weapon.bullets -= 1;
 		RaycastHit _hit;
+		GameObject impact = impactEffect;
 		if (Physics.Raycast(cam.transform.position, cam.transform.forward, out _hit, Weapon.range, mask ))
 		{
 			//we hit smth 
@@ -90,9 +92,10 @@ public class PlayerShoot : NetworkBehaviour
 				string uIdentity = _hit.transform.name;
 				CmdTellServerWhichZombieWasShot(uIdentity, Weapon.damage);
 				Debug.Log("One");
+				impact = impactEffectBlood;
 			}
 			
-			GameObject impactGO = Instantiate(impactEffect, _hit.point, Quaternion.LookRotation(_hit.normal));
+			GameObject impactGO = Instantiate(impact, _hit.point, Quaternion.LookRotation(_hit.normal));
 			Destroy(impactGO, 2f);
 		}
 		
