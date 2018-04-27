@@ -10,6 +10,7 @@ public class Alien_Health : NetworkBehaviour {
 	{
 		health -= dmg;
 		CheckHealth();
+		Debug.Log("zombie " + health);
 	}
 
 	void CheckHealth()

@@ -16,6 +16,7 @@ public class PlayerShoot : NetworkBehaviour
 	private float nextTimeToFire = 0f;
 	private bool hasFinishedReloading = true;
 	private bool reloadInterrupted = true;
+	//public ; 
 
 	void Start()
 	{
@@ -83,6 +84,14 @@ public class PlayerShoot : NetworkBehaviour
 				CmdPlayerShot(_hit.collider.name, Weapon.damage);
 				Debug.Log(transform.name + " shoot ");
 			}
+
+			else if (_hit.collider.tag == "Alien")
+			{
+				string uIdentity = _hit.transform.name;
+				CmdTellServerWhichZombieWasShot(uIdentity, Weapon.damage);
+				Debug.Log("One");
+			}
+			
 			GameObject impactGO = Instantiate(impactEffect, _hit.point, Quaternion.LookRotation(_hit.normal));
 			Destroy(impactGO, 2f);
 		}
@@ -97,4 +106,13 @@ public class PlayerShoot : NetworkBehaviour
 		_player.RpcTakeDamage(damage);
 
 	}
+	
+	[Command]
+	void CmdTellServerWhichZombieWasShot (string uniqueID, int dmg)
+	{
+		Debug.Log("kinda working");
+		GameObject go = GameObject.Find(uniqueID);
+		go.GetComponent<Alien_Health>().DeductHealth(dmg);
+	}
+	
 }
