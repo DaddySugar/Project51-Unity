@@ -3993,7 +3993,7 @@ MonoBehaviour:
   m_OfflineScene: 
   m_OnlineScene: 
   m_SpawnPrefabs:
-  - {fileID: 1840537947329578, guid: 003edf64381a1154ba694ecdd85c0656, type: 2}
+  - {fileID: 1070971150031598, guid: cdf58bd732e20d2419bbdfbb852e23f5, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -31742,11 +31742,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1963723310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d75359461949ba441bdc60ef98fd1ff0, type: 3}
+  m_Script: {fileID: 11500000, guid: c86c239e3c2632e49aa8d2cc2f63a3ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zombie: {fileID: 1840537947329578, guid: 003edf64381a1154ba694ecdd85c0656, type: 2}
-  spawnpos: {fileID: 2125128794}
+  wavenb: {fileID: 0}
+  wavetxt: {fileID: 0}
+  waves:
+  - name: 1
+    enemy: {fileID: 0}
+    count: 10
+    rate: 2
+  spawnPoints:
+  - {fileID: 2125128795}
+  timeBetweenWaves: 5
 --- !u!4 &1963723313
 Transform:
   m_ObjectHideFlags: 0
