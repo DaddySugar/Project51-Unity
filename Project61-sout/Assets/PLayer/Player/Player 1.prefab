@@ -3164,7 +3164,7 @@ MonoBehaviour:
   impactEffectBlood: {fileID: 1137192370727886, guid: 962b887e75e66d94c8d058f976207802,
     type: 2}
   fireRate: 15
-  GunShot: {fileID: 1766442469435170, guid: 985dd62ab6be0624785247e917f67aa1, type: 2}
+  GunShot: {fileID: 1181699108063728, guid: 17dda892594174c4cb010824631eb28a, type: 2}
 --- !u!114 &114944823305247644
 MonoBehaviour:
   m_ObjectHideFlags: 1
