@@ -9,11 +9,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float sprintSpeed = 10f;
     [SerializeField] private float lookSensitivity = 3f;
     [SerializeField] private float jumpForce = 5f;
+    [SerializeField] private float jumpDelay = 15f;
 
-    private bool isGrounded = true;
+    private bool isAbleToJump = true;
     private Vector3 _velocity = new Vector3(0f, 0f, 0f);
     private Animator anim;
     private PlayerMotor motor;
+    private bool isFalling = false;
+
+    private float nextTimeToJump = 0f;
     // Use this for initialization
 	
     void Start ()
@@ -24,13 +28,20 @@ public class PlayerController : MonoBehaviour
 	
     void OnCollisionStay()
     {
-        isGrounded = true;
+        if (Time.time >= nextTimeToJump)
+        {
+            isFalling = false;
+        }
     }
 	
     // Update is called once per frame
     void Update ()
     {
-
+        
+        if (Time.time >= nextTimeToJump)
+        {
+            isAbleToJump = true;
+        }
         float _xMov = Input.GetAxisRaw("Horizontal");
         float _zMov = Input.GetAxisRaw("Vertical");
 
@@ -70,11 +81,13 @@ public class PlayerController : MonoBehaviour
 
         // apply force for jump
 		
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && isAbleToJump && !isFalling)
         {
-
+            Debug.Log("jump");
             motor.Jump(jumpForce);
-            isGrounded = false;
+            isAbleToJump = false;
+            nextTimeToJump = Time.time + jumpDelay;
+            isFalling = true;
         }
 
         if (Input.GetKeyDown(KeyCode.R))
