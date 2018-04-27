@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4187281838058722}
   - component: {fileID: 82655894371098702}
-  - component: {fileID: 114783969666766824}
+  - component: {fileID: 114576957364434138}
   m_Layer: 0
   m_Name: Gunshoot
   m_TagString: Untagged
@@ -50,7 +50,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 632083fe4deb2e345b490c3d0684b272, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1c85f3061d0d90d459dae3b487a3c2d1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -121,7 +121,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114783969666766824
+--- !u!114 &114576957364434138
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
