@@ -1,10 +1,12 @@
-﻿	using System.Collections;
+﻿	using System;
+	using System.Collections;
 	using System.Collections.Generic;
 	using UnityEngine;
 	using UnityEngine.AI;
 	using UnityEngine.Networking;
-	
-	public class ChaseAlien : NetworkBehaviour
+	using Random = UnityEngine.Random;
+
+public class ChaseAlien : NetworkBehaviour
 	{
 		private GameObject goal; 
 		//public GameObject player;
@@ -14,6 +16,9 @@
 		private Transform AlienPosition;
 		private float radius = 100;
 		private LayerMask raycastLayer;
+		private Vector3 pos1;
+		private Vector3 pos2;
+
 		
 		
 		void Start ()
@@ -33,6 +38,20 @@
 			{
 				agent.destination =  NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position;
 
+			}
+			else if (NetworkManager.singleton.client.connection.playerControllers.Count == 1)
+			{
+				pos1 = NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position;
+				pos2 = NetworkManager.singleton.client.connection.playerControllers[1].gameObject.transform.position;
+
+				if ((AlienPosition.position - pos1).magnitude < (AlienPosition.position - pos2).magnitude)
+				{
+					agent.destination = pos1;
+				}
+				else
+				{
+					agent.destination = pos2;
+				}
 			}
 
 			if ((AlienPosition.position - agent.destination).magnitude < 3)

@@ -75,8 +75,10 @@
           <e p="WaveSpawner.cs" t="Include" />
         </e>
         <e p="SFX" t="Include">
+          <e p="GunSounds.cs" t="Include" />
           <e p="SFX.cs" t="Include" />
         </e>
+        <e p="ShootSound.cs" t="Include" />
         <e p="Standard Assets" t="Include">
           <e p="Characters" t="Include">
             <e p="FirstPersonCharacter" t="Include">
