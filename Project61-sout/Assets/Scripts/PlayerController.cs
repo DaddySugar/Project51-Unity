@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
             isFalling = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.T))
         {
             motor.Reset();
         }

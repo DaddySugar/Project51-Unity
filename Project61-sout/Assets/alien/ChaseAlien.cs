@@ -10,6 +10,7 @@ public class ChaseAlien : MonoBehaviour
 	private NavMeshAgent agent;
 	private Animator anim;
 	private Transform AlienPosition;
+	
 	void Start ()
 	{
 		agent = GetComponent<NavMeshAgent>();

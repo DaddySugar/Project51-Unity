@@ -58,7 +58,7 @@ public class PlayerShoot : NetworkBehaviour
 			Shoot();
 			_animation.Play("fire");
 		}
-		else if (Input.GetKey(KeyCode.T))//Reload, do not put the bullets in the gun yet, wait to see if the animation was interrupted
+		else if (Input.GetKey(KeyCode.R))//Reload, do not put the bullets in the gun yet, wait to see if the animation was interrupted
 		{
 			_animation.Play("reload");
 			reloadInterrupted = false;

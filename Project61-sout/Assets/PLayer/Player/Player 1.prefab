@@ -3087,6 +3087,7 @@ MonoBehaviour:
   sprintSpeed: 10
   lookSensitivity: 3
   jumpForce: 2
+  jumpDelay: 0.85
 --- !u!114 &114674887225638620
 MonoBehaviour:
   m_ObjectHideFlags: 1

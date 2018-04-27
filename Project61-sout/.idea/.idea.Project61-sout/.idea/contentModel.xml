@@ -10,6 +10,7 @@
         <e p="alien" t="Include">
           <e p="ChaseAlien.cs" t="Include" />
         </e>
+        <e p="Alien.cs" t="Include" />
         <e p="Interface" t="Include">
           <e p="_Scripts" t="Include">
             <e p="ExitOnClick.cs" t="Include" />
