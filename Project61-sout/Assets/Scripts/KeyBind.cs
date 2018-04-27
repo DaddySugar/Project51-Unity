@@ -8,7 +8,7 @@ public class KeyBind : MonoBehaviour {
 
     private Dictionary<string, KeyCode> keys = new Dictionary<string, KeyCode>();
 
-    public Text up, left, down, right, jump;
+    public Text up, left, down, right, jump, reload, shoot;
 
     private GameObject currentKey; 
 
@@ -20,37 +20,22 @@ public class KeyBind : MonoBehaviour {
         keys.Add("Left",(KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Left", "A")));
         keys.Add("Right",(KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Right", "D")));
         keys.Add("Jump",(KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Jump", "Space")));
+        keys.Add("Reload", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Reload", "R")));
+        keys.Add("Shoot", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Shoot", "Left Click")));
 
         up.text = keys["Up"].ToString();
         down.text = keys["Down"].ToString();
         left.text = keys["Left"].ToString();
         right.text = keys["Right"].ToString();
         jump.text = keys["Jump"].ToString();
+        reload.text = keys["Reload"].ToString();
+        shoot.text = keys["Shoot"].ToString();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-		if (Input.GetKeyDown(keys["Up"]))
-        {
-            Debug.Log("Up");
-        }
-        if (Input.GetKeyDown(keys["Down"]))
-        {
-            Debug.Log("Down");
-        }
-        if (Input.GetKeyDown(keys["Left"]))
-        {
-            Debug.Log("Left");
-        }
-        if (Input.GetKeyDown(keys["Right"]))
-        {
-            Debug.Log("Right");
-        }
-        if (Input.GetKeyDown(keys["Jump"]))
-        {
-            Debug.Log("Jump");
-        }
+	
     }
 
     void OnGUI()
