@@ -17,7 +17,8 @@ public class PlayerShoot : NetworkBehaviour
 	private float nextTimeToFire = 0f;
 	private bool hasFinishedReloading = true;
 	private bool reloadInterrupted = true;
-	//public ; 
+    //public ; 
+    public GameObject GunShot;  
 
 	void Start()
 	{
@@ -51,6 +52,7 @@ public class PlayerShoot : NetworkBehaviour
 		}
 		else if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && Weapon.bullets != 0)
 		{
+            GameObject gunshot = Instantiate(GunShot, this.transform.position, this.transform.rotation) as GameObject;
 			if (_animation.IsPlaying("reload"))
 			{
 				reloadInterrupted = true;
