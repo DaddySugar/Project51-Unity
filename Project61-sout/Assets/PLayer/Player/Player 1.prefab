@@ -3159,12 +3159,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967039
   muzzleFlash: {fileID: 198447666451807488}
-  impactEffect: {fileID: 1799641042682126, guid: b1439f8aeb3508b4ba933db1c83a1694,
+  impactEffect: {fileID: 1799641042682126, guid: be335d9f3c49c4a45abe6379a40c50e8,
     type: 2}
-  impactEffectBlood: {fileID: 1137192370727886, guid: 962b887e75e66d94c8d058f976207802,
+  impactEffectBlood: {fileID: 1137192370727886, guid: 7d22ce31e6b63b54d82f523466aa6e9f,
     type: 2}
   fireRate: 15
-  GunShot: {fileID: 1766442469435170, guid: 985dd62ab6be0624785247e917f67aa1, type: 2}
+  GunShot: {fileID: 1766442469435170, guid: 09c1a93765e2adc4e8bdda2606d7e086, type: 2}
 --- !u!114 &114944823305247644
 MonoBehaviour:
   m_ObjectHideFlags: 1

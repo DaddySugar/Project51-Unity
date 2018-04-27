@@ -3991,7 +3991,7 @@ MonoBehaviour:
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 1
   m_OfflineScene: 
-  m_OnlineScene: 
+  m_OnlineScene: MainMulti2
   m_SpawnPrefabs:
   - {fileID: 1070971150031598, guid: cdf58bd732e20d2419bbdfbb852e23f5, type: 2}
   m_CustomConfig: 0
@@ -31749,7 +31749,7 @@ MonoBehaviour:
   wavetxt: {fileID: 0}
   waves:
   - name: 1
-    enemy: {fileID: 0}
+    enemy: {fileID: 4690177065888660, guid: cdf58bd732e20d2419bbdfbb852e23f5, type: 2}
     count: 10
     rate: 2
   spawnPoints:
