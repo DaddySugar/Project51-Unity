@@ -35,10 +35,10 @@ public class WaveSpawner : NetworkBehaviour {
 		public float rate;
 	}
 
-	[SerializeField]
+	/*[SerializeField]
 	private Text wavenb;
 	[SerializeField]
-	private Text wavetxt;
+	private Text wavetxt;*/
 	
 	
 	
@@ -48,16 +48,16 @@ public class WaveSpawner : NetworkBehaviour {
 
 	private void DisplayWaveCountDown()
 	{
-		wavenb.text = " " + (nextWave+1);
+		/*wavenb.text = " " + (nextWave+1);
 		wavenb.GetComponent<Text>().enabled = true;
-		wavetxt.GetComponent<Text>().enabled = true;
+		wavetxt.GetComponent<Text>().enabled = true;*/
 	}
 	
 	private void DisableWaveCountDownText()
 	{
 		
-		wavenb.GetComponent<Text>().enabled = false;
-		wavetxt.GetComponent<Text>().enabled = false;
+		//wavenb.GetComponent<Text>().enabled = false;
+		//wavetxt.GetComponent<Text>().enabled = false;
 	}
 	
 	public int NextWave
