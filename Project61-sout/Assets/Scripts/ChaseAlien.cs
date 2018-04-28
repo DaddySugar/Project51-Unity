@@ -60,59 +60,93 @@ public class ChaseAlien : NetworkBehaviour
 			
 			if (NetworkManager.singleton.client == null)
 				return; 
-			else if (!hasLostTrack && NetworkManager.singleton.client.connection.playerControllers.Count == 1)
+			else if (NetworkManager.singleton.client.connection.playerControllers.Count == 1)
 			{
-				
-				if (!agent.hasPath && Time.time > timeToResetDest) 
+				if (hasLostTrack)
 				{
-					hasLostTrack = true;
+
+					var temp = (NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -
+					            AlienPosition.position);
+					var temp2 = temp.y;
+					temp = temp.normalized * 20;
+					temp.y = temp2 - NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position.y;
+
+					agent.destination = temp + AlienPosition.position;
+					if ((NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -
+					     AlienPosition.position).magnitude < 40)
+					{
+						hasLostTrack = false;
+						timeToResetDest = Time.time + 1 / timeToResetDest;
+					}
 				}
 				else
 				{
-					hasLostTrack = false;
+					if (!agent.hasPath && Time.time > timeToResetDest) 
+					{
+						hasLostTrack = true;
+					}
+					else
+					{
+						hasLostTrack = false;
 					
+					}
+					fuckYouGame = NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -
+					              AlienPosition.position;
+					agent.destination =  NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position;
 				}
-				fuckYouGame = NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -
-				              AlienPosition.position;
-				agent.destination =  NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position;
+				
 			}
 			else if (NetworkManager.singleton.client.connection.playerControllers.Count == 2)
 			{
-				pos1 = NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position;
-				pos2 = NetworkManager.singleton.client.connection.playerControllers[1].gameObject.transform.position;
-
-				if ((AlienPosition.position - pos1).magnitude < (AlienPosition.position - pos2).magnitude)
+				if (hasLostTrack)
 				{
-					agent.destination = pos1;
-					fuckYouGame = pos1 - AlienPosition.position;
+					pos1 = NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position;
+					pos2 = NetworkManager.singleton.client.connection.playerControllers[1].gameObject.transform.position;
+					if ((AlienPosition.position - pos1).magnitude > (AlienPosition.position - pos2).magnitude)
+					{
+						pos2 = pos1;
+					}
+					
+					var temp = (pos1 - AlienPosition.position);
+					var temp2 = temp.y;
+					temp = temp.normalized * 20;
+					temp.y = temp2 - NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position.y;
+
+					agent.destination = temp + AlienPosition.position;
+					if ((NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -
+					     AlienPosition.position).magnitude < 40)
+					{
+						hasLostTrack = false;
+						timeToResetDest = Time.time + 1 / timeToResetDest;
+					}
 				}
 				else
 				{
-					agent.destination = pos2;
-					fuckYouGame = pos2 - AlienPosition.position;
+					if (!agent.hasPath && Time.time > timeToResetDest) 
+					{
+						hasLostTrack = true;
+					}
+					else
+					{
+						hasLostTrack = false;
+					
+					}
+					pos1 = NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position;
+					pos2 = NetworkManager.singleton.client.connection.playerControllers[1].gameObject.transform.position;
 
+					if ((AlienPosition.position - pos1).magnitude < (AlienPosition.position - pos2).magnitude)
+					{
+						agent.destination = pos1;
+						fuckYouGame = pos1 - AlienPosition.position;
+					}
+					else
+					{
+						agent.destination = pos2;
+						fuckYouGame = pos2 - AlienPosition.position;
+					}
 				}
-				
 			}
-			Debug.Log(agent.hasPath);
-			if (hasLostTrack)
-			{
-				
-				var temp = (NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -
-				            AlienPosition.position);
-				var temp2 = temp.y;
-				temp = temp.normalized * 20;
-				temp.y = temp2 - NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position.y;
-
-				agent.destination = temp + AlienPosition.position;
-				if ((NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -
-				     AlienPosition.position).magnitude < 40)
-				{
-					hasLostTrack = false;
-					timeToResetDest = Time.time + 1 / timeToResetDest;
-				}
-				
-			}
+			
 			if (fuckYouGame.magnitude < 4)
 			{
 				anim.SetBool("isAttacking", true);
