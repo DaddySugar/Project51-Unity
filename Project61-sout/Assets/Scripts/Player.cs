@@ -24,7 +24,7 @@ public class Player : NetworkBehaviour
 	private bool[] wasEnabled;
     //private float health;
     
-	[SerializeField] private int maxHealth = 100;
+	public int maxHealth = 100;
 
     [SyncVar]
 	private int currentHealth;

@@ -68,12 +68,12 @@ public class ChaseAlien : NetworkBehaviour
 					var temp = (NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -
 					            AlienPosition.position);
 					var temp2 = temp.y;
-					temp = temp.normalized * 20;
+					temp = temp.normalized * 40;
 					temp.y = temp2 - NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position.y;
 
 					agent.destination = temp + AlienPosition.position;
 					if ((NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -
-					     AlienPosition.position).magnitude < 40)
+					     AlienPosition.position).magnitude < 45)
 					{
 						hasLostTrack = false;
 						timeToResetDest = Time.time + 1 / timeToResetDest;
@@ -109,12 +109,12 @@ public class ChaseAlien : NetworkBehaviour
 					
 					var temp = (pos1 - AlienPosition.position);
 					var temp2 = temp.y;
-					temp = temp.normalized * 20;
+					temp = temp.normalized * 40;
 					temp.y = temp2 - NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position.y;
 
 					agent.destination = temp + AlienPosition.position;
 					if ((NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -
-					     AlienPosition.position).magnitude < 40)
+					     AlienPosition.position).magnitude < 45)
 					{
 						hasLostTrack = false;
 						timeToResetDest = Time.time + 1 / timeToResetDest;

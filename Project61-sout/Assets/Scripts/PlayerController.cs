@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 public class PlayerController : MonoBehaviour
 {
 
-    [SerializeField] private float speed = 5f;
+    public float speed = 5f;
     [SerializeField] private float sprintSpeed = 10f;
     [SerializeField] private float lookSensitivity = 3f;
     [SerializeField] private float jumpForce = 5f;
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
             _velocity = (_moveHorizontal + _moveVertical).normalized * speed;
         }
         anim.SetFloat("Speed", _velocity.magnitude);
-		
+		Debug.Log(_velocity.magnitude);
         motor.Move(_velocity);
 		
         

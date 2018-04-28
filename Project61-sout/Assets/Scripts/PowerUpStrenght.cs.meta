@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: c86c239e3c2632e49aa8d2cc2f63a3ac
-timeCreated: 1524795853
+guid: d7e2c2c33365b9a48b613cab7d279f75
+timeCreated: 1524951751
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - wavenb: {instanceID: 0}
-  - wavetxt: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
