@@ -58,7 +58,7 @@ public class ChaseAlien : NetworkBehaviour
 			}
 			
 			if (NetworkManager.singleton.client == null)
-				return;
+				return; 
 			else if (NetworkManager.singleton.client.connection.playerControllers.Count == 1)
 			{
 				fuckYouGame = NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -

@@ -35,10 +35,10 @@ public class WaveSpawner : NetworkBehaviour {
 		public float rate;
 	}
 
-	/*[SerializeField]
+	[SerializeField]
 	private Text wavenb;
 	[SerializeField]
-	private Text wavetxt;*/
+	private Text wavetxt;
 	
 	
 	
@@ -48,27 +48,22 @@ public class WaveSpawner : NetworkBehaviour {
 
 	private void DisplayWaveCountDown()
 	{
-		/*wavenb.text = " " + (nextWave+1);
-		wavenb.GetComponent<Text>().enabled = true;
-		wavetxt.GetComponent<Text>().enabled = true;*/
+		Debug.Log("wave edwwwww");
+		wavenb.text = nextWave.ToString();
+		wavetxt.text = "Wave";
 	}
 	
 	private void DisableWaveCountDownText()
 	{
-		
-		//wavenb.GetComponent<Text>().enabled = false;
-		//wavetxt.GetComponent<Text>().enabled = false;
+
+		wavenb.text = "";
+		wavetxt.text = "";
 	}
 	
 	public int NextWave
 	{
 		
-		get
-		{
-			DisplayWaveCountDown();
-		 	Thread.Sleep(1500);
-			DisableWaveCountDownText();
-			return nextWave + 1; }
+		get {return nextWave + 1; }
 	}
 
 	public Transform[] spawnPoints;
@@ -90,9 +85,16 @@ public class WaveSpawner : NetworkBehaviour {
 
 	void Start()
 	{
-		DisplayWaveCountDown();
-		Thread.Sleep(1500);
+		
+		//Thread.Sleep(10500);
 //		Debug.Log("text");
+		int countdown = 100;
+		while (countdown > 0)
+		{
+			DisplayWaveCountDown();
+
+			countdown--;
+		}
 		DisableWaveCountDownText();
 		
 		networkManager = NetworkManager.singleton;
@@ -112,6 +114,10 @@ public class WaveSpawner : NetworkBehaviour {
 			if (!EnemyIsAlive())
 			{
 				WaveCompleted();
+				Debug.Log("Next Wave");
+				DisplayWaveCountDown();
+				Thread.Sleep(1500);
+				DisableWaveCountDownText();
 			}
 			else
 			{
