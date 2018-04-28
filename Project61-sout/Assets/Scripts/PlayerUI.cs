@@ -20,7 +20,7 @@ public class PlayerUI : MonoBehaviour {
 
     void Update ()
     {
-        SetHealthAmount(player.GetHealthPct()); 
+//        SetHealthAmount(player.GetHealthPct()); 
     }
     
     

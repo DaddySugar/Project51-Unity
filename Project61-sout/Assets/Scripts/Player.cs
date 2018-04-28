@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class Player : NetworkBehaviour
 {
 
+	//public Slider healthbar; 
+	public HealthBar playerhealthbar = new HealthBar(); 
+	
 	[SyncVar]
 	private bool _isDead = false;
 	public bool isDead
@@ -18,12 +22,13 @@ public class Player : NetworkBehaviour
 	[SerializeField]
 	private Behaviour[] disableOnDeath;
 	private bool[] wasEnabled;
-    private float health;
+    //private float health;
     
 	[SerializeField] private int maxHealth = 100;
 
     [SyncVar]
 	private int currentHealth;
+
 
 	public void Setup()
 	{
@@ -33,12 +38,16 @@ public class Player : NetworkBehaviour
 			wasEnabled[i] = disableOnDeath[i].enabled;
 		}
 		SetDefaults();
+		
+		
 	}
 
 	public void SetDefaults()
 	{
 		isDead = false;
 		currentHealth = maxHealth;
+
+		
 		
 		//Enable the components
 		for (int i = 0; i < disableOnDeath.Length; i++)
@@ -52,9 +61,10 @@ public class Player : NetworkBehaviour
 			_col.enabled = true;	
 	}
 
-    public float GetHealthPct()
+    public float OnChangeHealthBar()
     {
-        return (float)currentHealth / maxHealth;
+        return  currentHealth / maxHealth;
+	    
     }
 
     [ClientRpc]
@@ -73,6 +83,9 @@ public class Player : NetworkBehaviour
 		{
 			Die();
 		}
+
+		playerhealthbar.SetHealthAmount(OnChangeHealthBar());
+
 	}
 
 	private void Die()
@@ -115,8 +128,11 @@ public class Player : NetworkBehaviour
 
 		if (Input.GetKeyDown(KeyCode.K))
 		{
-			RpcTakeDamage(99999);
+			RpcTakeDamage(10);
 		}
+		
+		
+		
 	}
 
 }

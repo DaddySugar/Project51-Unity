@@ -3085,9 +3085,6 @@ MonoBehaviour:
   - {fileID: 114806824193330584}
   - {fileID: 81117865683160222}
   remoteLayerName: RemotePlayer
-  playerUIPrefab: {fileID: 1138309827768084, guid: 258b012010e1e4f42835644798a3b325,
-    type: 2}
-  playerUIInstance: {fileID: 0}
 --- !u!114 &114587079434965980
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3115,6 +3112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69fdf0de8817c8f4db588eb6fcceed37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerhealthbar: {fileID: 114675321576872140, guid: 20a63ee4b0af2b04e8c9058d27c0b70c,
+    type: 2}
   disableOnDeath:
   - {fileID: 114587079434965980}
   - {fileID: 114806824193330584}
