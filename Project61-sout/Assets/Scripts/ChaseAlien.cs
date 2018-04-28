@@ -57,8 +57,9 @@ public class ChaseAlien : NetworkBehaviour
 				Debug.Log("player ctr");
 			}
 			
-			
-			if (NetworkManager.singleton.client.connection.playerControllers.Count == 1)
+			if (NetworkManager.singleton.client == null)
+				return;
+			else if (NetworkManager.singleton.client.connection.playerControllers.Count == 1)
 			{
 				fuckYouGame = NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -
 				              AlienPosition.position;
