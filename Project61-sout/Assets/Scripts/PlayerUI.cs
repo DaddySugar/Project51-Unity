@@ -9,6 +9,8 @@ public class PlayerUI : MonoBehaviour {
 
     private Player player;
     private PlayerController controller;
+    
+    
     public void SetPlayer (Player _player)
     {
         player = _player ;
@@ -20,6 +22,8 @@ public class PlayerUI : MonoBehaviour {
     {
         SetHealthAmount(player.GetHealthPct()); 
     }
+    
+    
     void SetHealthAmount(float _amount)
     {
         healthBarFill.localScale = new Vector3(1f, _amount, 1f);
