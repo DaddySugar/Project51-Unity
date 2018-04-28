@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class WaveSpawner : NetworkBehaviour {
 
 	public enum SpawnState { SPAWNING, WAITING, COUNTING };
-
+	
 	private NetworkManager networkManager;
 	
 	/*
