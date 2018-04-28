@@ -5,7 +5,9 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerUIPrefab: {instanceID: 0}
+  - playerUIInstance: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
