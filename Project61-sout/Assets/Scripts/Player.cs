@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -34,7 +35,13 @@ public class Player : NetworkBehaviour
 	private int precedentMaxHealth = 100;
 	private float hasFinishedDyingTime= 4f;
 	private bool hasPlayedDyingAnimation = false;
+	private Animator _animation;
 
+	void Start()
+	{
+		_animation = GetComponent<Animator>();
+
+	}
 
 	public void Setup()
 	{
@@ -53,6 +60,7 @@ public class Player : NetworkBehaviour
 	{
 		isDead = false;
 		currentHealth = maxHealth;
+		LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
 
 		
 		
@@ -103,29 +111,28 @@ public class Player : NetworkBehaviour
 		}
 		
 		//Disable the collider
-		Collider _col = GetComponent<Collider>();
+		/*Collider _col = GetComponent<Collider>();
 		if (_col != null)
-			_col.enabled = false;
+			_col.enabled = false;*/
 		
 		Debug.Log(transform.name + "dead");
+		_animation.SetBool("die", true);
 		
-		//	call respawn 
-		//Respawn();
 		hasPlayedDyingAnimation = true;
 		hasFinishedDyingTime = Time.time + hasFinishedDyingTime;
 	}
 
 	private void Respawn()
 	{
-		// respawn time set to 3 seconds look in match settings and game manager
 		SetDefaults();
 		Transform _spawPosition = NetworkManager.singleton.GetStartPosition();
 		Debug.Log(_spawPosition);
 		transform.position = _spawPosition.position;
 		transform.rotation = _spawPosition.rotation;
 		hasPlayedDyingAnimation = false;
+		hasFinishedDyingTime = 4f;
 		Debug.Log(transform.name + "  player respawn");
-		
+		_animation.SetBool("die", false);
 	}
 
 
@@ -143,7 +150,6 @@ public class Player : NetworkBehaviour
 		if (precedentMaxHealth < maxHealth)
 		{
 			currentHealth = maxHealth;
-			Debug.Log("precedentMaxHealth " +precedentMaxHealth + "maxHealth  " +maxHealth);
 			LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
 
 		}
@@ -153,15 +159,18 @@ public class Player : NetworkBehaviour
 			{
 				currentHealth = maxHealth;
 			}
-			Debug.Log("precedentMaxHealth " +precedentMaxHealth + "maxHealth  " +maxHealth);
 			LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
 
 
 		}
 		precedentMaxHealth = maxHealth;
-		
+		if (hasPlayedDyingAnimation)
+		{
+			Debug.Log(Time.time - hasFinishedDyingTime);
+		}
 		if (hasPlayedDyingAnimation && Time.time > hasFinishedDyingTime)
 		{
+			Debug.Log("Call respawn");
 			Respawn();
 		}
 	}
