@@ -42,13 +42,14 @@ public class PlayerShoot : NetworkBehaviour
 		}
 		if (Weapon.bullets == 0 && !_animation.isPlaying && !hasFinishedReloading)
 		{
-			Weapon.bullets = Weapon.maxBullets;
+            Weapon.bullets = Weapon.maxBullets;
 			hasFinishedReloading = true;
 		}
 		else if (Weapon.bullets == 0 && !_animation.isPlaying)
 		{
 			_animation.Play("reload");
-			hasFinishedReloading = false;
+            GameObject reload = Instantiate(Reload, this.transform.position, this.transform.rotation) as GameObject;
+            hasFinishedReloading = false;
 
 		}
 		else if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && Weapon.bullets != 0)
@@ -57,7 +58,6 @@ public class PlayerShoot : NetworkBehaviour
 			if (_animation.IsPlaying("reload"))
 			{
 				reloadInterrupted = true;
-
 			}
 			nextTimeToFire = Time.time + 1f / fireRate;
 			Shoot();
@@ -67,10 +67,7 @@ public class PlayerShoot : NetworkBehaviour
 		{
             _animation.Play("reload");
             reloadInterrupted = false;
-            GameObject reload = Instantiate(Reload, this.transform.position, this.transform.rotation) as GameObject;
-
         }
-
 
     }
 
