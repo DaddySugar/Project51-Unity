@@ -35651,6 +35651,7 @@ GameObject:
   - component: {fileID: 1963723313}
   - component: {fileID: 1963723312}
   - component: {fileID: 1963723311}
+  - component: {fileID: 1963723314}
   m_Layer: 0
   m_Name: ZombieSpawner
   m_TagString: Untagged
@@ -35696,7 +35697,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1963723310}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c86c239e3c2632e49aa8d2cc2f63a3ac, type: 3}
   m_Name: 
@@ -35730,6 +35731,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1963723314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1963723310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae29ec0573d9f4c4390533a9d2720dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombiePrefab: {fileID: 1070971150031598, guid: cdf58bd732e20d2419bbdfbb852e23f5,
+    type: 2}
+  zombieSpawns: {fileID: 2125128794}
+  _MaxWave: 5
 --- !u!1 &1965969819 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100006, guid: 2c57d46bcf753ad44b9fac863ee06d14, type: 3}
