@@ -39,6 +39,7 @@ public class Alien_Health : NetworkBehaviour {
 		if(health <= 0 && !hasPlayedDyingAnimation)
 		{
 			GetComponent<CapsuleCollider>().enabled = false;
+			GetComponent<Alien_ID>().enabled = false;
 			anim.SetBool("isDead", true);
 			hasPlayedDyingAnimation = true;
 			GetComponent<ChaseAlien>().enabled = false;

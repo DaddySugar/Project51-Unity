@@ -31,6 +31,8 @@ public class Player : NetworkBehaviour
     [SyncVar]
 	private int currentHealth;
 
+	private int precedentMaxHealth = 100;
+
 
 	public void Setup()
 	{
@@ -123,6 +125,7 @@ public class Player : NetworkBehaviour
 
 	void Update()
 	{
+		
 		if (!isLocalPlayer)
 			return;
 
@@ -130,9 +133,26 @@ public class Player : NetworkBehaviour
 		{
 			RpcTakeDamage(10);
 		}
-		
-		
-		
+
+		if (precedentMaxHealth < maxHealth)
+		{
+			currentHealth = maxHealth;
+			Debug.Log("precedentMaxHealth " +precedentMaxHealth + "maxHealth  " +maxHealth);
+			LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
+
+		}
+		else if (precedentMaxHealth > maxHealth)
+		{
+			if (currentHealth > maxHealth)
+			{
+				currentHealth = maxHealth;
+			}
+			Debug.Log("precedentMaxHealth " +precedentMaxHealth + "maxHealth  " +maxHealth);
+			LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
+
+
+		}
+		precedentMaxHealth = maxHealth;
 	}
 
 }
