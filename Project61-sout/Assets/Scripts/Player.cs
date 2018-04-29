@@ -78,7 +78,7 @@ public class Player : NetworkBehaviour
 	}
 
 
-    [ClientRpc]
+    [Client]
 	public void RpcTakeDamage(int ammount)
 	{
 		if (_isDead)
