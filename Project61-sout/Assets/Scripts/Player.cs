@@ -105,6 +105,7 @@ public class Player : NetworkBehaviour
 		isDead = true;
 		
 		// disable comp 
+		gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 		for (int i = 0; i < disableOnDeath.Length; i++)
 		{
 			disableOnDeath[i].enabled = false;
@@ -114,7 +115,6 @@ public class Player : NetworkBehaviour
 		/*Collider _col = GetComponent<Collider>();
 		if (_col != null)
 			_col.enabled = false;*/
-		
 		Debug.Log(transform.name + "dead");
 		_animation.SetBool("die", true);
 		
@@ -125,6 +125,9 @@ public class Player : NetworkBehaviour
 	private void Respawn()
 	{
 		SetDefaults();
+		gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+		gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+		
 		Transform _spawPosition = NetworkManager.singleton.GetStartPosition();
 		Debug.Log(_spawPosition);
 		transform.position = _spawPosition.position;
@@ -133,6 +136,7 @@ public class Player : NetworkBehaviour
 		hasFinishedDyingTime = 4f;
 		Debug.Log(transform.name + "  player respawn");
 		_animation.SetBool("die", false);
+
 	}
 
 
@@ -164,13 +168,9 @@ public class Player : NetworkBehaviour
 
 		}
 		precedentMaxHealth = maxHealth;
-		if (hasPlayedDyingAnimation)
-		{
-			Debug.Log(Time.time - hasFinishedDyingTime);
-		}
+		
 		if (hasPlayedDyingAnimation && Time.time > hasFinishedDyingTime)
 		{
-			Debug.Log("Call respawn");
 			Respawn();
 		}
 	}

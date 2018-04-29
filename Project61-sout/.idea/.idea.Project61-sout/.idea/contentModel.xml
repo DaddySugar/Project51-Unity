@@ -84,6 +84,7 @@
         </e>
         <e p="SFX" t="Include">
           <e p="GunSounds.cs" t="Include" />
+          <e p="ReloadSound.cs" t="Include" />
           <e p="SFX.cs" t="Include" />
         </e>
         <e p="ShootSound.cs" t="Include" />

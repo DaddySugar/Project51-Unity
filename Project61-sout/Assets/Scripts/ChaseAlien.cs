@@ -13,6 +13,8 @@ public class ChaseAlien : NetworkBehaviour
 		private GameObject goal; 
 		//public GameObject player;
 		public Transform targetTransform; //the enemy's target
+
+		public int alienDamage = 5;
 		private NavMeshAgent agent;
 		private Animator anim;
 		private Transform AlienPosition;
@@ -23,6 +25,8 @@ public class ChaseAlien : NetworkBehaviour
 		private Vector3 fuckYouGame;
 		private bool hasLostTrack = false;
 		private float timeToResetDest = 2f;
+
+		private float timeToNextHit = 2f;
 		//public GameObject clientnetwoek;
 		
 
@@ -94,6 +98,11 @@ public class ChaseAlien : NetworkBehaviour
 					              AlienPosition.position;
 					agent.destination =  NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position;
 				}
+				if (fuckYouGame.magnitude < 2 && Time.time > timeToNextHit)
+				{
+					NetworkManager.singleton.client.connection.playerControllers[0].gameObject.GetComponent<Player>().RpcTakeDamage(alienDamage);
+					timeToNextHit = Time.time + 2f;
+				}
 				
 			}
 			else if (NetworkManager.singleton.client.connection.playerControllers.Count == 2)
@@ -145,6 +154,21 @@ public class ChaseAlien : NetworkBehaviour
 						fuckYouGame = pos2 - AlienPosition.position;
 					}
 				}
+				if (fuckYouGame.magnitude < 2 && Time.time > timeToNextHit)
+				{
+					pos1 = NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position;
+					pos2 = NetworkManager.singleton.client.connection.playerControllers[1].gameObject.transform.position;
+
+					if ((AlienPosition.position - pos1).magnitude < (AlienPosition.position - pos2).magnitude)
+					{
+						NetworkManager.singleton.client.connection.playerControllers[0].gameObject.GetComponent<Player>().RpcTakeDamage(alienDamage);
+					}
+					else
+					{
+						NetworkManager.singleton.client.connection.playerControllers[1].gameObject.GetComponent<Player>().RpcTakeDamage(alienDamage);
+					}
+					timeToNextHit = Time.time + 2f;
+				}
 			}
 			
 			if (fuckYouGame.magnitude < 4)
@@ -155,6 +179,7 @@ public class ChaseAlien : NetworkBehaviour
 			{
 				anim.SetBool("isAttacking", false);
 			}
+			
 			
 	
 			
