@@ -155,6 +155,7 @@ public class ChaseAlien : NetworkBehaviour
 			{
 				anim.SetBool("isAttacking", false);
 			}
+			
 	
 			
 		}

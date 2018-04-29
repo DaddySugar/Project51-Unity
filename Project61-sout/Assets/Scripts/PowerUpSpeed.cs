@@ -26,6 +26,7 @@ public class PowerUpSpeed : MonoBehaviour
 	{
 		PlayerController stats = player.GetComponent<PlayerController>();
 		stats.speed *= multiplierSpeed;
+		stats.sprintSpeed *= multiplierSpeed;
 
 		GetComponent<MeshRenderer>().enabled = false;
 		GetComponent<Collider>().enabled = false;
@@ -33,6 +34,7 @@ public class PowerUpSpeed : MonoBehaviour
 		yield return new WaitForSeconds(duration);
 
 		stats.speed /= multiplierSpeed;
+		stats.sprintSpeed /= multiplierSpeed;
 		
 		Destroy(gameObject);
 	}

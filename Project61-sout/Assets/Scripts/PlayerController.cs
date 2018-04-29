@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed = 5f;
-    [SerializeField] private float sprintSpeed = 10f;
+    public float sprintSpeed = 10f;
     [SerializeField] private float lookSensitivity = 3f;
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float jumpDelay = 15f;
@@ -59,7 +59,6 @@ public class PlayerController : MonoBehaviour
             _velocity = (_moveHorizontal + _moveVertical).normalized * speed;
         }
         anim.SetFloat("Speed", _velocity.magnitude);
-		Debug.Log(_velocity.magnitude);
         motor.Move(_velocity);
 		
         
