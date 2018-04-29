@@ -23,8 +23,8 @@ public class WaveSpawner : NetworkBehaviour {
 	 *
 	 * 	
 	 */
-	
-	
+
+	private int counter = 0; 
 	
 	[System.Serializable]
 	public class Wave
@@ -188,10 +188,12 @@ public class WaveSpawner : NetworkBehaviour {
 
 	void SpawnEnemy(Transform _enemy)
 	{
+		counter++;
 		Debug.Log("Spawning Enemy: " + _enemy.name);
 
 		Transform _sp = spawnPoints[ Random.Range (0, spawnPoints.Length) ];
 		Instantiate(_enemy, _sp.position, _sp.rotation);
+		_enemy.GetComponent<Alien_ID>().AlienID = "Alien " + counter;
 	}
 
 }

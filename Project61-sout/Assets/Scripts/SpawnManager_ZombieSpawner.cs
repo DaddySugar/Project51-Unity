@@ -49,7 +49,7 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour {
 		//Debug.Log("Spaw");
 		counter++;
 		GameObject go = GameObject.Instantiate(zombiePrefab, spawnPos, Quaternion.identity) as GameObject;
-		go.GetComponent<Alien_ID>().zombieID = "Zombie " + counter;
+		go.GetComponent<Alien_ID>().AlienID= "Zombie " + counter;
 		NetworkServer.Spawn(go);
 	}
 

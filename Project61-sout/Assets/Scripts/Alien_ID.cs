@@ -4,7 +4,7 @@ using UnityEngine.Networking;
 
 public class Alien_ID : NetworkBehaviour {
 
-	[SyncVar] public string zombieID;
+	[SyncVar] public string AlienID;
 	private Transform myTransform;
 
 	// Use this for initialization
@@ -23,7 +23,7 @@ public class Alien_ID : NetworkBehaviour {
 	{
 		if(myTransform.tag == "Alien")
 		{
-			myTransform.name = zombieID;
+			myTransform.name = AlienID;
 		}
 	}
 }
