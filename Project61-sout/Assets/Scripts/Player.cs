@@ -8,7 +8,9 @@ public class Player : NetworkBehaviour
 {
 
 	//public Slider healthbar; 
-	public HealthBar playerhealthbar = new HealthBar(); 
+	//public HealthBar playerhealthbar = new HealthBar(); 
+	//public RectTransform healthBar;
+	public Image LocalHealthBarImg;
 	
 	[SyncVar]
 	private bool _isDead = false;
@@ -39,7 +41,8 @@ public class Player : NetworkBehaviour
 		}
 		SetDefaults();
 		
-		
+		LocalHealthBarImg.fillAmount = GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
+		//healthBar.sizeDelta = new Vector2( currentHealth, healthBar.sizeDelta.x);
 	}
 
 	public void SetDefaults()
@@ -61,11 +64,6 @@ public class Player : NetworkBehaviour
 			_col.enabled = true;	
 	}
 
-    public float OnChangeHealthBar()
-    {
-        return  currentHealth / maxHealth;
-	    
-    }
 
     [ClientRpc]
 	public void RpcTakeDamage(int ammount)
@@ -84,7 +82,9 @@ public class Player : NetworkBehaviour
 			Die();
 		}
 
-		playerhealthbar.SetHealthAmount(OnChangeHealthBar());
+		//playerhealthbar.SetHealthAmount(OnChangeHealthBar());
+		LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
+		//healthBar.sizeDelta = new Vector2( currentHealth, healthBar.sizeDelta.x);
 
 	}
 
