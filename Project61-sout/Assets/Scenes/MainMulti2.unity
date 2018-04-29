@@ -5972,7 +5972,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4615018456772570, guid: c0b9c7c1c8edf1b479763ac4a5965f77, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0b9c7c1c8edf1b479763ac4a5965f77, type: 2}
@@ -23759,7 +23759,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4940665475652616, guid: 2badf9b5f6da325478fd1123682c0a42, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2badf9b5f6da325478fd1123682c0a42, type: 2}
@@ -35192,6 +35192,7 @@ GameObject:
   - component: {fileID: 1963723313}
   - component: {fileID: 1963723312}
   - component: {fileID: 1963723311}
+  - component: {fileID: 1963723314}
   m_Layer: 0
   m_Name: ZombieSpawner
   m_TagString: Untagged
@@ -35237,7 +35238,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1963723310}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c86c239e3c2632e49aa8d2cc2f63a3ac, type: 3}
   m_Name: 
@@ -35247,11 +35248,11 @@ MonoBehaviour:
   waves:
   - name: 1
     enemy: {fileID: 4690177065888660, guid: cdf58bd732e20d2419bbdfbb852e23f5, type: 2}
-    count: 10
+    count: 3
     rate: 2
   - name: 1
     enemy: {fileID: 4690177065888660, guid: cdf58bd732e20d2419bbdfbb852e23f5, type: 2}
-    count: 10
+    count: 3
     rate: 2
   spawnPoints:
   - {fileID: 2125128795}
@@ -35269,6 +35270,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1963723314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1963723310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae29ec0573d9f4c4390533a9d2720dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zombiePrefab: {fileID: 1070971150031598, guid: cdf58bd732e20d2419bbdfbb852e23f5,
+    type: 2}
+  zombieSpawns: {fileID: 2125128794}
 --- !u!1 &1965969819 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100006, guid: 2c57d46bcf753ad44b9fac863ee06d14, type: 3}
