@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReloadSounds : MonoBehaviour
+public class ReloadSound : MonoBehaviour
 {
-
     private float totalTimeBeforeDestroy2;
 
     // Use this for initialization

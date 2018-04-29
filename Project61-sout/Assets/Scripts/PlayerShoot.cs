@@ -65,13 +65,14 @@ public class PlayerShoot : NetworkBehaviour
 		}
 		else if (Input.GetKey(KeyCode.R))//Reload, do not put the bullets in the gun yet, wait to see if the animation was interrupted
 		{
-			_animation.Play("reload");
-			GameObject reload = Instantiate(Reload, this.transform.position, this.transform.rotation) as GameObject;
+            _animation.Play("reload");
             reloadInterrupted = false;
-		}
-		
+            GameObject reload = Instantiate(Reload, this.transform.position, this.transform.rotation) as GameObject;
 
-	}
+        }
+
+
+    }
 
 	[Client]
 	void Shoot()

@@ -3356,7 +3356,7 @@ MonoBehaviour:
     type: 2}
   fireRate: 15
   GunShot: {fileID: 1766442469435170, guid: 09c1a93765e2adc4e8bdda2606d7e086, type: 2}
-  Reload: {fileID: 1230862029133906, guid: 2e1160e2a229dd04b82e56741e87f990, type: 2}
+  Reload: {fileID: 1428444542617022, guid: 8564a2d7538862a4d83ad0254a82aef8, type: 2}
 --- !u!114 &114944823305247644
 MonoBehaviour:
   m_ObjectHideFlags: 1
