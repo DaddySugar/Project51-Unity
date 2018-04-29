@@ -32,6 +32,8 @@ public class Player : NetworkBehaviour
 	private int currentHealth;
 
 	private int precedentMaxHealth = 100;
+	private float hasFinishedDyingTime= 4f;
+	private bool hasPlayedDyingAnimation = false;
 
 
 	public void Setup()
@@ -108,18 +110,22 @@ public class Player : NetworkBehaviour
 		Debug.Log(transform.name + "dead");
 		
 		//	call respawn 
-		StartCoroutine(Respawn());
+		//Respawn();
+		hasPlayedDyingAnimation = true;
+		hasFinishedDyingTime = Time.time + hasFinishedDyingTime;
 	}
 
-	private IEnumerator Respawn()
+	private void Respawn()
 	{
 		// respawn time set to 3 seconds look in match settings and game manager
-		yield return new WaitForSeconds(GameManager.instance._MatchSettings.respawnTime);
 		SetDefaults();
 		Transform _spawPosition = NetworkManager.singleton.GetStartPosition();
+		Debug.Log(_spawPosition);
 		transform.position = _spawPosition.position;
 		transform.rotation = _spawPosition.rotation;
+		hasPlayedDyingAnimation = false;
 		Debug.Log(transform.name + "  player respawn");
+		
 	}
 
 
@@ -153,6 +159,11 @@ public class Player : NetworkBehaviour
 
 		}
 		precedentMaxHealth = maxHealth;
+		
+		if (hasPlayedDyingAnimation && Time.time > hasFinishedDyingTime)
+		{
+			Respawn();
+		}
 	}
 
 }
