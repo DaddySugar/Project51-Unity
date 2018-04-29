@@ -1283,6 +1283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 4482694287364066, guid: b31286c8a5d4ac145ba20b159559d20c,
     type: 2}
+  alienDamage: 0
 --- !u!114 &114346102802556274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1294,6 +1295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e81a741a6a5aa47ae2a3f5cda8a6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 50
 --- !u!114 &114371509757042766
 MonoBehaviour:
   m_ObjectHideFlags: 1

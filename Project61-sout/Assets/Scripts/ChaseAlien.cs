@@ -61,7 +61,7 @@ public class ChaseAlien : NetworkBehaviour
 			{
 				Debug.Log("player ctr");
 			}
-			
+			Debug.Log(NetworkManager.singleton.client.connection.playerControllers.Count);
 			if (NetworkManager.singleton.client == null)
 				return; 
 			else if (NetworkManager.singleton.client.connection.playerControllers.Count == 1)
