@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using NUnit.Framework;
 using UnityEngine.Networking;
 
 public class SpawnManager_ZombieSpawner : NetworkBehaviour {
