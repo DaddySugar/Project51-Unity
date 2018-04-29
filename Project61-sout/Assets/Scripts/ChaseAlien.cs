@@ -27,6 +27,8 @@ public class ChaseAlien : NetworkBehaviour
 		private float timeToResetDest = 2f;
 
 		private float timeToNextHit = 2f;
+
+
 		//public GameObject clientnetwoek;
 		
 
@@ -61,23 +63,29 @@ public class ChaseAlien : NetworkBehaviour
 			{
 				Debug.Log("player ctr");
 			}
-			Debug.Log(NetworkManager.singleton.client.connection.playerControllers.Count);
 			if (NetworkManager.singleton.client == null)
 				return; 
-			else if (NetworkManager.singleton.client.connection.playerControllers.Count == 1)
+
+			if (GameManager.players.Count == 1)
 			{
+				string playerId = "";
+				foreach (var playerKey in GameManager.players.Keys)
+				{
+					playerId = playerKey;
+				}
+				pos1 = GameManager.players[playerId].GetComponentInParent<Transform>().position;
+				
 				if (hasLostTrack)
 				{
 
-					var temp = (NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -
+					var temp = (pos1 -
 					            AlienPosition.position);
 					var temp2 = temp.y;
 					temp = temp.normalized * 40;
-					temp.y = temp2 - NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position.y;
+					temp.y = temp2 - pos1.y;
 
 					agent.destination = temp + AlienPosition.position;
-					if ((NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -
-					     AlienPosition.position).magnitude < 45)
+					if ((pos1 - AlienPosition.position).magnitude < 45)
 					{
 						hasLostTrack = false;
 						timeToResetDest = Time.time + 1 / timeToResetDest;
@@ -94,36 +102,44 @@ public class ChaseAlien : NetworkBehaviour
 						hasLostTrack = false;
 					
 					}
-					fuckYouGame = NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -
-					              AlienPosition.position;
-					agent.destination =  NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position;
+					fuckYouGame = pos1 -AlienPosition.position;
+					agent.destination =  pos1;
 				}
 				if (fuckYouGame.magnitude < 2 && Time.time > timeToNextHit)
 				{
-					NetworkManager.singleton.client.connection.playerControllers[0].gameObject.GetComponent<Player>().RpcTakeDamage(alienDamage);
+					GameManager.players[playerId].GetComponentInParent<Player>().RpcTakeDamage(alienDamage);
 					timeToNextHit = Time.time + 2f;
 				}
 				
 			}
-			else if (NetworkManager.singleton.client.connection.playerControllers.Count == 2)
+			else if (GameManager.players.Count == 2)
 			{
+				List<string> playerIds = new List<string>();
+				foreach (var playerKey in GameManager.players.Keys)
+				{
+					playerIds.Add(playerKey);
+				}
+				pos1 = GameManager.players[playerIds[0]].GetComponentInParent<Transform>().position;
+				
+				if (playerIds.Count > 1)
+				{
+						pos2 = GameManager.players[playerIds[1]].GetComponentInParent<Transform>().position;
+
+				}
+				if ((AlienPosition.position - pos1).magnitude > (AlienPosition.position - pos2).magnitude)
+				{
+					pos1 = pos2;
+				}
+
 				if (hasLostTrack)
 				{
-					pos1 = NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position;
-					pos2 = NetworkManager.singleton.client.connection.playerControllers[1].gameObject.transform.position;
-					if ((AlienPosition.position - pos1).magnitude > (AlienPosition.position - pos2).magnitude)
-					{
-						pos2 = pos1;
-					}
-					
 					var temp = (pos1 - AlienPosition.position);
 					var temp2 = temp.y;
 					temp = temp.normalized * 40;
-					temp.y = temp2 - NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position.y;
+					temp.y = temp2 - pos1.y;
 
 					agent.destination = temp + AlienPosition.position;
-					if ((NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position -
-					     AlienPosition.position).magnitude < 45)
+					if ((pos1 - AlienPosition.position).magnitude < 45)
 					{
 						hasLostTrack = false;
 						timeToResetDest = Time.time + 1 / timeToResetDest;
@@ -140,32 +156,27 @@ public class ChaseAlien : NetworkBehaviour
 						hasLostTrack = false;
 					
 					}
-					pos1 = NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position;
-					pos2 = NetworkManager.singleton.client.connection.playerControllers[1].gameObject.transform.position;
-
-					if ((AlienPosition.position - pos1).magnitude < (AlienPosition.position - pos2).magnitude)
-					{
-						agent.destination = pos1;
-						fuckYouGame = pos1 - AlienPosition.position;
-					}
-					else
-					{
-						agent.destination = pos2;
-						fuckYouGame = pos2 - AlienPosition.position;
-					}
+					agent.destination = pos1;
+					fuckYouGame = pos1 - AlienPosition.position;
+					
 				}
 				if (fuckYouGame.magnitude < 2 && Time.time > timeToNextHit)
 				{
-					pos1 = NetworkManager.singleton.client.connection.playerControllers[0].gameObject.transform.position;
-					pos2 = NetworkManager.singleton.client.connection.playerControllers[1].gameObject.transform.position;
+					pos1 = GameManager.players[playerIds[0]].GetComponentInParent<Transform>().position;
+				
+					if (playerIds.Count > 1)
+					{
+						pos2 = GameManager.players[playerIds[1]].GetComponentInParent<Transform>().position;
+
+					}
 
 					if ((AlienPosition.position - pos1).magnitude < (AlienPosition.position - pos2).magnitude)
 					{
-						NetworkManager.singleton.client.connection.playerControllers[0].gameObject.GetComponent<Player>().RpcTakeDamage(alienDamage);
+						GameManager.players[playerIds[0]].GetComponentInParent<Player>().RpcTakeDamage(alienDamage);
 					}
 					else
 					{
-						NetworkManager.singleton.client.connection.playerControllers[1].gameObject.GetComponent<Player>().RpcTakeDamage(alienDamage);
+						GameManager.players[playerIds[1]].GetComponentInParent<Player>().RpcTakeDamage(alienDamage);
 					}
 					timeToNextHit = Time.time + 2f;
 				}

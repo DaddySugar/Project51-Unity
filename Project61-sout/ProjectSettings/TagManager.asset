@@ -17,8 +17,8 @@ TagManager:
   - 
   - LocalPlayer
   - RemotePlayer
-  - CameraIgnored
-  - 
+  - CameraIgnoredPlayer1
+  - CameraIgnoredPlayer2
   - 
   - 
   - 

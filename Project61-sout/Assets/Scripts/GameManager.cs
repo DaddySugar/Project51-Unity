@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     
 
     
-    private static Dictionary<string, Player> players= new Dictionary<string, Player>();
+    public static Dictionary<string, Player> players= new Dictionary<string, Player>();
     private const string PLAYER_ID_PREFIX = "Player ";
 
     public static void RegisterPlayer(string _netID, Player _player)
