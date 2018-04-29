@@ -7,6 +7,8 @@ public class PowerUpSpeed : MonoBehaviour
 
 	[SerializeField] private float multiplierSpeed = 1.4f;
 	[SerializeField] private float duration = 4f;
+	[SerializeField] private int cost = 300;
+
 
 	void Update()
 	{
@@ -14,9 +16,9 @@ public class PowerUpSpeed : MonoBehaviour
 		temp += 10f;
 	}
 
-	private void OnTriggerEnter(Collider other)
+	private void OnTriggerStay(Collider other)
 	{
-		if (other.CompareTag("Player"))
+		if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E) && other.GetComponent<Player>().money >= cost)
 		{
 			StartCoroutine(Pickup(other));
 		}
@@ -27,6 +29,7 @@ public class PowerUpSpeed : MonoBehaviour
 		PlayerController stats = player.GetComponent<PlayerController>();
 		stats.speed *= multiplierSpeed;
 		stats.sprintSpeed *= multiplierSpeed;
+		player.GetComponent<Player>().money -= cost;
 
 		GetComponent<MeshRenderer>().enabled = false;
 		GetComponent<Collider>().enabled = false;

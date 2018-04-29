@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 public class Alien_Health : NetworkBehaviour {
 
-	private int health = 50;
+	public int health = 50;
 	private Animator anim;
 	private float hasFinishedDyingTime= 4f;
 	private bool hasPlayedDyingAnimation = false;

@@ -36,6 +36,8 @@ public class Player : NetworkBehaviour
 	private float hasFinishedDyingTime= 4f;
 	private bool hasPlayedDyingAnimation = false;
 	private Animator _animation;
+	public int money;
+	public int moneyRewardedByKill = 25;
 
 	void Start()
 	{
@@ -61,7 +63,7 @@ public class Player : NetworkBehaviour
 		isDead = false;
 		currentHealth = maxHealth;
 		LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
-
+		money = 500;
 		
 		
 		//Enable the components

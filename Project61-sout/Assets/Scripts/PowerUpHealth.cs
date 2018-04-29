@@ -7,6 +7,8 @@ public class PowerUpHealth : MonoBehaviour {
 
 	[SerializeField] private float multiplierSpeed = 1.4f;
 	[SerializeField] private float duration = 4f;
+	[SerializeField] private int cost = 300;
+
 
 	void Update()
 	{
@@ -14,9 +16,9 @@ public class PowerUpHealth : MonoBehaviour {
 		temp += 1f;
 	}
 
-	private void OnTriggerEnter(Collider other)
+	private void OnTriggerStay(Collider other)
 	{
-		if (other.CompareTag("Player"))
+		if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E) && other.GetComponent<Player>().money >= cost)
 		{
 			StartCoroutine(Pickup(other));
 		}
@@ -26,6 +28,7 @@ public class PowerUpHealth : MonoBehaviour {
 	{
 		Player stats = player.GetComponent<Player>();
 		stats.maxHealth = Convert.ToInt32(stats.maxHealth * multiplierSpeed);
+		stats.money -= cost;
 		
 		GetComponent<MeshRenderer>().enabled = false;
 		GetComponent<Collider>().enabled = false;

@@ -3289,6 +3289,8 @@ MonoBehaviour:
   - {fileID: 114587079434965980}
   - {fileID: 114806824193330584}
   maxHealth: 100
+  money: 0
+  moneyRewardedByKill: 10
 --- !u!114 &114707725891598242
 MonoBehaviour:
   m_ObjectHideFlags: 1

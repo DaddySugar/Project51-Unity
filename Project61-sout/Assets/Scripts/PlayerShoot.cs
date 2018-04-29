@@ -94,6 +94,10 @@ public class PlayerShoot : NetworkBehaviour
 			else if (_hit.collider.tag == "Alien")
 			{
 				string uIdentity = _hit.transform.name;
+				if (_hit.collider.gameObject.GetComponent<Alien_Health>().health - Weapon.damage<= 0)
+				{
+					gameObject.GetComponent<Player>().money += gameObject.GetComponent<Player>().moneyRewardedByKill;
+				}
 				CmdTellServerWhichZombieWasShot(uIdentity, Weapon.damage);
 				//Debug.Log("One");
 				impact = impactEffectBlood;
