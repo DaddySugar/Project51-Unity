@@ -11,7 +11,7 @@ public class Player : NetworkBehaviour
 	//public Slider healthbar; 
 	//public HealthBar playerhealthbar = new HealthBar(); 
 	//public RectTransform healthBar;
-	public Image LocalHealthBarImg;
+	//public Image LocalHealthBarImg;
 	
 	[SyncVar]
 	private bool _isDead = false;
@@ -57,7 +57,7 @@ public class Player : NetworkBehaviour
 		}
 		SetDefaults();
 		
-		LocalHealthBarImg.fillAmount = GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
+		//LocalHealthBarImg.fillAmount = GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
 		//healthBar.sizeDelta = new Vector2( currentHealth, healthBar.sizeDelta.x);
 	}
 
@@ -65,7 +65,7 @@ public class Player : NetworkBehaviour
 	{
 		isDead = false;
 		currentHealth = maxHealth;
-		LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
+		//LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
 		money = 500;
 		
 		
@@ -100,7 +100,7 @@ public class Player : NetworkBehaviour
 		}
 
 		//playerhealthbar.SetHealthAmount(OnChangeHealthBar());
-		LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
+		//LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
 		//healthBar.sizeDelta = new Vector2( currentHealth, healthBar.sizeDelta.x);
 
 	}
@@ -178,7 +178,7 @@ public class Player : NetworkBehaviour
 		if (precedentMaxHealth < maxHealth)
 		{
 			currentHealth = maxHealth;
-			LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
+			//LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
 
 		}
 		else if (precedentMaxHealth > maxHealth)
@@ -187,7 +187,7 @@ public class Player : NetworkBehaviour
 			{
 				currentHealth = maxHealth;
 			}
-			LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
+			//LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
 
 
 		}

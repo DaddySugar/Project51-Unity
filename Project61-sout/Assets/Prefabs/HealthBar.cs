@@ -7,13 +7,13 @@ public class HealthBar : MonoBehaviour
 {
 	[SerializeField] public Slider healthbar;
 	private Player player;
-	private PlayerController controller;
+//	private PlayerController controller;
 	
 
 	public void SetPlayer (Player _player)
 	{
 		player = _player;
-		controller = player.GetComponent<PlayerController>();
+	//	controller = player.GetComponent<PlayerController>();
 		Debug.Log("Player healthbar set");
 	}
 
