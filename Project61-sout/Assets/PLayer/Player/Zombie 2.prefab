@@ -1283,7 +1283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 4482694287364066, guid: b31286c8a5d4ac145ba20b159559d20c,
     type: 2}
-  alienDamage: 2
+  alienDamage: 5
 --- !u!114 &114346102802556274
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -20,6 +20,8 @@ public class PlayerShoot : NetworkBehaviour
     //public ; 
     public GameObject GunShot;
     public GameObject Reload;
+	private float timeToNextReload = 0f;
+	private float temp = 2f;
 
 	void Start()
 	{
@@ -35,6 +37,7 @@ public class PlayerShoot : NetworkBehaviour
 
 	void Update()
 	{
+		
 		if (!_animation.isPlaying && !reloadInterrupted)//reload successful
 		{
 			Weapon.bullets = Weapon.maxBullets;
@@ -63,11 +66,13 @@ public class PlayerShoot : NetworkBehaviour
 			Shoot();
 			_animation.Play("fire");
 		}
-		else if (Input.GetKey(KeyCode.R))//Reload, do not put the bullets in the gun yet, wait to see if the animation was interrupted
+		else if (Input.GetKey(KeyCode.R) && Time.time > timeToNextReload)//Reload, do not put the bullets in the gun yet, wait to see if the animation was interrupted
 		{
-            _animation.Play("reload");
+			_animation.Play("reload");
+			GameObject reload = Instantiate(Reload, this.transform.position, this.transform.rotation) as GameObject;
             reloadInterrupted = false;
-        }
+			timeToNextReload = Time.time + temp;
+		}
 
     }
 

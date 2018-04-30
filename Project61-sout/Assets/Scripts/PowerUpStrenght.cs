@@ -11,8 +11,7 @@ public class PowerUpStrenght : MonoBehaviour {
 
 	void Update()
 	{
-		var temp = gameObject.transform.rotation.y;
-		temp += 1f;
+		gameObject.GetComponent<Rigidbody>().MoveRotation(gameObject.GetComponent<Rigidbody>().rotation * Quaternion.Euler(new Vector3(0f,0f,1f)));
 	}
 
 	private void OnTriggerStay(Collider other)

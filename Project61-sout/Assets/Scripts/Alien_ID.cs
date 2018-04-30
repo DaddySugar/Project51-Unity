@@ -21,7 +21,7 @@ public class Alien_ID : NetworkBehaviour {
 
 	void SetIdentity()
 	{
-		if(myTransform.name == "" || myTransform.name == "Zombie(Clone)")
+		if(myTransform.tag == "Alien")
 		{
 			myTransform.name = AlienID;
 		}

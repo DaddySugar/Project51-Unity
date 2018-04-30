@@ -3291,6 +3291,12 @@ MonoBehaviour:
   maxHealth: 100
   money: 0
   moneyRewardedByKill: 10
+  maskPlayer1:
+    serializedVersion: 2
+    m_Bits: 0
+  maskPlayer2:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &114707725891598242
 MonoBehaviour:
   m_ObjectHideFlags: 1

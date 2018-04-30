@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -37,6 +38,8 @@ public class Player : NetworkBehaviour
 	private Animator _animation;
 	public int money;
 	public int moneyRewardedByKill = 25;
+	public LayerMask maskPlayer1;
+	public LayerMask maskPlayer2;
 
 	void Start()
 	{
@@ -174,6 +177,38 @@ public class Player : NetworkBehaviour
 		{
 			Respawn();
 		}
+		//set layers
+		if (GameManager.players.Count == 1)
+		{
+			string playerId = "";
+			foreach (var playerKey in GameManager.players.Keys)
+			{
+				playerId = playerKey;
+			}
+			GameObject obj = GameManager.players[playerId].gameObject;
+			//Camera cam = gameObject.GetComponentInChildren<Camera>();
+			//cam.cullingMask = maskPlayer1;
+
+
+		}
+		
+		else if (GameManager.players.Count == 2)
+		{
+			List<string> playerIds = new List<string>();
+			foreach (var playerKey in GameManager.players.Keys)
+			{
+				playerIds.Add(playerKey);
+			}
+			GameObject obj = GameManager.players[playerIds[0]].transform.parent.gameObject;
+			Camera cam1 = GameManager.players[playerIds[0]].GetComponentInParent<GameObject>().GetComponentInChildren<Camera>();
+			cam1.cullingMask = maskPlayer1;
+			Camera cam2 = GameManager.players[playerIds[1]].GetComponentInParent<GameObject>().GetComponentInChildren<Camera>();
+			cam2.cullingMask = maskPlayer2;
+			
+		}
+		
+
+		
 	}
 
 }
