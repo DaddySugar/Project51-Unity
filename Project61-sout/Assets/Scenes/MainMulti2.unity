@@ -40310,7 +40310,7 @@ MonoBehaviour:
   zombiePrefab: {fileID: 1070971150031598, guid: cdf58bd732e20d2419bbdfbb852e23f5,
     type: 2}
   zombieSpawns: {fileID: 2125128794}
-  _MaxWave: 5
+  _MaxWave: 0
 --- !u!1 &1963912116
 GameObject:
   m_ObjectHideFlags: 0

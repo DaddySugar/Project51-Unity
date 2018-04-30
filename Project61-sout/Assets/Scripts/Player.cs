@@ -40,6 +40,7 @@ public class Player : NetworkBehaviour
 	public int moneyRewardedByKill = 25;
 	public LayerMask maskPlayer1;
 	public LayerMask maskPlayer2;
+	private int formerNumberofPlayer = 0;
 
 	void Start()
 	{
@@ -142,7 +143,25 @@ public class Player : NetworkBehaviour
 		_animation.SetBool("die", false);
 
 	}
-
+	
+	void SetLayerRecursively(GameObject obj, int newLayer)
+	{
+		if (null == obj)
+		{
+			return;
+		}
+       
+		obj.layer = newLayer;
+       
+		foreach (Transform child in obj.transform)
+		{
+			if (null == child)
+			{
+				continue;
+			}
+			SetLayerRecursively(child.gameObject, newLayer);
+		}
+	}
 
 	void Update()
 	{
@@ -178,7 +197,7 @@ public class Player : NetworkBehaviour
 			Respawn();
 		}
 		//set layers
-		if (GameManager.players.Count == 1)
+		if (GameManager.players.Count == 1 && GameManager.players.Count != formerNumberofPlayer)
 		{
 			string playerId = "";
 			foreach (var playerKey in GameManager.players.Keys)
@@ -186,26 +205,29 @@ public class Player : NetworkBehaviour
 				playerId = playerKey;
 			}
 			GameObject obj = GameManager.players[playerId].gameObject;
-			//Camera cam = gameObject.GetComponentInChildren<Camera>();
-			//cam.cullingMask = maskPlayer1;
-
+			obj.GetComponentInChildren<Camera>().cullingMask = maskPlayer1;
+			SetLayerRecursively(obj.transform.Find("Graphics").gameObject, 10);
+			formerNumberofPlayer = 1;
 
 		}
 		
-		else if (GameManager.players.Count == 2)
+		else if (GameManager.players.Count == 2 && GameManager.players.Count != formerNumberofPlayer)
 		{
 			List<string> playerIds = new List<string>();
 			foreach (var playerKey in GameManager.players.Keys)
 			{
 				playerIds.Add(playerKey);
 			}
-			GameObject obj = GameManager.players[playerIds[0]].transform.parent.gameObject;
-			Camera cam1 = GameManager.players[playerIds[0]].GetComponentInParent<GameObject>().GetComponentInChildren<Camera>();
-			cam1.cullingMask = maskPlayer1;
-			Camera cam2 = GameManager.players[playerIds[1]].GetComponentInParent<GameObject>().GetComponentInChildren<Camera>();
-			cam2.cullingMask = maskPlayer2;
-			
+			GameObject objPlayer1 = GameManager.players[playerIds[0]].gameObject;
+			GameObject objPlayer2 = GameManager.players[playerIds[1]].gameObject;
+			objPlayer1.GetComponentInChildren<Camera>().cullingMask = maskPlayer1;
+			objPlayer2.GetComponentInChildren<Camera>().cullingMask = maskPlayer2;
+			SetLayerRecursively(objPlayer1.transform.Find("Graphics").gameObject, 10);
+			SetLayerRecursively(objPlayer2.transform.Find("Graphics").gameObject, 11);
+			formerNumberofPlayer = 2;
+
 		}
+		
 		
 
 		
