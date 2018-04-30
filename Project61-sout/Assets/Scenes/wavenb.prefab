@@ -29,7 +29,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &114454647254646580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51,18 +51,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9111db8e46fdc43419eace20d27baf38, type: 3}
-    m_FontSize: 277
+    m_FontSize: 285
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 10
-    m_MaxSize: 278
+    m_MaxSize: 300
     m_Alignment: 4
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: rtg
 --- !u!114 &114645930846209564
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,15 +103,15 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1314961500526912}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.63747, y: 1, z: 1}
+  m_LocalScale: {x: 1.1999999, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 300, y: 17}
-  m_SizeDelta: {x: 1658.8, y: 420.2}
+  m_AnchoredPosition: {x: -437.5, y: 14.2}
+  m_SizeDelta: {x: 829.1, y: 1483.2}
   m_Pivot: {x: 0.5, y: 0.5}

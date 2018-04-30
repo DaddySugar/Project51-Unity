@@ -1,25 +1,49 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class SpawnManager_ZombieSpawner : NetworkBehaviour {
 
 	[SerializeField] GameObject zombiePrefab;
 	[SerializeField]  private GameObject zombieSpawns;
 	private int counter;
-	private int numberOfZombies = 3;
-	private int maxNumberOfZombies = 30;
-	private float waveRate = 10;
+	private int numberOfZombies = 5;
+	private int maxNumberOfZombies = 50;
+	private float waveRate = 5;
 	private bool isSpawnActivated = true;
 	private int _currentWave = 0;
 	
-	[SerializeField]
-	private int _MaxWave;
+	//wave text
+	public GameObject WavePanel;
+	public Text waveText;
+	public Text _WaveNumb;
 
 	public override void OnStartServer ()
 	{
 		//zombieSpawns = GameObject.FindGameObjectsWithTag("ZombieSpawn");
 		StartCoroutine(ZombieSpawner());
+	}
+	
+	void Awake ()
+	{
+		WavePanel.SetActive(false);
+	}
+	
+	IEnumerator ShowMessage (float delay) {
+		WavePanel.SetActive(true);
+		waveText.text = "Wave";
+		_WaveNumb.text = _currentWave.ToString();
+			
+		Debug.Log("Text add");
+		yield return new WaitForSeconds(delay);
+		WavePanel.SetActive(false);
+		Debug.Log("TextRemove");
+	}
+
+	void SetWaveText()
+	{
+		StartCoroutine(ShowMessage(3));
 	}
 
 	IEnumerator ZombieSpawner()
@@ -27,13 +51,19 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour {
 		//Debug.Log("111");
 		for(;;)
 		{
+			
 			yield return new WaitForSeconds(waveRate);
+			
+		//	SetWaveText();
 			GameObject[] zombies = GameObject.FindGameObjectsWithTag("Alien");
 			if(IsSpawnPossible(zombies.Length))
 			{
 				CommenceSpawn();
 			}
+			
+			
 		}
+		
 	}
 
 	void CommenceSpawn()
@@ -52,6 +82,12 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour {
 	{
 		//Debug.Log("Spaw");
 		counter++;
+		if (counter % 20 == 1)
+		{
+			NextWave();
+			SetWaveText();
+		}
+			
 		GameObject go = GameObject.Instantiate(zombiePrefab, spawnPos, Quaternion.identity) as GameObject;
 		go.GetComponent<Alien_ID>().AlienID= "Alien " + counter;
 		NetworkServer.Spawn(go);
@@ -86,11 +122,6 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour {
 	private void NextWave()
 	{
 		_currentWave++;
-		if (_currentWave > _MaxWave)
-		{
-			_currentWave = 0;
-		}
-		
 	}
 	
 	bool EnemyIsAlive()
