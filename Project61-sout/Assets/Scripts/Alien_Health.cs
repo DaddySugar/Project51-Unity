@@ -17,6 +17,7 @@ public class Alien_Health : NetworkBehaviour {
 
 	private void Update()
 	{
+		CheckHealth();
 		if (hasPlayedDyingAnimation && Time.time > hasFinishedDyingTime)
 		{
 			Destroy(gameObject);
@@ -36,8 +37,10 @@ public class Alien_Health : NetworkBehaviour {
 
 	void CheckHealth()
 	{
+		Debug.Log(hasPlayedDyingAnimation);
 		if(health <= 0 && !hasPlayedDyingAnimation)
 		{
+			
 			GetComponent<CapsuleCollider>().enabled = false;
 			GetComponent<Alien_ID>().enabled = false;
 			anim.SetBool("isDead", true);
