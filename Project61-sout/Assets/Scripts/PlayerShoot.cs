@@ -126,7 +126,7 @@ public class PlayerShoot : NetworkBehaviour
 	{
 		Debug.Log("kinda working shooting aliens ");
 		GameObject go = GameObject.Find(uniqueID);
-		go.GetComponent<Alien_Health>().DeductHealth(dmg);
+		go.GetComponent<Alien_Health>().RpcDeductHealth(dmg);
 	}
 	
 }

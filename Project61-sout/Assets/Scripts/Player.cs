@@ -96,7 +96,7 @@ public class Player : NetworkBehaviour
 		
 		if (currentHealth <= 1)
 		{
-			Die();
+			RpcDie();
 		}
 
 		//playerhealthbar.SetHealthAmount(OnChangeHealthBar());
@@ -104,8 +104,8 @@ public class Player : NetworkBehaviour
 		//healthBar.sizeDelta = new Vector2( currentHealth, healthBar.sizeDelta.x);
 
 	}
-
-	private void Die()
+	[Client]
+	private void RpcDie()
 	{
 		isDead = true;
 		
@@ -127,7 +127,8 @@ public class Player : NetworkBehaviour
 		hasFinishedDyingTime = Time.time + hasFinishedDyingTime;
 	}
 
-	private void Respawn()
+	[Client]
+	private void RpcRespawn()
 	{
 		SetDefaults();
 		gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
@@ -194,7 +195,7 @@ public class Player : NetworkBehaviour
 		
 		if (hasPlayedDyingAnimation && Time.time > hasFinishedDyingTime)
 		{
-			Respawn();
+			RpcRespawn();
 		}
 		//set layers
 		if (GameManager.players.Count == 1 && GameManager.players.Count != formerNumberofPlayer)
