@@ -92,10 +92,9 @@ public class Player : NetworkBehaviour
 		currentHealth -= ammount;
 
 		
-		Debug.Log(transform.name + " " + currentHealth);
-		
 		if (currentHealth <= 1)
 		{
+			//gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 			RpcDie();
 		}
 
@@ -110,7 +109,6 @@ public class Player : NetworkBehaviour
 		isDead = true;
 		
 		// disable comp 
-		gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 		for (int i = 0; i < disableOnDeath.Length; i++)
 		{
 			disableOnDeath[i].enabled = false;
@@ -125,14 +123,15 @@ public class Player : NetworkBehaviour
 		
 		hasPlayedDyingAnimation = true;
 		hasFinishedDyingTime = Time.time + hasFinishedDyingTime;
+		
 	}
 
 	[Client]
 	private void RpcRespawn()
 	{
+		
 		SetDefaults();
-		gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-		gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+		
 		
 		Transform _spawPosition = NetworkManager.singleton.GetStartPosition();
 		Debug.Log(_spawPosition);
@@ -163,6 +162,8 @@ public class Player : NetworkBehaviour
 			SetLayerRecursively(child.gameObject, newLayer);
 		}
 	}
+
+	
 
 	void Update()
 	{

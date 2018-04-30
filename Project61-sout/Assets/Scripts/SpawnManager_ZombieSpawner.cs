@@ -9,7 +9,7 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour {
 	[SerializeField]  private GameObject zombieSpawns;
 	private int counter;
 	private int numberOfZombies = 5;
-	private int maxNumberOfZombies = 50;
+	private int maxNumberOfZombies = 20;
 	private float waveRate = 5;
 	private bool isSpawnActivated = true;
 	private int _currentWave = 0;

@@ -51,8 +51,12 @@ public class PlayerMotor : MonoBehaviour
 	
 	private void FixedUpdate()
 	{
-		PerformMovement();
-		PerformRotation();
+		if (gameObject.GetComponent<PlayerController>().enabled) //player has not died 
+		{
+			PerformMovement();
+			PerformRotation();
+			
+		}
 
 	}
 
