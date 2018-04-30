@@ -233,5 +233,10 @@ public class Player : NetworkBehaviour
 
 		
 	}
+	
+	public float GetHealthpct()
+	{
+		return (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
+	}
 
 }

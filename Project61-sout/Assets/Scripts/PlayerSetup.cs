@@ -14,11 +14,11 @@ public class PlayerSetup : NetworkBehaviour {
 	
 	Camera sceneCamera;
 	
-/*	[SerializeField]
+	[SerializeField]
 	GameObject playerUIPrefab;
 	
 	//[HideInInspector]
-	private GameObject playerUIInstance;*/
+	private GameObject playerUIInstance;
 
 	void Start ()
 	{
@@ -39,7 +39,16 @@ public class PlayerSetup : NetworkBehaviour {
 			{
 				sceneCamera.gameObject.SetActive (false);
 			}
-			
+			// Create PlayerUI
+			playerUIInstance = Instantiate(playerUIPrefab);
+			playerUIInstance.name = playerUIPrefab.name;
+
+			// Configure PlayerUI
+			PlayerUI ui = playerUIInstance.GetComponent<PlayerUI>();
+			if (ui == null)
+				Debug.LogError("No PlayerUI component on PlayerUI prefab.");
+			ui.SetPlayer(GetComponent<Player>());
+
 			
 
 		}

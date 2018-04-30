@@ -1,31 +1,50 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour {
 
     [SerializeField]
-    RectTransform healthBarFill; 
+    Image healthBarFill;
+
+    [SerializeField]
+    Text ammoText;
+
 
     private Player player;
     private PlayerController controller;
-    
-    
+    private PlayerWeapon weaponManager;
+
     public void SetPlayer (Player _player)
     {
-        player = _player ;
+        player = _player;
         controller = player.GetComponent<PlayerController>();
+        weaponManager = player.GetComponent<PlayerShoot>().Weapon;
     }
 
+    //void Start ()
+    //{
+       // PauseMenu.IsOn = false;
+    //}
 
     void Update ()
     {
-//        SetHealthAmount(player.GetHealthPct()); 
+       // SetFuelAmount (controller.GetThrusterFuelAmount());
+        SetHealthAmount(player.GetHealthpct());
+        SetAmmoAmount(weaponManager.bullets);
+
+
     }
-    
-    
-    void SetHealthAmount(float _amount)
+
+
+
+    void SetHealthAmount (float _amount)
     {
-        healthBarFill.localScale = new Vector3(1f, _amount, 1f);
+        healthBarFill.fillAmount = _amount;
     }
+
+    void SetAmmoAmount (int _amount)
+    {
+        ammoText.text = _amount.ToString();
+    }
+
 }

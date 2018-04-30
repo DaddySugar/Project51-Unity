@@ -124,7 +124,7 @@ public class PlayerShoot : NetworkBehaviour
 	[Command]
 	void CmdTellServerWhichZombieWasShot (string uniqueID, int dmg)
 	{
-		Debug.Log("kinda working shooting aliens ");
+		//Debug.Log("kinda working shooting aliens ");
 		GameObject go = GameObject.Find(uniqueID);
 		go.GetComponent<Alien_Health>().RpcDeductHealth(dmg);
 	}
