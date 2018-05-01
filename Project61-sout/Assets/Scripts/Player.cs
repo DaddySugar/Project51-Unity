@@ -66,7 +66,7 @@ public class Player : NetworkBehaviour
 		isDead = false;
 		currentHealth = maxHealth;
 		//LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
-		money = 500;
+		money = 1000;
 		
 		
 		//Enable the components

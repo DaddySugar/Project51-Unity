@@ -2129,7 +2129,7 @@ Transform:
   m_GameObject: {fileID: 1116229745210546}
   m_LocalRotation: {x: 0, y: -0.30278546, z: 0, w: 0.95305884}
   m_LocalPosition: {x: 43.667168, y: 1.024, z: 59.625412}
-  m_LocalScale: {x: 0.703801, y: 1.3208288, z: 0.5344905}
+  m_LocalScale: {x: 1.099625, y: 2.06375, z: 0.835}
   m_Children:
   - {fileID: 4361317949573086}
   - {fileID: 4606492894183068}
@@ -2921,8 +2921,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.37, y: 0.51, z: 1}
+  m_Center: {x: 0, y: -0.33, z: 0}
 --- !u!81 &81117865683160222
 AudioListener:
   m_ObjectHideFlags: 1
@@ -3161,7 +3161,7 @@ MonoBehaviour:
     damage: 10
     range: 100
     fireRate: 15
-    maxBullets: 40
+    maxBullets: 60
     bullets: 0
   cam: {fileID: 20359224695707916}
   weaponPrefab: {fileID: 1951827242857996}
@@ -3203,10 +3203,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1
-  m_Height: 1.5
+  m_Radius: 0.43
+  m_Height: 0.88
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.26, z: 0}
 --- !u!137 &137036467352188922
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
