@@ -50,6 +50,9 @@
           </e>
         </e>
         <e p="Prefabs" t="Include">
+          <e p="Cannon" t="Include">
+            <e p="READ ME!.txt" t="Include" />
+          </e>
           <e p="HealthBar.cs" t="Include" />
         </e>
         <e p="Scripts" t="Include">
@@ -57,6 +60,7 @@
           <e p="Alien_Health.cs" t="Include" />
           <e p="Alien_ID.cs" t="Include" />
           <e p="CameraIgnore.cs" t="Include" />
+          <e p="Cannon.cs" t="Include" />
           <e p="ChaseAlien.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="HostGame.cs" t="Include" />

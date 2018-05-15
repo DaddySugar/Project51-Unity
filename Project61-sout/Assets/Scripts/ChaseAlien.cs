@@ -2,6 +2,7 @@
 	using System.Collections;
 	using System.Collections.Generic;
 	using System.Security.Principal;
+	using UnityEditor;
 //	using UnityEditor.PackageManager;
 	using UnityEngine;
 	using UnityEngine.AI;
@@ -78,12 +79,21 @@ public class ChaseAlien : NetworkBehaviour
 				if (hasLostTrack)
 				{
 
-					var temp = (pos1 -
-					            AlienPosition.position);
+					var temp = (pos1 - AlienPosition.position);
 					var temp2 = temp.y;
 					temp = temp.normalized * 40;
 					temp.y = temp2 - pos1.y;
-
+					
+					/*NavMeshHit hit;
+					
+					if (NavMesh.SamplePosition(temp + AlienPosition.position, out hit, 1.0f, 00000001)) {
+						agent.destination = hit.position;
+						
+					}
+					else
+					{
+						agent.destination = temp + AlienPosition.position;
+					}*/
 					agent.destination = temp + AlienPosition.position;
 					if ((pos1 - AlienPosition.position).magnitude < 45)
 					{
