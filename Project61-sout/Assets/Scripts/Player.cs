@@ -40,7 +40,11 @@ public class Player : NetworkBehaviour
 	public int moneyRewardedByKill = 25;
 	public LayerMask maskPlayer1;
 	public LayerMask maskPlayer2;
+	public LayerMask maskDie;
+	private LayerMask formerMask;
 	private int formerNumberofPlayer = 0;
+	private Vector3 formerCameraPosition;
+	private Quaternion formerCameraRotation;
 
 	void Start()
 	{
@@ -74,7 +78,7 @@ public class Player : NetworkBehaviour
 		{
 			disableOnDeath[i].enabled = wasEnabled[i];
 		}
-
+		
 		//Enable the collider
 		Collider _col = GetComponent<Collider>();
 		if (_col != null)
@@ -107,6 +111,15 @@ public class Player : NetworkBehaviour
 	private void RpcDie()
 	{
 		isDead = true;
+		//camera goes up and ignore the gun of its player
+		GameObject cam = gameObject.transform.Find("Camera").gameObject;
+		SetLayerRecursively(cam.transform.Find("m4_fp").gameObject, 1);
+		formerCameraPosition = cam.GetComponent<Transform>().position;
+		formerCameraRotation = cam.GetComponent<Transform>().rotation;
+		cam.GetComponent<Transform>().position += new Vector3(0, 1f, -2f);
+		cam.GetComponent<Transform>().rotation = Quaternion.Euler(40,0,0);
+		formerMask = cam.GetComponent<Camera>().cullingMask;
+		cam.GetComponent<Camera>().cullingMask = maskDie;
 		
 		// disable comp 
 		for (int i = 0; i < disableOnDeath.Length; i++)
@@ -131,7 +144,12 @@ public class Player : NetworkBehaviour
 	{
 		
 		SetDefaults();
-		
+		//restore camera place
+		GameObject cam = gameObject.transform.Find("Camera").gameObject;
+		cam.GetComponent<Transform>().position = formerCameraPosition;
+		cam.GetComponent<Transform>().rotation = formerCameraRotation;
+		SetLayerRecursively(cam.transform.Find("m4_fp").gameObject, 0);
+		cam.GetComponent<Camera>().cullingMask = formerMask;
 		
 		Transform _spawPosition = NetworkManager.singleton.GetStartPosition();
 		Debug.Log(_spawPosition);

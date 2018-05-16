@@ -3122,10 +3122,13 @@ MonoBehaviour:
   moneyRewardedByKill: 10
   maskPlayer1:
     serializedVersion: 2
-    m_Bits: 4294966271
+    m_Bits: 4294966269
   maskPlayer2:
     serializedVersion: 2
-    m_Bits: 4294965247
+    m_Bits: 4294965245
+  maskDie:
+    serializedVersion: 2
+    m_Bits: 4294967293
 --- !u!114 &114752844669310544
 MonoBehaviour:
   m_ObjectHideFlags: 1

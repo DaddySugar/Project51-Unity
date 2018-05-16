@@ -11,7 +11,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="ChaseAlien.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ChaseAlien.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/ChaseAlien.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="458">
@@ -131,45 +131,62 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Player.cs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Player.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2825">
-              <caret line="68" column="18" lean-forward="false" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
+            <state relative-caret-position="-242">
+              <caret line="118" column="66" lean-forward="false" selection-start-line="118" selection-start-column="66" selection-end-line="118" selection-end-column="66" />
               <folding>
-                <marker date="1525176920988" expanded="false" signature="6:168" ph="..." />
-                <marker date="1525176920988" expanded="true" signature="208:5648" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="213:366" ph="/* public Slider healthbar; ... */" />
-                <marker date="1525176920988" expanded="true" signature="430:503" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="1024:1072" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="1094:1456" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="1191:1245" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="1268:1453" ph="/* LocalHealthBarImg.fillAmount = GetComponent&lt;Player&gt; ().currentHealth / GetComponent&lt;Player&gt; ().maxHealth; ... */" />
-                <marker date="1525176920988" expanded="true" signature="1484:1921" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="1750:1804" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="1976:2440" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="1994:2014" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="2072:2181" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="2185:2436" ph="/* playerhealthbar.SetHealthAmount(OnChangeHealthBar()); ... */" />
-                <marker date="1525176920988" expanded="true" signature="2473:2907" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="2565:2611" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="2642:2732" ph="/* Collider _col = GetComponent&lt;Collider&gt;(); ... */" />
-                <marker date="1525176920988" expanded="true" signature="2945:3323" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="3381:3616" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="3403:3422" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="3507:3613" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="3533:3557" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="3635:5516" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="3710:3740" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="3779:3937" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="3980:4184" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="4018:4059" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="4288:4313" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="4419:4773" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="4503:4539" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="4872:5503" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="4979:5019" ph="{...}" />
-                <marker date="1525176920988" expanded="true" signature="5547:5645" ph="{...}" />
+                <marker date="1526506616269" expanded="false" signature="6:168" ph="..." />
+                <marker date="1526506616269" expanded="true" signature="208:6689" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="213:366" ph="/* public Slider healthbar; ... */" />
+                <marker date="1526506616269" expanded="true" signature="430:503" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="1163:1211" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="1233:1595" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="1330:1384" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="1407:1592" ph="/* LocalHealthBarImg.fillAmount = GetComponent&lt;Player&gt; ().currentHealth / GetComponent&lt;Player&gt; ().maxHealth; ... */" />
+                <marker date="1526506616269" expanded="true" signature="1623:2062" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="1889:1943" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="2117:2581" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="2135:2155" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="2213:2322" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="2326:2577" ph="/* playerhealthbar.SetHealthAmount(OnChangeHealthBar()); ... */" />
+                <marker date="1526506616269" expanded="true" signature="2614:3608" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="3266:3312" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="3343:3433" ph="/* Collider _col = GetComponent&lt;Collider&gt;(); ... */" />
+                <marker date="1526506616269" expanded="true" signature="3646:4364" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="4422:4657" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="4444:4463" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="4548:4654" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="4574:4598" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="4676:6557" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="4751:4781" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="4820:4978" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="5021:5225" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="5059:5100" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="5329:5354" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="5460:5814" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="5544:5580" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="5913:6544" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="6020:6060" ph="{...}" />
+                <marker date="1526506616269" expanded="true" signature="6588:6686" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PowerUpHealth.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/PowerUpHealth.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding>
+                <marker date="1525091919137" expanded="false" signature="6:92" ph="..." />
+                <marker date="1525091919137" expanded="true" signature="137:1080" ph="{...}" />
+                <marker date="1525091919137" expanded="true" signature="301:449" ph="{...}" />
+                <marker date="1525091919137" expanded="true" signature="494:653" ph="{...}" />
+                <marker date="1525091919137" expanded="true" signature="608:650" ph="{...}" />
+                <marker date="1525091919137" expanded="true" signature="691:1078" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -305,10 +322,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Alien_ID.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Alien_Health.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMotor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SpawnManager_ZombieSpawner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerShoot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ChaseAlien.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
       </list>
     </option>
   </component>
@@ -345,6 +362,24 @@
             <path>
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="Project61-sout (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Project61-sout (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Project61-sout (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+            </path>
+            <path>
+              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Project61-sout (3 projects)" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assembly-CSharp" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Assets" type="977d5f41:SolutionExplorerNodeRider" />
+              <item name="Scripts" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
           </expand>
           <select />
@@ -407,12 +442,12 @@
       <workItem from="1525176414928" duration="911000" />
       <workItem from="1526422474773" duration="2006000" />
       <workItem from="1526424590743" duration="1277000" />
-      <workItem from="1526476254290" duration="11290000" />
+      <workItem from="1526476254290" duration="15591000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110282000" />
+    <option name="totallyTimeSpent" value="114583000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -630,13 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PowerUpHealth.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PowerUpSpeed.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -734,48 +762,6 @@
             <marker date="1526034621286" expanded="true" signature="379:564" ph="{...}" />
             <marker date="1526034621286" expanded="true" signature="519:561" ph="{...}" />
             <marker date="1526034621286" expanded="true" signature="604:739" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2825">
-          <caret line="68" column="18" lean-forward="false" selection-start-line="68" selection-start-column="18" selection-end-line="68" selection-end-column="18" />
-          <folding>
-            <marker date="1525176920988" expanded="false" signature="6:168" ph="..." />
-            <marker date="1525176920988" expanded="true" signature="208:5648" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="213:366" ph="/* public Slider healthbar; ... */" />
-            <marker date="1525176920988" expanded="true" signature="430:503" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="1024:1072" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="1094:1456" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="1191:1245" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="1268:1453" ph="/* LocalHealthBarImg.fillAmount = GetComponent&lt;Player&gt; ().currentHealth / GetComponent&lt;Player&gt; ().maxHealth; ... */" />
-            <marker date="1525176920988" expanded="true" signature="1484:1921" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="1750:1804" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="1976:2440" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="1994:2014" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="2072:2181" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="2185:2436" ph="/* playerhealthbar.SetHealthAmount(OnChangeHealthBar()); ... */" />
-            <marker date="1525176920988" expanded="true" signature="2473:2907" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="2565:2611" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="2642:2732" ph="/* Collider _col = GetComponent&lt;Collider&gt;(); ... */" />
-            <marker date="1525176920988" expanded="true" signature="2945:3323" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="3381:3616" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="3403:3422" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="3507:3613" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="3533:3557" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="3635:5516" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="3710:3740" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="3779:3937" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="3980:4184" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="4018:4059" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="4288:4313" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="4419:4773" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="4503:4539" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="4872:5503" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="4979:5019" ph="{...}" />
-            <marker date="1525176920988" expanded="true" signature="5547:5645" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -894,6 +880,63 @@
             <marker date="1526490752179" expanded="true" signature="5553:5903" ph="{...}" />
             <marker date="1526490752179" expanded="true" signature="5621:5895" ph="{...}" />
             <marker date="1526490752179" expanded="true" signature="5760:5890" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PowerUpHealth.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <marker date="1525091919137" expanded="false" signature="6:92" ph="..." />
+            <marker date="1525091919137" expanded="true" signature="137:1080" ph="{...}" />
+            <marker date="1525091919137" expanded="true" signature="301:449" ph="{...}" />
+            <marker date="1525091919137" expanded="true" signature="494:653" ph="{...}" />
+            <marker date="1525091919137" expanded="true" signature="608:650" ph="{...}" />
+            <marker date="1525091919137" expanded="true" signature="691:1078" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Player.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-242">
+          <caret line="118" column="66" lean-forward="false" selection-start-line="118" selection-start-column="66" selection-end-line="118" selection-end-column="66" />
+          <folding>
+            <marker date="1526506616269" expanded="false" signature="6:168" ph="..." />
+            <marker date="1526506616269" expanded="true" signature="208:6689" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="213:366" ph="/* public Slider healthbar; ... */" />
+            <marker date="1526506616269" expanded="true" signature="430:503" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="1163:1211" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="1233:1595" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="1330:1384" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="1407:1592" ph="/* LocalHealthBarImg.fillAmount = GetComponent&lt;Player&gt; ().currentHealth / GetComponent&lt;Player&gt; ().maxHealth; ... */" />
+            <marker date="1526506616269" expanded="true" signature="1623:2062" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="1889:1943" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="2117:2581" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="2135:2155" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="2213:2322" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="2326:2577" ph="/* playerhealthbar.SetHealthAmount(OnChangeHealthBar()); ... */" />
+            <marker date="1526506616269" expanded="true" signature="2614:3608" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="3266:3312" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="3343:3433" ph="/* Collider _col = GetComponent&lt;Collider&gt;(); ... */" />
+            <marker date="1526506616269" expanded="true" signature="3646:4364" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="4422:4657" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="4444:4463" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="4548:4654" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="4574:4598" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="4676:6557" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="4751:4781" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="4820:4978" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="5021:5225" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="5059:5100" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="5329:5354" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="5460:5814" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="5544:5580" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="5913:6544" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="6020:6060" ph="{...}" />
+            <marker date="1526506616269" expanded="true" signature="6588:6686" ph="{...}" />
           </folding>
         </state>
       </provider>
