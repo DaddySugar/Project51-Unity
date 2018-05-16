@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class SpawnManager_ZombieSpawner : NetworkBehaviour {
 
-	[SerializeField] GameObject zombiePrefab;
-	[SerializeField]  private GameObject zombieSpawns;
+	[SerializeField] GameObject []zombiePrefab;
+	private GameObject []zombieSpawns;
 	private int counter;
 	private int numberOfZombies = 5;
 	private int maxNumberOfZombies = 20;
@@ -21,7 +21,7 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour {
 
 	public override void OnStartServer ()
 	{
-		//zombieSpawns = GameObject.FindGameObjectsWithTag("ZombieSpawn");
+		zombieSpawns = GameObject.FindGameObjectsWithTag("ZombieSpawn");
 		StartCoroutine(ZombieSpawner());
 	}
 	
@@ -72,14 +72,15 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour {
 		{
 			for(int i = 0; i < numberOfZombies; i++)
 			{
-				//int randomIndex = Random.Range(0, zombieSpawns.Length);
-				SpawnZombies(zombieSpawns.transform.position);
+				int randomIndex = Random.Range(0, zombieSpawns.Length);
+				SpawnZombies(zombieSpawns[randomIndex].transform.position);
 			}
 		}
 	}
 
 	void SpawnZombies(Vector3 spawnPos)
 	{
+		int randomIndex = Random.Range(0, zombiePrefab.Length);
 		//Debug.Log("Spaw");
 		counter++;
 		if (counter % 20 == 1)
@@ -88,7 +89,7 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour {
 			SetWaveText();
 		}
 			
-		GameObject go = GameObject.Instantiate(zombiePrefab, spawnPos, Quaternion.identity) as GameObject;
+		GameObject go = GameObject.Instantiate(zombiePrefab[randomIndex], spawnPos, Quaternion.identity) as GameObject;
 		go.GetComponent<Alien_ID>().AlienID= "Alien " + counter;
 		NetworkServer.Spawn(go);
 	}
@@ -102,35 +103,9 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour {
 			return false;
 	}
 
-	public bool IsWaveComplete()
-	{
-		GameObject[] aliensList = GameObject.FindGameObjectsWithTag("Alien");
-		if (aliensList.Length >= 0 || aliensList == null)
-		{
-			NextWave();
-			SpawnZombies(zombiePrefab.transform.position);
-			return true;
-			
-		}
-
-		else
-			return false;
-		
-		
-	}
-
 	private void NextWave()
 	{
 		_currentWave++;
 	}
-	
-	bool EnemyIsAlive()
-	{
-		if (GameObject.FindGameObjectWithTag("Alien") == null)
-		{
-			return false;
-		}
-	
-	return true;
-	}
+
 }

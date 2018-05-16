@@ -5,14 +5,20 @@ public class PlayerUI : MonoBehaviour {
 
     [SerializeField]
     Image healthBarFill;
+    
+    [SerializeField]
+    Image CannonBarFill;
 
     [SerializeField]
     Text ammoText;
 
     [SerializeField] private Text cashText;
 
+    
     private Player player;
-   // private PlayerController controller;
+
+    private Cannon playercannon;
+    // private PlayerController controller;
     private PlayerWeapon weaponManager;
 
     public void SetPlayer (Player _player)
@@ -21,11 +27,10 @@ public class PlayerUI : MonoBehaviour {
        // controller = player.GetComponent<PlayerController>();
         weaponManager = player.GetComponent<PlayerShoot>().Weapon;
     }
-
-    //void Start ()
-    //{
-       // PauseMenu.IsOn = false;
-    //}
+    public void SetCannon (Cannon _can)
+    {
+        playercannon = _can;
+    }
 
     void Update ()
     {
@@ -33,6 +38,7 @@ public class PlayerUI : MonoBehaviour {
         SetHealthAmount(player.GetHealthpct());
         SetAmmoAmount(weaponManager.bullets);
         SetCashAmount(player.money);
+        //SetCannnonAmount(playercannon.Getpst());
 
     }
 
@@ -51,5 +57,9 @@ public class PlayerUI : MonoBehaviour {
     {
         cashText.text = _amount.ToString();
     }
-
+    
+    void SetCannnonAmount(float _amount)
+    {
+        CannonBarFill.fillAmount = _amount;
+    }
 }
