@@ -60,6 +60,7 @@ public class PlayerShoot : NetworkBehaviour
             GameObject gunshot = Instantiate(GunShot, this.transform.position, this.transform.rotation) as GameObject;
 			if (_animation.IsPlaying("reload"))
 			{
+				Destroy(GameObject.FindWithTag("Sound"));
 				reloadInterrupted = true;
 			}
 			nextTimeToFire = Time.time + 1f / fireRate;

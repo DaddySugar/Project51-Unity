@@ -26,8 +26,12 @@ public class ChaseAlien : NetworkBehaviour
 		private Vector3 fuckYouGame;
 		private bool hasLostTrack = false;
 		private float timeToResetDest = 2f;
+		private float timeToPass = 0f;
+		float coeff = 1f;
+		public float timeBetweenChanges = 0.4f;
 
 		private float timeToNextHit = 2f;
+		private float timeToPass2 = 0f;
 
 
 		//public GameObject clientnetwoek;
@@ -75,42 +79,44 @@ public class ChaseAlien : NetworkBehaviour
 					playerId = playerKey;
 				}
 				pos1 = GameManager.players[playerId].GetComponentInParent<Transform>().position;
-				
+				//
 				if (hasLostTrack)
 				{
-
 					var temp = (pos1 - AlienPosition.position);
 					var temp2 = temp.y;
-					temp = temp.normalized * 40;
+					temp = temp.normalized * 40 * coeff;
 					temp.y = temp2 - pos1.y;
-					
-					/*NavMeshHit hit;
-					
-					if (NavMesh.SamplePosition(temp + AlienPosition.position, out hit, 1.0f, 00000001)) {
-						agent.destination = hit.position;
-						
-					}
-					else
-					{
-						agent.destination = temp + AlienPosition.position;
-					}*/
 					agent.destination = temp + AlienPosition.position;
-					if ((pos1 - AlienPosition.position).magnitude < 45)
+					if (!agent.hasPath && Time.time > timeToPass2)
 					{
+						coeff -= 0.15f;
+						timeToPass2 = Time.time + timeBetweenChanges;
+						if (coeff <= 0)
+						{
+							coeff = 1;
+						}
+					}
+					
+					if ((pos1 - AlienPosition.position).magnitude < 40 && agent.hasPath && Time.time > timeToPass2 + 3f)
+					{
+						coeff = 1;
 						hasLostTrack = false;
-						timeToResetDest = Time.time + 1 / timeToResetDest;
+					}
+					if ((pos1 - AlienPosition.position).magnitude < 10)
+					{
+						coeff = 1;
+						hasLostTrack = false;
 					}
 				}
 				else
 				{
-					if (!agent.hasPath && Time.time > timeToResetDest) 
+					if (!agent.hasPath) 
 					{
 						hasLostTrack = true;
 					}
 					else
 					{
 						hasLostTrack = false;
-					
 					}
 					fuckYouGame = pos1 -AlienPosition.position;
 					agent.destination =  pos1;
@@ -145,19 +151,33 @@ public class ChaseAlien : NetworkBehaviour
 				{
 					var temp = (pos1 - AlienPosition.position);
 					var temp2 = temp.y;
-					temp = temp.normalized * 40;
+					temp = temp.normalized * 40 * coeff;
 					temp.y = temp2 - pos1.y;
-
 					agent.destination = temp + AlienPosition.position;
-					if ((pos1 - AlienPosition.position).magnitude < 45)
+					if (!agent.hasPath && Time.time > timeToPass2)
 					{
+						coeff -= 0.15f;
+						timeToPass2 = Time.time + timeBetweenChanges;
+						if (coeff <= 0)
+						{
+							coeff = 1;
+						}
+					}
+					
+					if ((pos1 - AlienPosition.position).magnitude < 40 && agent.hasPath && Time.time > timeToPass2 + 3f)
+					{
+						coeff = 1;
 						hasLostTrack = false;
-						timeToResetDest = Time.time + 1 / timeToResetDest;
+					}
+					if ((pos1 - AlienPosition.position).magnitude < 10)
+					{
+						coeff = 1;
+						hasLostTrack = false;
 					}
 				}
 				else
 				{
-					if (!agent.hasPath && Time.time > timeToResetDest) 
+					if (!agent.hasPath && Time.time > timeToPass) 
 					{
 						hasLostTrack = true;
 					}
