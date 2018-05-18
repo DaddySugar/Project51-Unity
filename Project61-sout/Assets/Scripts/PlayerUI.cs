@@ -26,10 +26,7 @@ public class PlayerUI : MonoBehaviour {
         player = _player;
        // controller = player.GetComponent<PlayerController>();
         weaponManager = player.GetComponent<PlayerShoot>().Weapon;
-    }
-    public void SetCannon (Cannon _can)
-    {
-        playercannon = _can;
+        playercannon = FindObjectOfType<Cannon>();
     }
 
     void Update ()
@@ -38,7 +35,7 @@ public class PlayerUI : MonoBehaviour {
         SetHealthAmount(player.GetHealthpct());
         SetAmmoAmount(weaponManager.bullets);
         SetCashAmount(player.money);
-        //SetCannnonAmount(playercannon.Getpst());
+        SetCannnonAmount(playercannon.Getpst());
 
     }
 

@@ -7,20 +7,21 @@ using UnityEngine.UI;
 public class Cannon : NetworkBehaviour {
 
 	[SerializeField] private int cost = 500;
-	private int maxParts = 5;
-	[SyncVar]
-	public int currentpart;
+	private const int maxParts = 5;
+	//[SyncVar]
+	public static int currentpart;
 	
 	
-	public GameObject BarPanel;
-	public Image CannonBarFill; 
+	/*public GameObject BarPanel;
+	public Image CannonBarFill; */
 
-	void ShowMessage() {
+	/*public float ShowMessage() {
 		//BarPanel.SetActive(true);
-		CannonBarFill.fillAmount = (float)currentpart / maxParts;
+		//CannonBarFill.fillAmount = (float)currentpart / maxParts;
 		//WavePanel.SetActive(false);
+		return (float)currentpart / maxParts;
 		
-	}
+	}*/
 	
 	private void Start()
 	{
@@ -31,7 +32,7 @@ public class Cannon : NetworkBehaviour {
 
 	void Update()
 	{
-		ShowMessage();
+		//ShowMessage();
 	}
 
 
