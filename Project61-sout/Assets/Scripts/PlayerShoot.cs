@@ -17,7 +17,6 @@ public class PlayerShoot : NetworkBehaviour
 	private float nextTimeToFire = 0f;
 	private bool hasFinishedReloading = true;
 	private bool reloadInterrupted = true;
-    //public ; 
     public GameObject GunShot;
     public GameObject Reload;
 	private float timeToNextReload = 0f;
@@ -33,22 +32,41 @@ public class PlayerShoot : NetworkBehaviour
 		_animation = weaponPrefab.GetComponent<Animation>();
 		fireRate = Weapon.fireRate;
 		Weapon.bullets = Weapon.maxBullets;
+		Weapon.BulletsTotal = Weapon.maxBulletsTotal;
 	}
 
 	void Update()
 	{
-		
 		if (!_animation.isPlaying && !reloadInterrupted)//reload successful
 		{
-			Weapon.bullets = Weapon.maxBullets;
+			if (Weapon.maxBullets - Weapon.bullets >= Weapon.BulletsTotal)//not enough ammo to fill entirely clip
+			{
+				Weapon.bullets = Weapon.bullets + Weapon.BulletsTotal;
+				Weapon.BulletsTotal = 0;
+			}
+			else
+			{
+				Weapon.BulletsTotal = Weapon.BulletsTotal - (Weapon.maxBullets - Weapon.bullets);
+				Weapon.bullets = Weapon.maxBullets;
+			}
+			
 			reloadInterrupted = true;
 		}
 		if (Weapon.bullets == 0 && !_animation.isPlaying && !hasFinishedReloading)
 		{
-            Weapon.bullets = Weapon.maxBullets;
+			if (Weapon.maxBullets - Weapon.bullets >= Weapon.BulletsTotal)//not enough ammo to fill entirely clip
+			{
+				Weapon.bullets = Weapon.bullets + Weapon.BulletsTotal;
+				Weapon.BulletsTotal = 0;
+			}
+			else
+			{
+				Weapon.BulletsTotal = Weapon.BulletsTotal - (Weapon.maxBullets - Weapon.bullets);
+				Weapon.bullets = Weapon.maxBullets;
+			}
 			hasFinishedReloading = true;
 		}
-		else if (Weapon.bullets == 0 && !_animation.isPlaying)
+		else if (Weapon.bullets == 0 && !_animation.isPlaying && Weapon.BulletsTotal != 0)
 		{
 			_animation.Play("reload");
             GameObject reload = Instantiate(Reload, this.transform.position, this.transform.rotation) as GameObject;
@@ -67,7 +85,7 @@ public class PlayerShoot : NetworkBehaviour
 			Shoot();
 			_animation.Play("fire");
 		}
-		else if (Input.GetKey(KeyCode.R) && Time.time > timeToNextReload)//Reload, do not put the bullets in the gun yet, wait to see if the animation was interrupted
+		else if (Input.GetKey(KeyCode.R) && Time.time > timeToNextReload && Weapon.BulletsTotal != 0)//Reload, do not put the bullets in the gun yet, wait to see if the animation was interrupted
 		{
 			_animation.Play("reload");
 			GameObject reload = Instantiate(Reload, this.transform.position, this.transform.rotation) as GameObject;

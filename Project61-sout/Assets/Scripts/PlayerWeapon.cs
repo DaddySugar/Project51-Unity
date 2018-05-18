@@ -14,6 +14,9 @@ public class PlayerWeapon {
 	[HideInInspector]
 	public int bullets = 20;
 
+	public int maxBulletsTotal = 200;
+	[HideInInspector] public int BulletsTotal = 200;
+
 	//public float reloadTime = 1f;
 
 	//public GameObject graphics;
