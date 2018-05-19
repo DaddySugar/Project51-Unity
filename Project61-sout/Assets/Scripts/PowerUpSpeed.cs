@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class PowerUpSpeed : MonoBehaviour
+public class PowerUpSpeed : NetworkBehaviour
 {
 
 	[SerializeField] private float multiplierSpeed = 1.4f;

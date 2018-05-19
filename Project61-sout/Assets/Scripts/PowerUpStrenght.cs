@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Networking;
 
-public class PowerUpStrenght : MonoBehaviour {
+public class PowerUpStrenght : NetworkBehaviour {
 
 	[SerializeField] private float multiplierSpeed = 1.4f;
 	[SerializeField] private float duration = 4f;

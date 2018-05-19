@@ -19,8 +19,6 @@ public class ChaseAlien : NetworkBehaviour
 		private NavMeshAgent agent;
 		private Animator anim;
 		private Transform AlienPosition;
-		private float radius = 100;
-		private LayerMask raycastLayer;
 		private Vector3 pos1;
 		private Vector3 pos2;
 		private Vector3 fuckYouGame;
@@ -29,9 +27,11 @@ public class ChaseAlien : NetworkBehaviour
 		private float timeToPass = 0f;
 		float coeff = 1f;
 		public float timeBetweenChanges = 0.4f;
-
 		private float timeToNextHit = 2f;
 		private float timeToPass2 = 0f;
+		private double coeffAttractionAlienPlayer1 = 1f;
+		private double coeffAttractionAlienPlayer2 = 1f;
+		public float coeffAttractionAlien = 1.5f;
 
 
 		//public GameObject clientnetwoek;
@@ -44,8 +44,6 @@ public class ChaseAlien : NetworkBehaviour
 			agent = GetComponent<NavMeshAgent>();
 			anim = GetComponent<Animator>();
 			AlienPosition = GetComponent<Transform>();
-			raycastLayer = 2 << LayerMask.NameToLayer("LocalPlayer");
-			
 		}
 		
 		void Update () 
@@ -79,6 +77,7 @@ public class ChaseAlien : NetworkBehaviour
 					playerId = playerKey;
 				}
 				pos1 = GameManager.players[playerId].GetComponentInParent<Transform>().position;
+				
 				//
 				if (hasLostTrack)
 				{
@@ -136,17 +135,28 @@ public class ChaseAlien : NetworkBehaviour
 					playerIds.Add(playerKey);
 				}
 				pos1 = GameManager.players[playerIds[0]].GetComponentInParent<Transform>().position;
+				if (coeffAttractionAlienPlayer1 == 1f && GameManager.players[playerIds[0]].hasBetrayed)
+				{
+					coeffAttractionAlienPlayer1 = coeffAttractionAlien;
+					Debug.Log("player 1 has betrayed player 2");
+				}
+				
 				
 				if (playerIds.Count > 1)
 				{
 						pos2 = GameManager.players[playerIds[1]].GetComponentInParent<Transform>().position;
-
+					if (coeffAttractionAlienPlayer2 == 1f && GameManager.players[playerIds[1]].hasBetrayed)
+					{
+						coeffAttractionAlienPlayer2 = coeffAttractionAlien;
+						Debug.Log("player 2 has betrayed player 1");
+					}
 				}
-				if ((AlienPosition.position - pos1).magnitude > (AlienPosition.position - pos2).magnitude)
+				
+				if ((AlienPosition.position - pos1).magnitude * coeffAttractionAlienPlayer1 > (AlienPosition.position - pos2).magnitude * coeffAttractionAlienPlayer2)
 				{
 					pos1 = pos2;
 				}
-
+				
 				if (hasLostTrack)
 				{
 					var temp = (pos1 - AlienPosition.position);
@@ -193,18 +203,13 @@ public class ChaseAlien : NetworkBehaviour
 				if (fuckYouGame.magnitude < 2 && Time.time > timeToNextHit)
 				{
 					pos1 = GameManager.players[playerIds[0]].GetComponentInParent<Transform>().position;
-				
-					if (playerIds.Count > 1)
-					{
-						pos2 = GameManager.players[playerIds[1]].GetComponentInParent<Transform>().position;
+					pos2 = GameManager.players[playerIds[1]].GetComponentInParent<Transform>().position;
 
-					}
-
-					if ((AlienPosition.position - pos1).magnitude < (AlienPosition.position - pos2).magnitude)
+					if ((AlienPosition.position - pos1).magnitude < 2)
 					{
 						GameManager.players[playerIds[0]].GetComponentInParent<Player>().RpcTakeDamage(alienDamage);
 					}
-					else
+					if ((AlienPosition.position - pos2).magnitude < 2)
 					{
 						GameManager.players[playerIds[1]].GetComponentInParent<Player>().RpcTakeDamage(alienDamage);
 					}
@@ -220,28 +225,8 @@ public class ChaseAlien : NetworkBehaviour
 			{
 				anim.SetBool("isAttacking", false);
 			}
-			
-			
-	
-			
 		}
 	
-		void SearchForTarget()
-		{
-			if(!isServer)	
-				return;
-	
-			if (targetTransform == null)
-			{
-				Collider[] hitColliders = Physics.OverlapSphere(AlienPosition.position, radius, raycastLayer);
-	
-				if (hitColliders.Length > 0)
-				{
-					int randomint = Random.Range(0, hitColliders.Length);
-					targetTransform = hitColliders[randomint].transform; 
-				}
-			}
-			
-		}
+		
 		
 	}
