@@ -3170,7 +3170,7 @@ MonoBehaviour:
   weaponPrefab: {fileID: 1951827242857996}
   mask:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 4294967023
   muzzleFlash: {fileID: 198447666451807488}
   impactEffect: {fileID: 1799641042682126, guid: be335d9f3c49c4a45abe6379a40c50e8,
     type: 2}
