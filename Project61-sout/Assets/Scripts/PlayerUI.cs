@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour {
@@ -13,6 +14,9 @@ public class PlayerUI : MonoBehaviour {
     Text ammoText;
 
     [SerializeField] private Text cashText;
+
+    [SerializeField]
+    GameObject scoreboard;
 
     
     private Player player;
@@ -32,11 +36,19 @@ public class PlayerUI : MonoBehaviour {
     void Update ()
     {
        // SetFuelAmount (controller.GetThrusterFuelAmount());
+        
         SetHealthAmount(player.GetHealthpct());
         SetAmmoAmount(weaponManager.bullets);
         SetCashAmount(player.money);
         SetCannnonAmount(playercannon.Getpst());
 
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            scoreboard.SetActive(true);
+        } else if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            scoreboard.SetActive(false);
+        }
     }
 
 
@@ -59,4 +71,7 @@ public class PlayerUI : MonoBehaviour {
     {
         CannonBarFill.fillAmount = _amount;
     }
+
+    
+    
 }

@@ -12,6 +12,8 @@ public class Cannon : NetworkBehaviour {
 	public int currentpart;
 
 	private float timeToWait = 0f;
+	//private PlayerUI ui; 
+	private string _buymsg; 
 	
 	
 	/*public GameObject BarPanel;
@@ -27,7 +29,9 @@ public class Cannon : NetworkBehaviour {
 	
 	private void Start()
 	{
-		currentpart = 0; 
+		//ui = GetComponent<PlayerUI>();
+		currentpart = 0;
+		_buymsg = "Parts for " + cost; 
 		//PlayerUI ui = GetComponent<PlayerUI>();
 		//ui.SetCannon(GetComponent<Cannon>());
 	}
@@ -40,9 +44,11 @@ public class Cannon : NetworkBehaviour {
 
 	private void OnTriggerStay(Collider other)
 	{
+		
 		if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E) && other.GetComponent<Player>().money >= cost && currentpart < maxParts && Time.time > timeToWait)
 		{
 			Pickup(other);
+			
 		}
 	}
 
