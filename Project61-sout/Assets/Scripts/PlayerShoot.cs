@@ -109,7 +109,7 @@ public class PlayerShoot : NetworkBehaviour
 			
 			if (_hit.collider.tag == PLAYER_TAG)
 			{
-				CmdPlayerShot(_hit.collider.name, Weapon.damage);
+				//CmdPlayerShot(_hit.collider.name, Weapon.damage); it bugs when you shoot another player
 				Debug.Log(transform.name + " shoot ");
 			}
 

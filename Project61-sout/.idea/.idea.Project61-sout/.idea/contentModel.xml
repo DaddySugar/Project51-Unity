@@ -7,7 +7,6 @@
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Alien.cs" t="Include" />
         <e p="Interface" t="Include">
           <e p="_Scripts" t="Include">
             <e p="ExitOnClick.cs" t="Include" />
@@ -57,6 +56,7 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="AISearchPlayer.cs" t="Include" />
+          <e p="Alien.cs" t="Include" />
           <e p="Alien_Health.cs" t="Include" />
           <e p="Alien_ID.cs" t="Include" />
           <e p="ammoBoxScript.cs" t="Include" />
@@ -66,7 +66,6 @@
           <e p="GameManager.cs" t="Include" />
           <e p="HostGame.cs" t="Include" />
           <e p="HostSinglePlayer.cs" t="Include" />
-          <e p="IgnoreCamera.cs" t="Include" />
           <e p="JoinGame.cs" t="Include" />
           <e p="KeyBind.cs" t="Include" />
           <e p="MatchSettings.cs" t="Include" />
@@ -83,6 +82,7 @@
           <e p="PowerUpSpeed.cs" t="Include" />
           <e p="PowerUpStrenght.cs" t="Include" />
           <e p="RoomListItem.cs" t="Include" />
+          <e p="ShootSound.cs" t="Include" />
           <e p="SpawnManager_ZombieSpawner.cs" t="Include" />
           <e p="WaveSpawner.cs" t="Include" />
           <e p="Zombie_Target.cs" t="Include" />
@@ -92,7 +92,6 @@
           <e p="ReloadSound.cs" t="Include" />
           <e p="SFX.cs" t="Include" />
         </e>
-        <e p="ShootSound.cs" t="Include" />
         <e p="Standard Assets" t="Include">
           <e p="Characters" t="Include">
             <e p="FirstPersonCharacter" t="Include">

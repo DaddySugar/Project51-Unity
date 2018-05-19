@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
@@ -45,6 +47,8 @@ public class Player : NetworkBehaviour
 	private int formerNumberofPlayer = 0;
 	private Vector3 formerCameraPosition;
 	private Quaternion formerCameraRotation;
+	[SyncVar] public bool hasBetrayed = false;
+
 
 	void Start()
 	{
@@ -95,7 +99,6 @@ public class Player : NetworkBehaviour
 		}
 		currentHealth -= ammount;
 
-		
 		if (currentHealth <= 1)
 		{
 			//gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
@@ -248,9 +251,22 @@ public class Player : NetworkBehaviour
 
 		}
 		
+		//check if has betrayed
+		if (!hasBetrayed && Input.GetKey(KeyCode.H))
+		{
+			RpcsetBetray();		
+		}
 		
+		
+	
+	
+		
+	}
 
-		
+	[Client]
+	public void RpcsetBetray()
+	{
+		hasBetrayed = true;
 	}
 	
 	public float GetHealthpct()

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23522811693910666}
   - component: {fileID: 114575582174547420}
   - component: {fileID: 54811615166988346}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: 'PowerUpSpeed '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cbe65b7f7e7ca147a4a11d33f6c2892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplierSpeed: 2
+  multiplierSpeed: 1.5
   duration: 20
   cost: 300
 --- !u!136 &136897358248306024
