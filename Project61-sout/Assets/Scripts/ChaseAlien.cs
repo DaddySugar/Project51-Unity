@@ -32,6 +32,9 @@ public class ChaseAlien : NetworkBehaviour
 		private double coeffAttractionAlienPlayer1 = 1f;
 		private double coeffAttractionAlienPlayer2 = 1f;
 		public float coeffAttractionAlien = 1.5f;
+		private float timeStartAlienDontMove;
+		private float speed;
+		
 
 
 		//public GameObject clientnetwoek;
@@ -44,11 +47,21 @@ public class ChaseAlien : NetworkBehaviour
 			agent = GetComponent<NavMeshAgent>();
 			anim = GetComponent<Animator>();
 			AlienPosition = GetComponent<Transform>();
+			timeStartAlienDontMove = Time.time + 2f;
+			speed = agent.speed;
 		}
 		
 		void Update () 
 		{
-			
+
+			if (timeStartAlienDontMove > Time.time)
+			{
+				agent.speed = 0f;
+			}
+			else
+			{
+				agent.speed = speed;
+			}
 			agent.destination = targetTransform.transform.position;
 			if (NetworkManager.singleton == null)
 			{
