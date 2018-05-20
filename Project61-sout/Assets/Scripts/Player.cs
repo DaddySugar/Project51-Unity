@@ -49,6 +49,13 @@ public class Player : NetworkBehaviour
 	private Quaternion formerCameraRotation;
 	[SyncVar] public bool hasBetrayed = false;
 
+	
+	public int kills;
+	public int deaths;
+	
+	[SyncVar]
+	public string username = "Loading...";
+	
 
 	void Start()
 	{
@@ -139,7 +146,7 @@ public class Player : NetworkBehaviour
 		
 		hasPlayedDyingAnimation = true;
 		hasFinishedDyingTime = Time.time + hasFinishedDyingTime;
-		
+		deaths++;
 	}
 
 	[Client]

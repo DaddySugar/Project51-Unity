@@ -62,7 +62,7 @@ public class Cannon : NetworkBehaviour {
 	{
 		Player stats = player.GetComponent<Player>();
 		currentpart++;
-		Debug.Log(currentpart);
+//		Debug.Log(currentpart);
 		timeToWait = Time.time + 0.1f;
 		stats.money -= cost;
 		

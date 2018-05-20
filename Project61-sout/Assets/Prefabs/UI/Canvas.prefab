@@ -552,8 +552,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac7ab64f60bc7546addd129da7b0d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBarFill: {fileID: 224679471759866262, guid: b07698c772fddc54fbbd133897413155,
-    type: 2}
+  healthBarFill: {fileID: 0}
+  CannonBarFill: {fileID: 0}
+  ammoText: {fileID: 0}
+  cashText: {fileID: 0}
+  scoreboard: {fileID: 0}
 --- !u!114 &114428619128583260
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,128 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Guilaume\.Rider2017.2\system\resharper-host\local\Transient\ReSharperHost\v10\SolutionCaches\_Project61-sout.1532501896.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Guilaume\Documents\Souten\Project61-sout" t="IncludeRecursive">
-      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+    <e p="C:\Users\walid\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_Project61-sout.223618511.00" t="ExcludeRecursive" />
+    <e p="D:\walid\Documents\Unity\Sout\Souten\Project61-sout" t="IncludeRecursive">
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
-      <e p="Assets" t="Include">
-        <e p="Interface" t="Include">
-          <e p="_Scripts" t="Include">
-            <e p="ExitOnClick.cs" t="Include" />
-            <e p="LoadSceneOnClick.cs" t="Include" />
-            <e p="SelectOnInput.cs" t="Include" />
+      <e p="Assets\Interface" t="Include">
+        <e p="_Scripts" t="Include">
+          <e p="ExitOnClick.cs" t="Include" />
+          <e p="LoadSceneOnClick.cs" t="Include" />
+          <e p="SelectOnInput.cs" t="Include" />
+        </e>
+        <e p="Fonts" t="Include">
+          <e p="Jupiter" t="Include">
+            <e p="LICENSE.txt" t="Include" />
           </e>
-          <e p="Fonts" t="Include">
-            <e p="Jupiter" t="Include">
+        </e>
+        <e p="Materials" t="Include">
+          <e p="UI-Default-No-Alpha.shader" t="Include" />
+        </e>
+        <e p="Textures and Sprites" t="Include">
+          <e p="SF UI" t="Include">
+            <e p="Background" t="Include">
               <e p="LICENSE.txt" t="Include" />
             </e>
           </e>
-          <e p="Materials" t="Include">
-            <e p="UI-Default-No-Alpha.shader" t="Include" />
-          </e>
-          <e p="Textures and Sprites" t="Include">
-            <e p="SF UI" t="Include">
-              <e p="Background" t="Include">
-                <e p="LICENSE.txt" t="Include" />
-              </e>
+        </e>
+      </e>
+      <e p="Assets\PLayer" t="Include">
+        <e p="Human" t="Include">
+          <e p="M4A1" t="Include">
+            <e p="Shaders" t="Include">
+              <e p="BumpedSpecular2.shader" t="Include" />
             </e>
           </e>
         </e>
         <e p="PLayer" t="Include">
-          <e p="Human" t="Include">
-            <e p="M4A1" t="Include">
-              <e p="Shaders" t="Include">
-                <e p="BumpedSpecular2.shader" t="Include" />
-              </e>
-            </e>
-          </e>
-          <e p="PLayer" t="Include">
-            <e p="tmp.cs" t="Include" />
-          </e>
+          <e p="tmp.cs" t="Include" />
         </e>
-        <e p="Plugins" t="Include">
-          <e p="Editor" t="Include">
-            <e p="JetBrains" t="Include">
-              <e p="Unity3DRider.cs" t="Include" />
-            </e>
-          </e>
+      </e>
+      <e p="Assets\Prefabs" t="Include">
+        <e p="Cannon" t="Include">
+          <e p="READ ME!.txt" t="Include" />
         </e>
-        <e p="Prefabs" t="Include">
-          <e p="Cannon" t="Include">
-            <e p="READ ME!.txt" t="Include" />
-          </e>
+        <e p="UI" t="Include">
           <e p="HealthBar.cs" t="Include" />
         </e>
-        <e p="Scripts" t="Include">
-          <e p="AISearchPlayer.cs" t="Include" />
-          <e p="Alien.cs" t="Include" />
-          <e p="Alien_Health.cs" t="Include" />
-          <e p="Alien_ID.cs" t="Include" />
-          <e p="ammoBoxScript.cs" t="Include" />
-          <e p="CameraIgnore.cs" t="Include" />
-          <e p="Cannon.cs" t="Include" />
-          <e p="ChaseAlien.cs" t="Include" />
-          <e p="GameManager.cs" t="Include" />
-          <e p="HostGame.cs" t="Include" />
-          <e p="HostSinglePlayer.cs" t="Include" />
-          <e p="JoinGame.cs" t="Include" />
-          <e p="KeyBind.cs" t="Include" />
-          <e p="MatchSettings.cs" t="Include" />
-          <e p="PauseMenu.cs" t="Include" />
-          <e p="PauseMenuToDisconnect.cs" t="Include" />
-          <e p="Player.cs" t="Include" />
-          <e p="PlayerController.cs" t="Include" />
-          <e p="PlayerMotor.cs" t="Include" />
-          <e p="PlayerSetup.cs" t="Include" />
-          <e p="PlayerShoot.cs" t="Include" />
-          <e p="PlayerUI.cs" t="Include" />
-          <e p="PlayerWeapon.cs" t="Include" />
-          <e p="PowerUpHealth.cs" t="Include" />
-          <e p="PowerUpSpeed.cs" t="Include" />
-          <e p="PowerUpStrenght.cs" t="Include" />
-          <e p="RoomListItem.cs" t="Include" />
-          <e p="ShootSound.cs" t="Include" />
-          <e p="SpawnManager_ZombieSpawner.cs" t="Include" />
-          <e p="WaveSpawner.cs" t="Include" />
-          <e p="Zombie_Target.cs" t="Include" />
+      </e>
+      <e p="Assets\Scripts" t="Include">
+        <e p="AISearchPlayer.cs" t="Include" />
+        <e p="Alien.cs" t="Include" />
+        <e p="Alien_Health.cs" t="Include" />
+        <e p="Alien_ID.cs" t="Include" />
+        <e p="ammoBoxScript.cs" t="Include" />
+        <e p="CameraIgnore.cs" t="Include" />
+        <e p="Cannon.cs" t="Include" />
+        <e p="ChaseAlien.cs" t="Include" />
+        <e p="GameManager.cs" t="Include" />
+        <e p="gui" t="Include">
+          <e p="PlayerScoreboardItem.cs" t="Include" />
+          <e p="SceneTrigger.cs" t="Include" />
+          <e p="Scoreboard.cs" t="Include" />
+          <e p="TurnBack.cs" t="Include" />
         </e>
-        <e p="SFX" t="Include">
-          <e p="GunSounds.cs" t="Include" />
-          <e p="ReloadSound.cs" t="Include" />
-          <e p="SFX.cs" t="Include" />
-        </e>
-        <e p="Standard Assets" t="Include">
-          <e p="Characters" t="Include">
-            <e p="FirstPersonCharacter" t="Include">
-              <e p="FirstPersonCharacterGuidelines.txt" t="Include" />
-            </e>
-            <e p="ThirdPersonCharacter" t="Include">
-              <e p="Scripts" t="Include">
-                <e p="AICharacterControl.cs" t="Include" />
-                <e p="ThirdPersonCharacter.cs" t="Include" />
-                <e p="ThirdPersonUserControl.cs" t="Include" />
-              </e>
-              <e p="ThirdPersonCharacterGuidelines.txt" t="Include" />
-            </e>
+        <e p="HostGame.cs" t="Include" />
+        <e p="HostSinglePlayer.cs" t="Include" />
+        <e p="JoinGame.cs" t="Include" />
+        <e p="KeyBind.cs" t="Include" />
+        <e p="MatchSettings.cs" t="Include" />
+        <e p="PauseMenu.cs" t="Include" />
+        <e p="PauseMenuToDisconnect.cs" t="Include" />
+        <e p="Player.cs" t="Include" />
+        <e p="PlayerController.cs" t="Include" />
+        <e p="PlayerMotor.cs" t="Include" />
+        <e p="PlayerSetup.cs" t="Include" />
+        <e p="PlayerShoot.cs" t="Include" />
+        <e p="PlayerUI.cs" t="Include" />
+        <e p="PlayerWeapon.cs" t="Include" />
+        <e p="PowerUpHealth.cs" t="Include" />
+        <e p="PowerUpSpeed.cs" t="Include" />
+        <e p="PowerUpStrenght.cs" t="Include" />
+        <e p="RoomListItem.cs" t="Include" />
+        <e p="ShootSound.cs" t="Include" />
+        <e p="SpawnManager_ZombieSpawner.cs" t="Include" />
+        <e p="WaveSpawner.cs" t="Include" />
+        <e p="Zombie_Target.cs" t="Include" />
+      </e>
+      <e p="Assets\SFX" t="Include">
+        <e p="GunSounds.cs" t="Include" />
+        <e p="ReloadSound.cs" t="Include" />
+        <e p="SFX.cs" t="Include" />
+      </e>
+      <e p="Assets\Standard Assets" t="Include">
+        <e p="Characters" t="Include">
+          <e p="FirstPersonCharacter" t="Include">
+            <e p="FirstPersonCharacterGuidelines.txt" t="Include" />
           </e>
-          <e p="CrossPlatformInput" t="Include">
-            <e p="CrossPlatformInputGuidelines.txt" t="Include" />
+          <e p="ThirdPersonCharacter" t="Include">
             <e p="Scripts" t="Include">
-              <e p="AxisTouchButton.cs" t="Include" />
-              <e p="ButtonHandler.cs" t="Include" />
-              <e p="CrossPlatformInputManager.cs" t="Include" />
-              <e p="InputAxisScrollbar.cs" t="Include" />
-              <e p="Joystick.cs" t="Include" />
-              <e p="MobileControlRig.cs" t="Include" />
-              <e p="PlatformSpecific" t="Include">
-                <e p="MobileInput.cs" t="Include" />
-                <e p="StandaloneInput.cs" t="Include" />
-              </e>
-              <e p="TiltInput.cs" t="Include" />
-              <e p="TouchPad.cs" t="Include" />
-              <e p="VirtualInput.cs" t="Include" />
+              <e p="AICharacterControl.cs" t="Include" />
+              <e p="ThirdPersonCharacter.cs" t="Include" />
+              <e p="ThirdPersonUserControl.cs" t="Include" />
             </e>
+            <e p="ThirdPersonCharacterGuidelines.txt" t="Include" />
+          </e>
+        </e>
+        <e p="CrossPlatformInput" t="Include">
+          <e p="CrossPlatformInputGuidelines.txt" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="AxisTouchButton.cs" t="Include" />
+            <e p="ButtonHandler.cs" t="Include" />
+            <e p="CrossPlatformInputManager.cs" t="Include" />
+            <e p="InputAxisScrollbar.cs" t="Include" />
+            <e p="Joystick.cs" t="Include" />
+            <e p="MobileControlRig.cs" t="Include" />
+            <e p="PlatformSpecific" t="Include">
+              <e p="MobileInput.cs" t="Include" />
+              <e p="StandaloneInput.cs" t="Include" />
+            </e>
+            <e p="TiltInput.cs" t="Include" />
+            <e p="TouchPad.cs" t="Include" />
+            <e p="VirtualInput.cs" t="Include" />
           </e>
         </e>
       </e>
