@@ -32754,7 +32754,7 @@ GameObject:
   - component: {fileID: 1984241783}
   - component: {fileID: 1984241782}
   - component: {fileID: 1984241781}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: BoxCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

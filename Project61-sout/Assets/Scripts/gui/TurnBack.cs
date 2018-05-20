@@ -31,19 +31,24 @@ public class TurnBack : MonoBehaviour {
 	}
 
 	// Update is called once per frame
-	void OnTriggerEnter (Collider player)
+	void OnTriggerStay (Collider player)
 	{
 		if (player.gameObject.tag == "Player")
 		{
 			Buyobject.SetActive(true);
 			buyText.text = pressText + Text;
-			StartCoroutine("WaitForSec");
 		}
 	}
-	IEnumerator WaitForSec()
+
+	private void OnTriggerExit(Collider player)
 	{
-		yield return new WaitForSeconds(3);
-		Buyobject.SetActive(false);
+		if (player.gameObject.tag == "Player")
+		{
+			Buyobject.SetActive(false);
+		}
+		
 	}
+
+	
 
 }
