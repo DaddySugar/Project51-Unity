@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [ExecuteInEditMode]
@@ -33,7 +31,7 @@ public class TurnBack : MonoBehaviour {
 	// Update is called once per frame
 	void OnTriggerStay (Collider player)
 	{
-		if (player.gameObject.tag == "Player")
+		if (player.gameObject.tag == "Player" && player.gameObject.layer == LayerMask.NameToLayer("LocalPlayer"))
 		{
 			Buyobject.SetActive(true);
 			buyText.text = pressText + Text;
@@ -42,7 +40,7 @@ public class TurnBack : MonoBehaviour {
 
 	private void OnTriggerExit(Collider player)
 	{
-		if (player.gameObject.tag == "Player")
+		if (player.gameObject.tag == "Player" && player.gameObject.layer == LayerMask.NameToLayer("LocalPlayer"))
 		{
 			Buyobject.SetActive(false);
 		}
