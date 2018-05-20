@@ -62,6 +62,7 @@
           <e p="Alien_Health.cs" t="Include" />
           <e p="Alien_ID.cs" t="Include" />
           <e p="ammoBoxScript.cs" t="Include" />
+          <e p="Betray.cs" t="Include" />
           <e p="CameraIgnore.cs" t="Include" />
           <e p="Cannon.cs" t="Include" />
           <e p="ChaseAlien.cs" t="Include" />

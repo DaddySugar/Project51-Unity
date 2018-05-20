@@ -34,7 +34,21 @@ public class TurnBack : MonoBehaviour {
 		if (player.gameObject.tag == "Player" && player.gameObject.layer == LayerMask.NameToLayer("LocalPlayer"))
 		{
 			Buyobject.SetActive(true);
-			buyText.text = pressText + Text;
+			if (gameObject.name == "BoxColliderCocoon")
+			{
+				if (!player.GetComponent<Player>().hasBetrayed)
+				{
+					buyText.text = Text;
+				}
+				else
+				{
+					Buyobject.SetActive(false);
+				}
+			}
+			else
+			{
+				buyText.text = pressText + Text;
+			}
 		}
 	}
 
