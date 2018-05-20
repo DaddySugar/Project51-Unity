@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40a48c56-cc68-4f6e-92aa-a70a9bf78cd2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.Project61-sout/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Project61-sout/.idea/contentModel.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.Project61-sout/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Project61-sout/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/MainMulti2.unity" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMulti2.unity" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/Player.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/gui/TurnBack.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/gui/TurnBack.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scripts/Betray.cs" afterPath="$PROJECT_DIR$/Assets/Scripts/Betray.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -117,8 +113,8 @@
       <file leaf-file-name="PowerUpSpeed.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/PowerUpSpeed.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+            <state relative-caret-position="627">
+              <caret line="35" column="50" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="50" />
               <folding>
                 <marker date="1526735619066" expanded="false" signature="6:78" ph="..." />
                 <marker date="1526735619066" expanded="true" signature="121:1115" ph="{...}" />
@@ -238,28 +234,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Betray.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Betray.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding>
-                <marker date="1526851046643" expanded="true" signature="6:78" ph="..." />
-                <marker date="1526851046643" expanded="true" signature="116:361" ph="{...}" />
-                <marker date="1526851046643" expanded="true" signature="162:262" ph="{...}" />
-                <marker date="1526851046643" expanded="true" signature="230:259" ph="{...}" />
-                <marker date="1526851046643" expanded="true" signature="305:359" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Cannon.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/Cannon.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1330">
               <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Betray.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Betray.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="8" column="74" lean-forward="false" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
+              <folding>
+                <marker date="1526853542836" expanded="false" signature="6:78" ph="..." />
+                <marker date="1526853542836" expanded="true" signature="116:693" ph="{...}" />
+                <marker date="1526853542836" expanded="true" signature="162:323" ph="{...}" />
+                <marker date="1526853542836" expanded="true" signature="275:320" ph="{...}" />
+                <marker date="1526853542836" expanded="true" signature="365:691" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -291,9 +287,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Cannon.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ChaseAlien.cs" />
         <option value="$PROJECT_DIR$/Assets/Betray.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Betray.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/gui/TurnBack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Betray.cs" />
       </list>
     </option>
   </component>
@@ -396,12 +392,12 @@
       <workItem from="1526638723314" duration="1240000" />
       <workItem from="1526772478501" duration="766000" />
       <workItem from="1526812912709" duration="5094000" />
-      <workItem from="1526849393658" duration="2481000" />
+      <workItem from="1526849393658" duration="3205000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11016000" />
+    <option name="totallyTimeSpent" value="11740000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1043,36 +1039,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PowerUpHealth.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-          <folding>
-            <marker date="1526735619061" expanded="false" signature="6:92" ph="..." />
-            <marker date="1526735619061" expanded="true" signature="137:1080" ph="{...}" />
-            <marker date="1526735619061" expanded="true" signature="301:449" ph="{...}" />
-            <marker date="1526735619061" expanded="true" signature="494:653" ph="{...}" />
-            <marker date="1526735619061" expanded="true" signature="608:650" ph="{...}" />
-            <marker date="1526735619061" expanded="true" signature="691:1078" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PowerUpSpeed.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding>
-            <marker date="1526735619066" expanded="false" signature="6:78" ph="..." />
-            <marker date="1526735619066" expanded="true" signature="121:1115" ph="{...}" />
-            <marker date="1526735619066" expanded="true" signature="286:434" ph="{...}" />
-            <marker date="1526735619066" expanded="true" signature="479:638" ph="{...}" />
-            <marker date="1526735619066" expanded="true" signature="593:635" ph="{...}" />
-            <marker date="1526735619066" expanded="true" signature="676:1113" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/PlayerShoot.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="406">
@@ -1169,16 +1135,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PowerUpHealth.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <folding>
+            <marker date="1526735619061" expanded="false" signature="6:92" ph="..." />
+            <marker date="1526735619061" expanded="true" signature="137:1080" ph="{...}" />
+            <marker date="1526735619061" expanded="true" signature="301:449" ph="{...}" />
+            <marker date="1526735619061" expanded="true" signature="494:653" ph="{...}" />
+            <marker date="1526735619061" expanded="true" signature="608:650" ph="{...}" />
+            <marker date="1526735619061" expanded="true" signature="691:1078" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/PowerUpSpeed.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="35" column="50" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="50" />
+          <folding>
+            <marker date="1526735619066" expanded="false" signature="6:78" ph="..." />
+            <marker date="1526735619066" expanded="true" signature="121:1115" ph="{...}" />
+            <marker date="1526735619066" expanded="true" signature="286:434" ph="{...}" />
+            <marker date="1526735619066" expanded="true" signature="479:638" ph="{...}" />
+            <marker date="1526735619066" expanded="true" signature="593:635" ph="{...}" />
+            <marker date="1526735619066" expanded="true" signature="676:1113" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Betray.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="114">
+          <caret line="8" column="74" lean-forward="false" selection-start-line="8" selection-start-column="74" selection-end-line="8" selection-end-column="74" />
           <folding>
-            <marker date="1526851046643" expanded="true" signature="6:78" ph="..." />
-            <marker date="1526851046643" expanded="true" signature="116:361" ph="{...}" />
-            <marker date="1526851046643" expanded="true" signature="162:262" ph="{...}" />
-            <marker date="1526851046643" expanded="true" signature="230:259" ph="{...}" />
-            <marker date="1526851046643" expanded="true" signature="305:359" ph="{...}" />
+            <marker date="1526853542836" expanded="false" signature="6:78" ph="..." />
+            <marker date="1526853542836" expanded="true" signature="116:693" ph="{...}" />
+            <marker date="1526853542836" expanded="true" signature="162:323" ph="{...}" />
+            <marker date="1526853542836" expanded="true" signature="275:320" ph="{...}" />
+            <marker date="1526853542836" expanded="true" signature="365:691" ph="{...}" />
           </folding>
         </state>
       </provider>

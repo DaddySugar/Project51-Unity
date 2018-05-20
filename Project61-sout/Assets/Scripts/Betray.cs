@@ -6,14 +6,22 @@ public class Betray : MonoBehaviour {
 
 	private void OnTriggerStay(Collider other)
 	{
-		if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
+		if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E) && !other.GetComponent<Player>().hasBetrayed)
 		{
-			Betraybis(other);
+			StartCoroutine(Betraybis(other));
 		}
 	}
 	
-	private void Betraybis(Collider player)
+	IEnumerator Betraybis(Collider player)
 	{
 		player.GetComponent<Player>().RpcsetBetray();
+		GameObject alie = gameObject.transform.parent.gameObject.transform.GetChild(2).gameObject;
+		alie.GetComponent<MeshRenderer>().material.color = Color.red;
+		yield return new WaitForSeconds(2f);
+		
+		alie.GetComponent<MeshRenderer>().material.color = Color.white;
+
+		
+		
 	}
 }
