@@ -22,6 +22,9 @@ public class PlayerShoot : NetworkBehaviour
 	private float timeToNextReload = 0f;
 	private float temp = 2f;
 
+	private Player idk;
+	private int kills = 0; 
+
 	void Start()
 	{
 		if (cam == null)
@@ -33,6 +36,8 @@ public class PlayerShoot : NetworkBehaviour
 		fireRate = Weapon.fireRate;
 		Weapon.bullets = Weapon.maxBullets;
 		Weapon.BulletsTotal = Weapon.maxBulletsTotal;
+
+		idk = GetComponent<Player>();
 	}
 
 	void Update()
@@ -119,6 +124,7 @@ public class PlayerShoot : NetworkBehaviour
 				if (_hit.collider.gameObject.GetComponent<Alien_Health>().health - Weapon.damage<= 0)
 				{
 					gameObject.GetComponent<Player>().money += gameObject.GetComponent<Player>().moneyRewardedByKill;
+					gameObject.GetComponent<Player>().kills++; 
 				}
 				CmdTellServerWhichZombieWasShot(uIdentity, Weapon.damage);
 				//Debug.Log("One");

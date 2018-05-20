@@ -8,8 +8,8 @@ public class Cannon : NetworkBehaviour {
 
 	[SerializeField] private int cost = 500;
 	private const int maxParts = 5;
-	[SyncVar]
-	public int currentpart;
+	
+	public static int currentpart;
 
 	private float timeToWait = 0f;
 	//private PlayerUI ui; 
@@ -61,10 +61,17 @@ public class Cannon : NetworkBehaviour {
 	private void Pickup(Collider player)
 	{
 		Player stats = player.GetComponent<Player>();
-		currentpart++;
+		RpcAddParts();
 //		Debug.Log(currentpart);
 		timeToWait = Time.time + 0.1f;
 		stats.money -= cost;
 		
 	}
+
+	[Client]
+	void RpcAddParts()
+	{
+		currentpart++;
+	}
+	
 }

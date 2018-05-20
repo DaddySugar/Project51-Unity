@@ -13,6 +13,8 @@ public class PlayerUI : MonoBehaviour {
     [SerializeField]
     Text ammoText;
 
+    [SerializeField] private Text ammoTotal; 
+
     [SerializeField] private Text cashText;
 
     [SerializeField]
@@ -38,7 +40,7 @@ public class PlayerUI : MonoBehaviour {
        // SetFuelAmount (controller.GetThrusterFuelAmount());
         
         SetHealthAmount(player.GetHealthpct());
-        SetAmmoAmount(weaponManager.bullets);
+        SetAmmoAmount(weaponManager.bullets, weaponManager.BulletsTotal);
         SetCashAmount(player.money);
         SetCannnonAmount(playercannon.Getpst());
 
@@ -58,9 +60,10 @@ public class PlayerUI : MonoBehaviour {
         healthBarFill.fillAmount = _amount;
     }
 
-    void SetAmmoAmount (int _amount)
+    void SetAmmoAmount (int _amount, int _amountTot)
     {
         ammoText.text = _amount.ToString();
+        ammoTotal.text = _amountTot.ToString();
     }
     void SetCashAmount (int _amount)
     {

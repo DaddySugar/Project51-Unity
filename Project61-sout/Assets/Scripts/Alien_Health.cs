@@ -51,4 +51,15 @@ public class Alien_Health : NetworkBehaviour {
 			
 		}
 	}
+
+	public bool IsAlienDead()
+	{
+		if (health <= 0)
+		{
+			return true;
+		}
+
+		return false;
+	}
+	
 }
