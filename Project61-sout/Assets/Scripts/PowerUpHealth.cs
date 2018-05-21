@@ -35,7 +35,8 @@ public class PowerUpHealth : MonoBehaviour {
 		yield return new WaitForSeconds(duration);
 
 		stats.maxHealth = Convert.ToInt32(stats.maxHealth / multiplierSpeed);
-
-		Destroy(gameObject);
+		GetComponent<MeshRenderer>().enabled = true;
+		GetComponent<Collider>().enabled = true;
+		
 	}
 }

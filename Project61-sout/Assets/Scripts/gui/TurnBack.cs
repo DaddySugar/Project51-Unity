@@ -31,7 +31,7 @@ public class TurnBack : MonoBehaviour {
 	// Update is called once per frame
 	void OnTriggerStay (Collider player)
 	{
-		if (player.gameObject.tag == "Player" && player.gameObject.layer == LayerMask.NameToLayer("LocalPlayer"))
+		if (player.gameObject.tag == "Player" && player.gameObject.layer == LayerMask.NameToLayer("LocalPlayer") )
 		{
 			Buyobject.SetActive(true);
 			if (gameObject.name == "BoxColliderCocoon")
@@ -44,6 +44,10 @@ public class TurnBack : MonoBehaviour {
 				{
 					Buyobject.SetActive(false);
 				}
+			}
+			else if (gameObject.tag == "PowerUp" && !gameObject.GetComponent<MeshRenderer>().enabled)
+			{
+				Buyobject.SetActive(false);
 			}
 			else
 			{

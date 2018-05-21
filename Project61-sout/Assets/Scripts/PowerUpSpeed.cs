@@ -38,6 +38,7 @@ public class PowerUpSpeed : MonoBehaviour
 		stats.speed /= multiplierSpeed;
 		stats.sprintSpeed /= multiplierSpeed;
 		
-		Destroy(gameObject);
+		GetComponent<MeshRenderer>().enabled = true;
+		GetComponent<Collider>().enabled = true;
 	}
 }

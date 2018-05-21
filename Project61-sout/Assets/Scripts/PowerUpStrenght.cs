@@ -35,6 +35,7 @@ public class PowerUpStrenght : MonoBehaviour {
 
 		stats.Weapon.damage = Convert.ToInt32(stats.Weapon.damage / multiplierSpeed);
 
-		Destroy(gameObject);
+		GetComponent<MeshRenderer>().enabled = true;
+		GetComponent<Collider>().enabled = true;
 	}
 }
