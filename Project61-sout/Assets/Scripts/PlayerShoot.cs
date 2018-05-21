@@ -21,7 +21,6 @@ public class PlayerShoot : NetworkBehaviour
     public GameObject Reload;
 	private float timeToNextReload = 0f;
 	private float temp = 2f;
-
 	private Player idk;
 	private int kills = 0; 
 
@@ -71,14 +70,14 @@ public class PlayerShoot : NetworkBehaviour
 			}
 			hasFinishedReloading = true;
 		}
-		else if (Weapon.bullets == 0 && !_animation.isPlaying && Weapon.BulletsTotal != 0)
+		else if (Weapon.bullets == 0 && !_animation.isPlaying && Weapon.BulletsTotal != 0 && !PauseMenu.GameIsPaused)
 		{
 			_animation.Play("reload");
             GameObject reload = Instantiate(Reload, this.transform.position, this.transform.rotation) as GameObject;
             hasFinishedReloading = false;
 
 		}
-		else if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && Weapon.bullets != 0)
+		else if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && Weapon.bullets != 0 && !PauseMenu.GameIsPaused)
 		{
             GameObject gunshot = Instantiate(GunShot, this.transform.position, this.transform.rotation) as GameObject;
 			if (_animation.IsPlaying("reload"))
@@ -90,12 +89,25 @@ public class PlayerShoot : NetworkBehaviour
 			Shoot();
 			_animation.Play("fire");
 		}
-		else if (Input.GetKey(KeyCode.R) && Time.time > timeToNextReload && Weapon.BulletsTotal != 0)//Reload, do not put the bullets in the gun yet, wait to see if the animation was interrupted
+		else if (Input.GetKey(KeyCode.R) && Time.time > timeToNextReload && Weapon.BulletsTotal != 0 && !PauseMenu.GameIsPaused)//Reload, do not put the bullets in the gun yet, wait to see if the animation was interrupted
 		{
 			_animation.Play("reload");
 			GameObject reload = Instantiate(Reload, this.transform.position, this.transform.rotation) as GameObject;
             reloadInterrupted = false;
 			timeToNextReload = Time.time + temp;
+		}
+		else if (Input.GetKeyDown(KeyCode.Escape))
+		{
+			GameObject go = GameObject.FindWithTag("Sound");
+			if (go != null && PauseMenu.GameIsPaused)
+			{
+				go.GetComponent<AudioSource>().Pause();
+			}
+			else if (go != null)
+			{
+				go.GetComponent<AudioSource>().Play();
+			}
+
 		}
 
     }

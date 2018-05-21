@@ -257,16 +257,6 @@ public class Player : NetworkBehaviour
 			formerNumberofPlayer = 2;
 
 		}
-		Debug.Log(hasBetrayed);
-		//check if has betrayed
-		/*if (!hasBetrayed && Input.GetKey(KeyCode.H))
-		{
-			RpcsetBetray();		
-		}*/
-		
-		
-	
-	
 		
 	}
 
