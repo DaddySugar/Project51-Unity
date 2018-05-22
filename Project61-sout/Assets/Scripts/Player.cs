@@ -49,8 +49,9 @@ public class Player : NetworkBehaviour
 	private Quaternion formerCameraRotation;
 	[SyncVar] public bool hasBetrayed = false;
 
-	
+	[SyncVar]
 	public int kills;
+	[SyncVar]
 	public int deaths;
 	
 	[SyncVar]
