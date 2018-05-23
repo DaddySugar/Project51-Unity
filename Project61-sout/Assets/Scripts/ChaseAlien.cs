@@ -214,8 +214,8 @@ public class ChaseAlien : NetworkBehaviour
 					agent.destination = pos1;
 					fuckYouGame = pos1 - AlienPosition.position;
 					
-				}
-				if (fuckYouGame.magnitude < 2 && Time.time > timeToNextHit)
+				}*/
+				if ((AlienPosition.position - pos1).magnitude < 2 && Time.time > timeToNextHit)
 				{
 					pos1 = GameManager.players[playerIds[0]].GetComponentInParent<Transform>().position;
 					pos2 = GameManager.players[playerIds[1]].GetComponentInParent<Transform>().position;
@@ -229,7 +229,7 @@ public class ChaseAlien : NetworkBehaviour
 						GameManager.players[playerIds[1]].GetComponentInParent<Player>().RpcTakeDamage(alienDamage);
 					}
 					timeToNextHit = Time.time + 2f;
-				}*/
+				}
 			}
 			
 			if ((pos1 - AlienPosition.position).magnitude < 4)
