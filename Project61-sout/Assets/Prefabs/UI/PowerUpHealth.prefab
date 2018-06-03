@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095e9fe31c4433e47875d6e75ab93ea1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PowerUp: {fileID: 1593970346365148, guid: 6f66062b133fb924695d07ee356a3677, type: 2}
   multiplierSpeed: 2
   duration: 20
   cost: 300

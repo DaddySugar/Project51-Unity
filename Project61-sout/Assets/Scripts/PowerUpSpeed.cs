@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PowerUpSpeed : MonoBehaviour
 {
+    public GameObject PowerUp;
 
 	[SerializeField] private float multiplierSpeed = 1.4f;
 	[SerializeField] private float duration = 4f;
@@ -20,6 +21,7 @@ public class PowerUpSpeed : MonoBehaviour
 		if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E) && other.GetComponent<Player>().money >= cost)
 		{
 			StartCoroutine(Pickup(other));
+            GameObject powerup = Instantiate(PowerUp, this.transform.position, this.transform.rotation) as GameObject;
 		}
 	}
 
