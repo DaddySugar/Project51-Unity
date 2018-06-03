@@ -15,7 +15,9 @@ public class Cannon : NetworkBehaviour {
 	private float timeToWait = 0f;
 	
 	private NetworkIdentity objNetId;
-	public GameObject objectID; 
+	public GameObject objectID;
+
+    public GameObject PartSound;
 
 	
 	private void Start()
@@ -29,9 +31,9 @@ public class Cannon : NetworkBehaviour {
 		
 		if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E) && other.GetComponent<Player>().money >= cost && currentpart < maxParts && Time.time > timeToWait)
 		{
-			Pickup(other);
-			
-		}
+            GameObject partsound = Instantiate(PartSound, this.transform.position, this.transform.rotation) as GameObject;
+            Pickup(other);
+        }
 	}
 
 	public float Getpst()
