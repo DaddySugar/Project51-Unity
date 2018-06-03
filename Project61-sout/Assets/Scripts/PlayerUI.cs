@@ -1,8 +1,13 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerUI : MonoBehaviour {
+public class PlayerUI : MonoBehaviour
+{
+
+    [SerializeField]
+    public List<GameObject> ToDisable; 
 
     [SerializeField]
     Image healthBarFill;
@@ -75,6 +80,13 @@ public class PlayerUI : MonoBehaviour {
         CannonBarFill.fillAmount = _amount;
     }
 
-    
+    public void DisableUI()
+    {
+        foreach (var VARIABLE in ToDisable)
+        {
+            VARIABLE.SetActive(false);
+        }
+        
+    }
     
 }

@@ -379,6 +379,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac7ab64f60bc7546addd129da7b0d89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ToDisable:
+  - {fileID: 1180105482448874}
+  - {fileID: 1013897056972952}
+  - {fileID: 1238374902675648}
+  - {fileID: 1599297859861604}
+  - {fileID: 1900386548250182}
   healthBarFill: {fileID: 114825562486209754}
   CannonBarFill: {fileID: 114826451404104340}
   ammoText: {fileID: 114308140308516162}

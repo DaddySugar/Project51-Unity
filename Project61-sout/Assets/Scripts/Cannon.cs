@@ -9,36 +9,18 @@ public class Cannon : NetworkBehaviour {
 	[SerializeField] private int cost = 500;
 	private const int maxParts = 5;
 	
-	public static int currentpart;
+	[SyncVar]
+	public  int currentpart;
 
 	private float timeToWait = 0f;
-	//private PlayerUI ui; 
-	private string _buymsg; 
 	
-	
-	/*public GameObject BarPanel;
-	public Image CannonBarFill; */
+	private NetworkIdentity objNetId;
+	public GameObject objectID; 
 
-	/*public float ShowMessage() {
-		//BarPanel.SetActive(true);
-		//CannonBarFill.fillAmount = (float)currentpart / maxParts;
-		//WavePanel.SetActive(false);
-		return (float)currentpart / maxParts;
-		
-	}*/
 	
 	private void Start()
 	{
-		//ui = GetComponent<PlayerUI>();
 		currentpart = 0;
-		_buymsg = "Parts for " + cost; 
-		//PlayerUI ui = GetComponent<PlayerUI>();
-		//ui.SetCannon(GetComponent<Cannon>());
-	}
-
-	void Update()
-	{
-		//ShowMessage();
 	}
 
 
@@ -60,18 +42,38 @@ public class Cannon : NetworkBehaviour {
 
 	private void Pickup(Collider player)
 	{
+		if (!isServer)
+		{
+			Debug.Log("server" +
+			          "");
+			CmdAddParts();
+		}
+		else
+		{
+			currentpart++;
+		}
+			
 		Player stats = player.GetComponent<Player>();
-		RpcAddParts();
-//		Debug.Log(currentpart);
+		//currentpart++;
+		
 		timeToWait = Time.time + 0.1f;
 		stats.money -= cost;
 		
 	}
 
-	[Client]
+	[ClientRpc]
 	void RpcAddParts()
 	{
 		currentpart++;
+	}
+
+	[Command]
+	void CmdAddParts()
+	{
+		//objNetId = GetComponent<NetworkIdentity> ();  
+		//objNetId.AssignClientAuthority (connectionToClient);
+		RpcAddParts();
+		//objNetId.RemoveClientAuthority (connectionToClient);
 	}
 	
 }
