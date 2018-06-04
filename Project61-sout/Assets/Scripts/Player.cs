@@ -53,6 +53,11 @@ public class Player : NetworkBehaviour
 	public int kills;
 	[SyncVar]
 	public int deaths;
+
+	public int Deaths
+	{
+		get { return deaths; }
+	}
 	
 	[SyncVar]
 	public string username = "Loading...";

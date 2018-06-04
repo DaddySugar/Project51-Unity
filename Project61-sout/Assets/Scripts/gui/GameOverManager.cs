@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using NUnit.Framework.Constraints;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.SceneManagement;
 
 public class GameOverManager : NetworkBehaviour
 {
 	public Cannon Canon;                    // Reference to the player's health.
 	public float restartDelay = 5f;         // Time to wait before restarting the level
 
-	public PlayerUI[] players;
+	public PlayerUI[] playersUI;
+
+	public Player[] players = GameManager.GetAllPlayers();
 	//public List<PlayerSetup> sett; 
 
 	public GameObject[] AllAliens; 
@@ -17,6 +21,8 @@ public class GameOverManager : NetworkBehaviour
 	Animator anim;                          // Reference to the animator component.
 	float restartTimer;                     // Timer to count up to restarting the level
 
+
+	private const string levelToLoad = "Lobby_2"; 
 
 	void Awake ()
 	{
@@ -31,27 +37,49 @@ public class GameOverManager : NetworkBehaviour
 		
 	}
 
+	bool CheckDeaths()
+	{
+		int a = 0;
+		foreach (var VARIABLE in players)
+		{
+			a += VARIABLE.deaths;
+			//Debug.Log("1");
+		}
+
+		if (a == 6)
+		{
+			return true;
+		}
+
+		return false;
+	}
+
 
 	void Update ()
 	{
 		// If the player has run out of health...
 		if(Canon.currentpart == 2)
 		{
-			Disable();
+			Disable(true);
+		}
+
+		else if (CheckDeaths())
+		{
+			Disable(false);
 		}
 	}
 
-	private void Disable()
+	private void Disable(bool _IsWin)
 	{
 		// ... tell the animator the game is over.
 		anim.SetTrigger ("GameOver");
-		players = FindObjectsOfType<PlayerUI>();
+		playersUI = FindObjectsOfType<PlayerUI>();
 		
 		
-		foreach (var VARIABLE in players)
+		foreach (var VARIABLE in playersUI)
 		{
 			VARIABLE.DisableUI();
-			Debug.Log("1");
+			//Debug.Log("1");
 		}
 
 		AllAliens = GameObject.FindGameObjectsWithTag("Alien");
@@ -60,14 +88,41 @@ public class GameOverManager : NetworkBehaviour
 			Destroy(GameObject.FindWithTag("Alien"));
 		}
 
+		if (_IsWin)
+		{
+			anim.SetTrigger("WonTheGame");
+		}
+		else
+		{
+			anim.SetTrigger("LostTheGame");
+		}
+
 		// .. increment a timer to count up to restarting.
 		restartTimer += Time.deltaTime;
 
+		StartCoroutine(Countdown());
+
 		// .. if it reaches the restart delay...
-		if(restartTimer >= restartDelay)
-		{
+		//
 			// .. then reload the currently loaded level.
-			Application.LoadLevel(Application.loadedLevel);
+			//Application.LoadLevel(Application.loadedLevel);
+		//}
+		
+		
+	}
+
+	IEnumerator Countdown()
+	{
+		int countdown = 30;
+		while (countdown > 0)
+		{
+			//status.text = "JOINING... (" + countdown + ")";
+
+			yield return new WaitForSeconds(1);
+
+			countdown--;
 		}
+		
+		SceneManager.LoadScene(levelToLoad);
 	}
 }
