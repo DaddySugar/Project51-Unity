@@ -50,9 +50,9 @@ public class Player : NetworkBehaviour
 	[SyncVar] public bool hasBetrayed = false;
 
 	[SyncVar]
-	public int kills;
+	public int kills = 0;
 	[SyncVar]
-	public int deaths;
+	public int deaths = 0;
 
 	public int Deaths
 	{
@@ -280,6 +280,12 @@ public class Player : NetworkBehaviour
 	public void RpcsetBetray()
 	{
 		hasBetrayed = true;
+	}
+
+	[Command]
+	public void CmdUpKills()
+	{
+		kills++;
 	}
 	
 	public float GetHealthpct()
