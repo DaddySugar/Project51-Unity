@@ -119,8 +119,35 @@ public class PlayerShoot : NetworkBehaviour
 			}
 
 		}
+		if ((!_animation.isPlaying || _animation.IsPlaying("Idle2")) && !gameObject.GetComponent<PlayerController>().isFalling)
+		{
+			if (gameObject.GetComponent<PlayerController>().isRunning)
+			{
+				_animation.Play("RunGunAnim");
+			}
+			else if (gameObject.GetComponent<PlayerController>().isSprinting)
+			{
+				_animation.Play("SprintGunAnim");
+			}
+			else
+			{
+				_animation.Play("Idle2");
+				
+			}
+		}
+		
 
-    }
+	}
+
+	public void jump()
+	{
+		if (!_animation.IsPlaying("reload"))
+		{
+			_animation.Stop();
+			weaponPrefab.transform.localPosition = new Vector3(0,0,0);
+		}
+		
+	}
 
 	[Client]
 	void Shoot()

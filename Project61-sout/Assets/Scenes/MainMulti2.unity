@@ -6562,6 +6562,16 @@ Prefab:
       propertyPath: m_Layer
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1423080700352120, guid: c0b9c7c1c8edf1b479763ac4a5965f77, type: 2}
+      propertyPath: m_TagString
+      value: PowerUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 114588158612373476, guid: c0b9c7c1c8edf1b479763ac4a5965f77,
+        type: 2}
+      propertyPath: PowerUp
+      value: 
+      objectReference: {fileID: 1593970346365148, guid: 6f66062b133fb924695d07ee356a3677,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0b9c7c1c8edf1b479763ac4a5965f77, type: 2}
   m_IsPrefabParent: 0
@@ -24229,6 +24239,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1162513606744396, guid: 2badf9b5f6da325478fd1123682c0a42, type: 2}
+      propertyPath: m_TagString
+      value: PowerUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 114390975458544618, guid: 2badf9b5f6da325478fd1123682c0a42,
+        type: 2}
+      propertyPath: PowerUp
+      value: 
+      objectReference: {fileID: 1593970346365148, guid: 6f66062b133fb924695d07ee356a3677,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2badf9b5f6da325478fd1123682c0a42, type: 2}
   m_IsPrefabParent: 0
@@ -25826,6 +25846,16 @@ Prefab:
       propertyPath: m_Layer
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1864908681570328, guid: cc6f1dde5b672ea4098385a41260cc66, type: 2}
+      propertyPath: m_TagString
+      value: PowerUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 114575582174547420, guid: cc6f1dde5b672ea4098385a41260cc66,
+        type: 2}
+      propertyPath: PowerUp
+      value: 
+      objectReference: {fileID: 1593970346365148, guid: 6f66062b133fb924695d07ee356a3677,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cc6f1dde5b672ea4098385a41260cc66, type: 2}
   m_IsPrefabParent: 0
@@ -27873,6 +27903,12 @@ Prefab:
       propertyPath: ammoBought
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 114507549671277328, guid: 27c9bff880f5b9c4ebf48f7379591fbd,
+        type: 2}
+      propertyPath: Outofammo
+      value: 
+      objectReference: {fileID: 1049990365789248, guid: 976ecaa86940e3a4e970a770ff2a6151,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 27c9bff880f5b9c4ebf48f7379591fbd, type: 2}
   m_IsPrefabParent: 0
@@ -37647,6 +37683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2232b8d8fb399824996972c35eb51703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wave: {fileID: 0}
   Canon: {fileID: 1984241782}
   restartDelay: 5
   playersUI: []

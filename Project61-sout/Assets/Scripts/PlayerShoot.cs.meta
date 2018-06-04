@@ -13,6 +13,8 @@ MonoImporter:
   - impactEffectBlood: {instanceID: 0}
   - GunShot: {fileID: 1766442469435170, guid: 09c1a93765e2adc4e8bdda2606d7e086, type: 2}
   - Reload: {fileID: 1428444542617022, guid: 8564a2d7538862a4d83ad0254a82aef8, type: 2}
+  - OutofAmmo: {fileID: 1989571358481386, guid: 77b8c49bb681446448e2d30bbd9b85d1,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

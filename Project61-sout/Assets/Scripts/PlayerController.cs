@@ -15,7 +15,12 @@ public class PlayerController : MonoBehaviour
     private Vector3 _velocity = new Vector3(0f, 0f, 0f);
     private Animator anim;
     private PlayerMotor motor;
-    private bool isFalling = false;
+    [HideInInspector]
+    public bool isFalling = false;
+    [HideInInspector]
+    public bool isSprinting = false;
+    [HideInInspector]
+    public bool isRunning = false;
 
     private float nextTimeToJump = 0f;
     // Use this for initialization
@@ -41,23 +46,48 @@ public class PlayerController : MonoBehaviour
         if (Time.time >= nextTimeToJump)
         {
             isAbleToJump = true;
+            
         }
         float _xMov = Input.GetAxisRaw("Horizontal");
         float _zMov = Input.GetAxisRaw("Vertical");
+       
 
 
         Vector3 _moveHorizontal = transform.right * _xMov;
         Vector3 _moveVertical = transform.forward * _zMov;
 
+        if (_xMov != 0 || _zMov != 0)
+        {
+            isRunning = true;
+        }
+        else
+        {
+            isRunning = false;
+        }
         if (Input.GetKey(KeyCode.LeftShift))
         {
             _velocity = (_moveHorizontal + _moveVertical).normalized * sprintSpeed;
+            isSprinting = true;
+            isRunning = false;
+            if (_xMov != 0 || _zMov != 0)
+            {
+                isSprinting = true;
+                isRunning = false;
+            }
+            else
+            {
+                isRunning = false;
+                isSprinting = false;
+            }
 
         }
         else
         {
             _velocity = (_moveHorizontal + _moveVertical).normalized * speed;
+            isSprinting = false;
+            
         }
+        
         anim.SetFloat("Speed", _velocity.magnitude);
         motor.Move(_velocity);
 		
@@ -82,8 +112,8 @@ public class PlayerController : MonoBehaviour
 		
         if (Input.GetKeyDown(KeyCode.Space) && isAbleToJump && !isFalling)
         {
-            Debug.Log("jump");
             motor.Jump(jumpForce);
+            gameObject.GetComponent<PlayerShoot>().jump();
             isAbleToJump = false;
             nextTimeToJump = Time.time + jumpDelay;
             isFalling = true;

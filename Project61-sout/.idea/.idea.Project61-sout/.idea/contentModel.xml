@@ -12,6 +12,7 @@
             <e p="ExitOnClick.cs" t="Include" />
             <e p="LoadSceneOnClick.cs" t="Include" />
             <e p="SelectOnInput.cs" t="Include" />
+            <e p="WindowScreen.cs" t="Include" />
           </e>
           <e p="Fonts" t="Include">
             <e p="Jupiter" t="Include">
@@ -53,6 +54,7 @@
             <e p="READ ME!.txt" t="Include" />
           </e>
           <e p="UI" t="Include">
+            <e p="GameOverScoreboard.cs" t="Include" />
             <e p="HealthBar.cs" t="Include" />
           </e>
         </e>
@@ -68,6 +70,7 @@
           <e p="ChaseAlien.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
           <e p="gui" t="Include">
+            <e p="GameOverManager.cs" t="Include" />
             <e p="PlayerScoreboardItem.cs" t="Include" />
             <e p="SceneTrigger.cs" t="Include" />
             <e p="Scoreboard.cs" t="Include" />
@@ -97,7 +100,12 @@
           <e p="Zombie_Target.cs" t="Include" />
         </e>
         <e p="SFX" t="Include">
+          <e p="AlienSound.cs" t="Include" />
+          <e p="Ammo.cs" t="Include" />
           <e p="GunSounds.cs" t="Include" />
+          <e p="Outofammo.cs" t="Include" />
+          <e p="PartSound.cs" t="Include" />
+          <e p="PowerUp.cs" t="Include" />
           <e p="ReloadSound.cs" t="Include" />
           <e p="SFX.cs" t="Include" />
         </e>

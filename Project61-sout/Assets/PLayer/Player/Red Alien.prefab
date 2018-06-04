@@ -9190,7 +9190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f3c3fd4aa473ef4984b686ea7f8147a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AlienSound: {fileID: 1484959993467726, guid: e27be11cec7114f4ba445c2bc219a469, type: 2}
   targetTransform: {fileID: 4482694287364066, guid: b31286c8a5d4ac145ba20b159559d20c,
     type: 2}
   alienDamage: 5
@@ -9220,7 +9219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 3
-  m_SendInterval: 0.1
+  m_SendInterval: 0.033333335
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0

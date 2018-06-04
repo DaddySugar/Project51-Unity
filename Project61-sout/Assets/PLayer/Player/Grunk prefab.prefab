@@ -10130,6 +10130,8 @@ MonoBehaviour:
   targetTransform: {fileID: 4482694287364066, guid: b31286c8a5d4ac145ba20b159559d20c,
     type: 2}
   alienDamage: 5
+  timeBetweenChanges: 0.4
+  coeffAttractionAlien: 1.5
 --- !u!114 &114481445383117858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10142,7 +10144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 3
-  m_SendInterval: 0.1
+  m_SendInterval: 0.033333335
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0

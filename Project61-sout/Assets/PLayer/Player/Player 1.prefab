@@ -2127,7 +2127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1116229745210546}
   m_LocalRotation: {x: 0, y: -0.30278546, z: 0, w: 0.95305884}
-  m_LocalPosition: {x: 43.667168, y: 1.024, z: 59.625412}
+  m_LocalPosition: {x: 24.753565, y: 2.52, z: 20.742443}
   m_LocalScale: {x: 1.099625, y: 2.06375, z: 0.835}
   m_Children:
   - {fileID: 4361317949573086}
@@ -2963,8 +2963,10 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: a13c5a77f74184c43b370388756d2071, type: 3}
   - {fileID: 7400000, guid: c58cca70d8e5a18488ba2af50941e736, type: 3}
-  - {fileID: 7400000, guid: 910c2c28525e1944693e7b44d4e7825b, type: 3}
+  - {fileID: 7400000, guid: da7cbc002a483ba45ae7f15af16ba64e, type: 2}
   - {fileID: 7400000, guid: 5a99d3b5f9cc0314cb6155437ac837dd, type: 3}
+  - {fileID: 7400000, guid: ba0a1e73dd8094f45afe77fc40b7dc6c, type: 2}
+  - {fileID: 7400000, guid: 7aa6415daf5b36c48950e64843a77dd1, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -2982,7 +2984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 4606492894183068}
   m_ChildIndex: 0
-  m_SendInterval: 0.1
+  m_SendInterval: 0.04761905
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_MovementThreshold: 0.001
@@ -3045,7 +3047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 3
-  m_SendInterval: 0.1
+  m_SendInterval: 0.04761905
   m_SyncRotationAxis: 7
   m_RotationSyncCompression: 0
   m_SyncSpin: 0
@@ -3090,6 +3092,9 @@ MonoBehaviour:
   lookSensitivity: 3
   jumpForce: 2
   jumpDelay: 0.85
+  isFalling: 0
+  isSprinting: 0
+  isRunning: 0
 --- !u!114 &114674887225638620
 MonoBehaviour:
   m_ObjectHideFlags: 1
