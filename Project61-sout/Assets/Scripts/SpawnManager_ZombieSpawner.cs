@@ -3,7 +3,12 @@ using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
-public class SpawnManager_ZombieSpawner : NetworkBehaviour {
+public class SpawnManager_ZombieSpawner : NetworkBehaviour
+{
+	public bool IsSpawnActivated
+	{
+		set { isSpawnActivated = value; }
+	}
 
 	[SerializeField] GameObject []zombiePrefab;
 	private GameObject []zombieSpawns;

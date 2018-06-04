@@ -7,6 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class GameOverManager : NetworkBehaviour
 {
+	
+	
+	
+	#region FirstImportant
+
+	public SpawnManager_ZombieSpawner wave;
 	public Cannon Canon;                    // Reference to the player's health.
 	public float restartDelay = 5f;         // Time to wait before restarting the level
 
@@ -23,18 +29,21 @@ public class GameOverManager : NetworkBehaviour
 
 
 	private const string levelToLoad = "Lobby_2"; 
+	
+	
 
 	void Awake ()
 	{
-		// Set up the reference.
+		// Set up the reference
 		anim = GetComponent <Animator> ();
+		wave = FindObjectOfType<SpawnManager_ZombieSpawner>();
 		//players = GameManager.GetAllPlayers();
 		/*sett = new List<PlayerSetup>();
 		foreach (var VARIABLE in players)
 		{
 			sett.Add(VARIABLE.GetComponent<PlayerSetup>());
 		}*/
-		
+
 	}
 
 	bool CheckDeaths()
@@ -46,7 +55,7 @@ public class GameOverManager : NetworkBehaviour
 			//Debug.Log("1");
 		}
 
-		if (a == 6)
+		if (a == 1)
 		{
 			return true;
 		}
@@ -72,7 +81,23 @@ public class GameOverManager : NetworkBehaviour
 	private void Disable(bool _IsWin)
 	{
 		// ... tell the animator the game is over.
-		anim.SetTrigger ("GameOver");
+		//anim.SetTrigger ("GameOver");
+		
+		if (_IsWin)
+		{
+			anim.SetBool("WonTheGame", true);
+		}
+		else
+		{
+			anim.SetBool("LostTheGame", false);
+		}
+
+		foreach (var VARIABLE in players)
+		{
+			VARIABLE.RpcDisableMouvements();
+		}
+		
+		
 		playersUI = FindObjectsOfType<PlayerUI>();
 		
 		
@@ -88,14 +113,8 @@ public class GameOverManager : NetworkBehaviour
 			Destroy(GameObject.FindWithTag("Alien"));
 		}
 
-		if (_IsWin)
-		{
-			anim.SetTrigger("WonTheGame");
-		}
-		else
-		{
-			anim.SetTrigger("LostTheGame");
-		}
+		wave.IsSpawnActivated = false; 
+	
 
 		// .. increment a timer to count up to restarting.
 		restartTimer += Time.deltaTime;
@@ -125,4 +144,6 @@ public class GameOverManager : NetworkBehaviour
 		
 		SceneManager.LoadScene(levelToLoad);
 	}
+	
+	#endregion
 }

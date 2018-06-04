@@ -18,11 +18,15 @@ public class Cannon : NetworkBehaviour {
 	public GameObject objectID;
 
     public GameObject PartSound;
+	
+	//Animator anim;                          // Reference to the animator component.
+	//float restartTimer;     
 
 	
 	private void Start()
 	{
 		currentpart = 0;
+		//anim = GetComponent <Animator> ();
 	}
 
 
@@ -53,6 +57,15 @@ public class Cannon : NetworkBehaviour {
 		else
 		{
 			currentpart++;
+		}
+
+		if (currentpart == 1)
+		{
+//			anim.SetBool("shoot", true);
+		}
+		else
+		{
+	//		anim.SetBool("shoot", false);
 		}
 			
 		Player stats = player.GetComponent<Player>();

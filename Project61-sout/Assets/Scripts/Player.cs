@@ -154,6 +154,16 @@ public class Player : NetworkBehaviour
 		hasFinishedDyingTime = Time.time + hasFinishedDyingTime;
 		deaths++;
 	}
+	
+
+	[Client]
+	public void RpcDisableMouvements()
+	{
+		for (int i = 0; i < disableOnDeath.Length; i++)
+		{
+			disableOnDeath[i].enabled = false;
+		}
+	}
 
 	[Client]
 	private void RpcRespawn()
