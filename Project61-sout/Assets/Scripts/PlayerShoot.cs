@@ -22,7 +22,9 @@ public class PlayerShoot : NetworkBehaviour
 	private float timeToNextReload = 0f;
 	private float temp = 2f;
 	private Player idk;
-	private int kills = 0; 
+	private int kills = 0;
+    public GameObject OutofAmmo;
+    bool caca = true;
 
 	void Start()
 	{
@@ -35,40 +37,48 @@ public class PlayerShoot : NetworkBehaviour
 		fireRate = Weapon.fireRate;
 		Weapon.bullets = Weapon.maxBullets;
 		Weapon.BulletsTotal = Weapon.maxBulletsTotal;
-
-		idk = GetComponent<Player>();
+        idk = GetComponent<Player>();
 	}
 
 	void Update()
 	{
-		if (!_animation.isPlaying && !reloadInterrupted)//reload successful
+        if (Weapon.bullets == 0 && Weapon.BulletsTotal == 0 && caca)
+        {
+            GameObject outofammo = Instantiate(OutofAmmo, this.transform.position, this.transform.rotation) as GameObject;
+            caca = false;
+        }
+        if (Weapon.BulletsTotal != 0 && !caca)
+        {
+            caca = true;
+        }
+        if (!_animation.isPlaying && !reloadInterrupted)//reload successful
 		{
 			if (Weapon.maxBullets - Weapon.bullets >= Weapon.BulletsTotal)//not enough ammo to fill entirely clip
 			{
-				Weapon.bullets = Weapon.bullets + Weapon.BulletsTotal;
-				Weapon.BulletsTotal = 0;
-			}
-			else
+                Weapon.bullets = Weapon.bullets + Weapon.BulletsTotal;
+                Weapon.BulletsTotal = 0;
+            }
+            else
 			{
 				Weapon.BulletsTotal = Weapon.BulletsTotal - (Weapon.maxBullets - Weapon.bullets);
 				Weapon.bullets = Weapon.maxBullets;
-			}
-			
-			reloadInterrupted = true;
+            }
+
+            reloadInterrupted = true;
 		}
 		if (Weapon.bullets == 0 && !_animation.isPlaying && !hasFinishedReloading)
 		{
 			if (Weapon.maxBullets - Weapon.bullets >= Weapon.BulletsTotal)//not enough ammo to fill entirely clip
 			{
 				Weapon.bullets = Weapon.bullets + Weapon.BulletsTotal;
-				Weapon.BulletsTotal = 0;
-			}
-			else
+                Weapon.BulletsTotal = 0;
+            }
+            else
 			{
 				Weapon.BulletsTotal = Weapon.BulletsTotal - (Weapon.maxBullets - Weapon.bullets);
-				Weapon.bullets = Weapon.maxBullets;
-			}
-			hasFinishedReloading = true;
+                Weapon.bullets = Weapon.maxBullets;
+            }
+            hasFinishedReloading = true;
 		}
 		else if (Weapon.bullets == 0 && !_animation.isPlaying && Weapon.BulletsTotal != 0 && !PauseMenu.GameIsPaused)
 		{
@@ -80,7 +90,7 @@ public class PlayerShoot : NetworkBehaviour
 		else if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire && Weapon.bullets != 0 && !PauseMenu.GameIsPaused)
 		{
             GameObject gunshot = Instantiate(GunShot, this.transform.position, this.transform.rotation) as GameObject;
-			if (_animation.IsPlaying("reload"))
+            if (_animation.IsPlaying("reload"))
 			{
 				Destroy(GameObject.FindWithTag("Sound"));
 				reloadInterrupted = true;
@@ -95,11 +105,11 @@ public class PlayerShoot : NetworkBehaviour
 			GameObject reload = Instantiate(Reload, this.transform.position, this.transform.rotation) as GameObject;
             reloadInterrupted = false;
 			timeToNextReload = Time.time + temp;
-		}
-		else if (Input.GetKeyDown(KeyCode.Escape))
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
 		{
 			GameObject go = GameObject.FindWithTag("Sound");
-			if (go != null && PauseMenu.GameIsPaused)
+            if (go != null && PauseMenu.GameIsPaused)
 			{
 				go.GetComponent<AudioSource>().Pause();
 			}
@@ -119,7 +129,7 @@ public class PlayerShoot : NetworkBehaviour
 		Weapon.bullets -= 1;
 		RaycastHit _hit;
 		GameObject impact = impactEffect;
-		if (Physics.Raycast(cam.transform.position, cam.transform.forward, out _hit, Weapon.range, mask ))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out _hit, Weapon.range, mask ))
 		{
 			//we hit smth 
 			//Debug.Log("we ghit " + _hit.collider.name);

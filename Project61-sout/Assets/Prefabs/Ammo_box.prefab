@@ -168,4 +168,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 300
+  Outofammo: {fileID: 1049990365789248, guid: 976ecaa86940e3a4e970a770ff2a6151, type: 2}
   ammoBought: 40

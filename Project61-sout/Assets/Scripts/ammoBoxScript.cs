@@ -6,6 +6,8 @@ public class ammoBoxScript : MonoBehaviour {
 
 	[SerializeField] private int cost = 100;
 
+    public GameObject Outofammo;
+
 	[SerializeField] private int ammoBought = 60;
 
 	private float timeToWaitToBuy = 0f;
@@ -15,8 +17,10 @@ public class ammoBoxScript : MonoBehaviour {
 		if (other.CompareTag("Player") && Input.GetKeyDown(KeyCode.E) && other.GetComponent<Player>().money >= cost && Time.time > timeToWaitToBuy && other.GetComponent<PlayerShoot>().Weapon.BulletsTotal < other.GetComponent<PlayerShoot>().Weapon.maxBulletsTotal)
 		{
 			Pickup(other);
-		}
-	}
+            GameObject outofammo = Instantiate(Outofammo, this.transform.position, this.transform.rotation) as GameObject;
+
+        }
+    }
 	
 	private void Pickup(Collider player)
 	{

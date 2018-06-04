@@ -3116,6 +3116,10 @@ MonoBehaviour:
   maskDie:
     serializedVersion: 2
     m_Bits: 4294967293
+  hasBetrayed: 0
+  kills: 0
+  deaths: 0
+  username: Loading...
 --- !u!114 &114752844669310544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3151,9 +3155,9 @@ MonoBehaviour:
     damage: 10
     range: 100
     fireRate: 15
-    maxBullets: 60
+    maxBullets: 30
     bullets: 0
-    maxBulletsTotal: 200
+    maxBulletsTotal: 30
     BulletsTotal: 200
   cam: {fileID: 20359224695707916}
   weaponPrefab: {fileID: 1951827242857996}
@@ -3168,6 +3172,7 @@ MonoBehaviour:
   fireRate: 15
   GunShot: {fileID: 1766442469435170, guid: 09c1a93765e2adc4e8bdda2606d7e086, type: 2}
   Reload: {fileID: 1428444542617022, guid: 8564a2d7538862a4d83ad0254a82aef8, type: 2}
+  OutofAmmo: {fileID: 1989571358481386, guid: 77b8c49bb681446448e2d30bbd9b85d1, type: 2}
 --- !u!114 &114944823305247644
 MonoBehaviour:
   m_ObjectHideFlags: 1

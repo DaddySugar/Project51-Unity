@@ -5,7 +5,6 @@ using UnityEngine.UI;
 [ExecuteInEditMode]
 public class TurnBack : MonoBehaviour {
 
-    public GameObject PartSound;
 	[Space(10)]
 	[Header("Toggle for the gui on off")]
 	public bool GuiOn;
