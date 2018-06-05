@@ -9,31 +9,31 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1239244919241832}
+  m_RootGameObject: {fileID: 1856467102846508}
   m_IsPrefabParent: 1
---- !u!1 &1239244919241832
+--- !u!1 &1856467102846508
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4985856117009522}
-  - component: {fileID: 82282509820826256}
-  - component: {fileID: 114230866899584280}
+  - component: {fileID: 4945232495481984}
+  - component: {fileID: 82514260642729394}
+  - component: {fileID: 114671689182685694}
   m_Layer: 0
-  m_Name: PartSound
+  m_Name: HitSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4985856117009522
+--- !u!4 &4945232495481984
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1239244919241832}
+  m_GameObject: {fileID: 1856467102846508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -41,16 +41,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &82282509820826256
+--- !u!82 &82514260642729394
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1239244919241832}
+  m_GameObject: {fileID: 1856467102846508}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5a4a3cd248c774d4d8c71f4dfe930295, type: 3}
+  m_audioClip: {fileID: 8300000, guid: faef4b2b86c1043479ecb8c08be3b89a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -121,14 +121,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!114 &114230866899584280
+--- !u!114 &114671689182685694
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1239244919241832}
+  m_GameObject: {fileID: 1856467102846508}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 330df81d53d1cd14ba17b5b4a30a6db9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5945956db2bf350419f97e0893fc5560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
