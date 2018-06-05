@@ -49,6 +49,8 @@ public class Player : NetworkBehaviour
 	private Vector3 formerCameraPosition;
 	private Quaternion formerCameraRotation;
 	[SyncVar] public bool hasBetrayed = false;
+    public GameObject HitSound;
+    public float nextsound;
 
 	[SyncVar]
 	public int kills = 0;
@@ -112,6 +114,13 @@ public class Player : NetworkBehaviour
 				return;
 		}
 		currentHealth -= ammount;
+        if (nextsound < Time.time)
+        {
+            GameObject hitsound = Instantiate(HitSound, this.transform.position, this.transform.rotation) as GameObject;
+            nextsound = Time.time + 1f;
+        }
+
+
 
 		if (currentHealth <= 1)
 		{

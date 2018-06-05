@@ -3123,6 +3123,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967293
   hasBetrayed: 0
+  HitSound: {fileID: 1856467102846508, guid: da67556fc9df97546ab1341c94f183d1, type: 2}
+  nextsound: 0
   kills: 0
   deaths: 0
   username: Loading...
