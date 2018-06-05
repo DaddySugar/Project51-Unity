@@ -22,7 +22,7 @@ public class GameOverScoreboard : MonoBehaviour {
 			PlayerScoreboardItem item = itemGO.GetComponent<PlayerScoreboardItem>();
 			if (item != null)
 			{
-				item.Setup("Player " + iiii , player.kills, player.deaths);
+				item.Setup("Player " + iiii , player.kills, player.money, player.deaths);
 			}
 		}
 	}

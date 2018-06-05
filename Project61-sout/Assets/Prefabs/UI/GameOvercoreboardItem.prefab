@@ -145,7 +145,7 @@ MonoBehaviour:
   usernameText: {fileID: 114673027051437004}
   killsText: {fileID: 114707982471996336}
   deathsText: {fileID: 114389712735704966}
-  CashText: {fileID: 0}
+  CashText: {fileID: 114862563060623904}
 --- !u!114 &114605920044347654
 MonoBehaviour:
   m_ObjectHideFlags: 1

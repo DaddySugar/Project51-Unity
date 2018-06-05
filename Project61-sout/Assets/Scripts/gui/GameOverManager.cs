@@ -49,14 +49,15 @@ public class GameOverManager : NetworkBehaviour
 
 	bool CheckDeaths()
 	{
+		players = GameManager.GetAllPlayers();
 		int a = 0;
 		foreach (var VARIABLE in players)
 		{
 			a += VARIABLE.deaths;
-			Debug.Log(a);
+			//Debug.Log(a);
 		}
 
-		if (a == 1)
+		if (a == 5)
 		{
 			return true;
 		}
@@ -90,7 +91,7 @@ public class GameOverManager : NetworkBehaviour
 		}
 		else
 		{
-			anim.SetBool("LostTheGame", false);
+			anim.SetBool("LostTheGame", true);
 		}
 
 		foreach (var VARIABLE in players)
