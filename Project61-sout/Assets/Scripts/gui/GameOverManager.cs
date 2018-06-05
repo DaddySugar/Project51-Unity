@@ -69,12 +69,12 @@ public class GameOverManager : NetworkBehaviour
 	void Update ()
 	{
 		// If the player has run out of health...
-		if(Canon.currentpart == 2 && !finished)
+		if(Canon.currentpart == 5 && !finished)
 		{
 			Disable(true);
 		}
 		
-		if (CheckDeaths())
+		if (CheckDeaths() && !finished)
 		{
 			Disable(false);
 		}
@@ -84,7 +84,8 @@ public class GameOverManager : NetworkBehaviour
 	{
 		// ... tell the animator the game is over.
 		//anim.SetTrigger ("GameOver");
-		
+
+		finished = true;
 		if (_IsWin)
 		{
 			anim.SetBool("WonTheGame", true);
