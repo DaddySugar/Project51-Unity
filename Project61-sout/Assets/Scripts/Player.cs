@@ -276,8 +276,8 @@ public class Player : NetworkBehaviour
 		
 	}
 
-	[Client]
-	public void RpcsetBetray()
+	[Command]
+	public void CmdsetBetray()
 	{
 		hasBetrayed = true;
 	}
@@ -286,6 +286,8 @@ public class Player : NetworkBehaviour
 	public void CmdUpKills()
 	{
 		kills++;
+		Debug.Log("SHOOT player.isClient " + isClient + " player.isServer " + isServer + " player.isLocalPlayer " + isLocalPlayer);
+
 	}
 	
 	public float GetHealthpct()

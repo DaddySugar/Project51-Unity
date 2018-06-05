@@ -103,6 +103,7 @@
           <e p="AlienSound.cs" t="Include" />
           <e p="Ammo.cs" t="Include" />
           <e p="GunSounds.cs" t="Include" />
+          <e p="HitSound.cs" t="Include" />
           <e p="Outofammo.cs" t="Include" />
           <e p="PartSound.cs" t="Include" />
           <e p="PowerUp.cs" t="Include" />

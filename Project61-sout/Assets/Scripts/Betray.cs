@@ -14,7 +14,7 @@ public class Betray : MonoBehaviour {
 	
 	IEnumerator Betraybis(Collider player)
 	{
-		player.GetComponent<Player>().RpcsetBetray();
+		player.GetComponent<Player>().CmdsetBetray();
 		GameObject alie = gameObject.transform.parent.gameObject.transform.GetChild(2).gameObject;
 		alie.GetComponent<MeshRenderer>().material.color = Color.red;
 		yield return new WaitForSeconds(2f);

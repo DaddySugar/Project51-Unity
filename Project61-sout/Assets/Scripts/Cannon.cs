@@ -18,6 +18,7 @@ public class Cannon : NetworkBehaviour {
 	public GameObject objectID;
 
     public GameObject PartSound;
+	public Animator anim;
 	
 	//Animator anim;                          // Reference to the animator component.
 	//float restartTimer;     
@@ -27,6 +28,14 @@ public class Cannon : NetworkBehaviour {
 	{
 		currentpart = 0;
 		//anim = GetComponent <Animator> ();
+	}
+
+	private void Update()
+	{
+		if (currentpart == 1)
+		{
+			anim.SetBool("shoot", true);
+		}
 	}
 
 
@@ -48,28 +57,29 @@ public class Cannon : NetworkBehaviour {
 
 	private void Pickup(Collider player)
 	{
-		if (!isServer)
-		{
-			Debug.Log("server" +
-			          "");
-			CmdAddParts();
-		}
-		else
-		{
-			currentpart++;
-		}
-
-		if (currentpart == 1)
-		{
-//			anim.SetBool("shoot", true);
-		}
-		else
-		{
-	//		anim.SetBool("shoot", false);
-		}
-			
+		currentpart++;
+		
 		Player stats = player.GetComponent<Player>();
-		//currentpart++;
+
+		Debug.Log(" player.isClient " + stats.isClient + " player.isServer " + stats.isServer + " player.isLocalPlayer " + stats.isLocalPlayer);
+			
+
+		
+
+		if (!stats.isServer)
+		{
+			RpcAddParts2(currentpart);
+		}
+		else
+		{
+			RpcAddParts(currentpart);
+		}
+		
+		
+		
+		
+			
+		
 		
 		timeToWait = Time.time + 0.1f;
 		stats.money -= cost;
@@ -77,17 +87,33 @@ public class Cannon : NetworkBehaviour {
 	}
 
 	[ClientRpc]
-	void RpcAddParts()
+	void RpcAddParts(int currPart)
 	{
-		currentpart++;
+		Debug.Log("rPC currentpart " + currentpart);
+		currentpart = currPart;
+		Debug.Log("rpC currentpart " + currentpart);
+
+	}
+
+	[Client]
+	void RpcAddParts2(int currPart)
+	{
+		Debug.Log("rPC currentpart2 " + currentpart);
+		currentpart = currPart;
+		Debug.Log("rpC currentpart2 " + currentpart);
 	}
 
 	[Command]
-	void CmdAddParts()
+	void CmdAddParts(int currPart)
 	{
+		Debug.Log("Cmd currentpart " + currentpart);
+		currentpart = currPart;
+
+		Debug.Log("Cmd currentpart " + currentpart);
+
 		//objNetId = GetComponent<NetworkIdentity> ();  
 		//objNetId.AssignClientAuthority (connectionToClient);
-		RpcAddParts();
+		RpcAddParts(currPart);
 		//objNetId.RemoveClientAuthority (connectionToClient);
 	}
 	

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
 public class Scoreboard : MonoBehaviour {
 
@@ -21,6 +22,8 @@ public class Scoreboard : MonoBehaviour {
 			if (item != null)
 			{
 				item.Setup("Player " + iiii , player.kills, player.deaths);
+				Debug.Log("Player " + iiii + " : " + " player.isClient " + player.isClient + " player.isServer " + player.isServer + " player.isLocalPlayer " + player.isLocalPlayer);
+
 			}
 		}
 	}
