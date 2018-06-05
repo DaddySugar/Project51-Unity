@@ -3106,13 +3106,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69fdf0de8817c8f4db588eb6fcceed37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitSound: {fileID: 1856467102846508, guid: da67556fc9df97546ab1341c94f183d1, type: 2}
   disableOnDeath:
   - {fileID: 114587079434965980}
   - {fileID: 114806824193330584}
   maxHealth: 100
   money: 0
-  moneyRewardedByKill: 10
+  StartingMoney: 300
+  moneyRewardedByKill: 50
   maskPlayer1:
     serializedVersion: 2
     m_Bits: 4294966269
@@ -3122,7 +3122,6 @@ MonoBehaviour:
   maskDie:
     serializedVersion: 2
     m_Bits: 4294967293
-  nextsound: 0
   hasBetrayed: 0
   kills: 0
   deaths: 0
@@ -3162,9 +3161,9 @@ MonoBehaviour:
     damage: 10
     range: 100
     fireRate: 15
-    maxBullets: 30
+    maxBullets: 60
     bullets: 0
-    maxBulletsTotal: 30
+    maxBulletsTotal: 200
     BulletsTotal: 200
   cam: {fileID: 20359224695707916}
   weaponPrefab: {fileID: 1951827242857996}

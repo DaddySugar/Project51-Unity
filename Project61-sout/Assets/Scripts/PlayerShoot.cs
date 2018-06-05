@@ -24,6 +24,7 @@ public class PlayerShoot : NetworkBehaviour
 	private Player idk;
     public GameObject OutofAmmo;
     bool caca = true;
+	private int multiplierGainKill = 1;
 
 	void Start()
 	{
@@ -171,7 +172,12 @@ public class PlayerShoot : NetworkBehaviour
 				string uIdentity = _hit.transform.name;
 				if (_hit.collider.gameObject.GetComponent<Alien_Health>().health - Weapon.damage<= 0)
 				{
-					gameObject.GetComponent<Player>().money += gameObject.GetComponent<Player>().moneyRewardedByKill;
+					if (_hit.collider.gameObject.GetComponent<ChaseAlien>().isGrunk)
+					{
+						multiplierGainKill = 2;
+					}
+					gameObject.GetComponent<Player>().money += (gameObject.GetComponent<Player>().moneyRewardedByKill * multiplierGainKill);
+					multiplierGainKill = 1;
 					gameObject.GetComponent<Player>().CmdUpKills();
 				}
 				CmdTellServerWhichZombieWasShot(uIdentity, Weapon.damage);

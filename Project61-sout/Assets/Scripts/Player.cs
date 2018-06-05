@@ -39,6 +39,7 @@ public class Player : NetworkBehaviour
 	private bool hasPlayedDyingAnimation = false;
 	private Animator _animation;
 	public int money;
+	public int StartingMoney = 1000;
 	public int moneyRewardedByKill = 25;
 	public LayerMask maskPlayer1;
 	public LayerMask maskPlayer2;
@@ -66,6 +67,7 @@ public class Player : NetworkBehaviour
 	void Start()
 	{
 		_animation = GetComponent<Animator>();
+		money = StartingMoney;
 
 	}
 
@@ -87,7 +89,6 @@ public class Player : NetworkBehaviour
 		isDead = false;
 		currentHealth = maxHealth;
 		//LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
-		money = 1000;
 		
 		
 		//Enable the components
@@ -176,7 +177,8 @@ public class Player : NetworkBehaviour
 		cam.GetComponent<Transform>().rotation = formerCameraRotation;
 		SetLayerRecursively(cam.transform.Find("m4_fp").gameObject, 0);
 		cam.GetComponent<Camera>().cullingMask = formerMask;
-		
+		gameObject.GetComponent<PlayerShoot>().Weapon.bullets = gameObject.GetComponent<PlayerShoot>().Weapon.maxBullets;
+		gameObject.GetComponent<PlayerShoot>().Weapon.BulletsTotal = gameObject.GetComponent<PlayerShoot>().Weapon.maxBulletsTotal;
 		Transform _spawPosition = NetworkManager.singleton.GetStartPosition();
 		Debug.Log(_spawPosition);
 		transform.position = _spawPosition.position;
@@ -286,8 +288,6 @@ public class Player : NetworkBehaviour
 	public void CmdUpKills()
 	{
 		kills++;
-		Debug.Log("SHOOT player.isClient " + isClient + " player.isServer " + isServer + " player.isLocalPlayer " + isLocalPlayer);
-
 	}
 	
 	public float GetHealthpct()

@@ -44,10 +44,8 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour
 		waveText.text = "Wave";
 		_WaveNumb.text = _currentWave.ToString();
 			
-		Debug.Log("Text add");
 		yield return new WaitForSeconds(delay);
 		WavePanel.SetActive(false);
-		Debug.Log("TextRemove");
 		}
 		
 	}

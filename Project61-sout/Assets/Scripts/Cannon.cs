@@ -32,10 +32,30 @@ public class Cannon : NetworkBehaviour {
 
 	private void Update()
 	{
-		if (currentpart == 1)
+		switch (currentpart)
 		{
-			anim.SetBool("shoot", true);
+				case 1:
+					anim.SetBool("shoot", true);
+					break;
+				
+				case 2:
+					anim.SetBool("shoot 2", true);
+					break;
+					
+				case 3:
+					anim.SetBool("shoot 3", true);
+					break;
+					
+				case 4:
+					anim.SetBool("shoot 4", true);
+					break;
+					
+				case 5:
+					anim.SetBool("shoot 5", true);
+					break;
+
 		}
+		
 	}
 
 
@@ -61,11 +81,6 @@ public class Cannon : NetworkBehaviour {
 		
 		Player stats = player.GetComponent<Player>();
 
-		Debug.Log(" player.isClient " + stats.isClient + " player.isServer " + stats.isServer + " player.isLocalPlayer " + stats.isLocalPlayer);
-			
-
-		
-
 		if (!stats.isServer)
 		{
 			RpcAddParts2(currentpart);
@@ -74,13 +89,6 @@ public class Cannon : NetworkBehaviour {
 		{
 			RpcAddParts(currentpart);
 		}
-		
-		
-		
-		
-			
-		
-		
 		timeToWait = Time.time + 0.1f;
 		stats.money -= cost;
 		
@@ -89,27 +97,20 @@ public class Cannon : NetworkBehaviour {
 	[ClientRpc]
 	void RpcAddParts(int currPart)
 	{
-		Debug.Log("rPC currentpart " + currentpart);
 		currentpart = currPart;
-		Debug.Log("rpC currentpart " + currentpart);
-
 	}
 
 	[Client]
 	void RpcAddParts2(int currPart)
 	{
-		Debug.Log("rPC currentpart2 " + currentpart);
 		currentpart = currPart;
-		Debug.Log("rpC currentpart2 " + currentpart);
 	}
 
 	[Command]
 	void CmdAddParts(int currPart)
 	{
-		Debug.Log("Cmd currentpart " + currentpart);
 		currentpart = currPart;
 
-		Debug.Log("Cmd currentpart " + currentpart);
 
 		//objNetId = GetComponent<NetworkIdentity> ();  
 		//objNetId.AssignClientAuthority (connectionToClient);

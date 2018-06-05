@@ -68,7 +68,6 @@ public class PlayerSetup : NetworkBehaviour {
 		Player player = GameManager.GetPlayer(playerID);
 		if (player != null)
 		{
-			Debug.Log(username + " has joined!");
 			player.username = username;	
 		}
 	}

@@ -35,6 +35,7 @@ public class ChaseAlien : NetworkBehaviour
     private float timeStartAlienDontMove;
     private float speed;
     private float TimeToPLaySoundAttack = 0f;
+	[HideInInspector] public bool isGrunk = false;
 
 
 
@@ -51,12 +52,18 @@ public class ChaseAlien : NetworkBehaviour
         timeStartAlienDontMove = Time.time + 2f;
         speed = agent.speed;
         agent.destination = targetTransform.transform.position;
+	    if (agent.speed < 3)
+	    {
+		    isGrunk = true;
+	    }
 
     }
 
-    void Update()
-    {
+	
 
+	void Update()
+    {
+		
         if (timeStartAlienDontMove > Time.time)
         {
             agent.speed = 0f;
