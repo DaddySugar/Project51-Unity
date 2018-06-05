@@ -27,7 +27,9 @@ public class GameOverManager : NetworkBehaviour
 	float restartTimer;                     // Timer to count up to restarting the level
 
 
-	private const string levelToLoad = "Lobby_2"; 
+	private const string levelToLoad = "MainMenu_";
+
+	private bool finished = false;
 	
 	
 
@@ -51,7 +53,7 @@ public class GameOverManager : NetworkBehaviour
 		foreach (var VARIABLE in players)
 		{
 			a += VARIABLE.deaths;
-			//Debug.Log("1");
+			Debug.Log(a);
 		}
 
 		if (a == 1)
@@ -66,12 +68,12 @@ public class GameOverManager : NetworkBehaviour
 	void Update ()
 	{
 		// If the player has run out of health...
-		if(Canon.currentpart == 2)
+		if(Canon.currentpart == 2 && !finished)
 		{
 			Disable(true);
 		}
-
-		else if (CheckDeaths())
+		
+		if (CheckDeaths())
 		{
 			Disable(false);
 		}
@@ -131,7 +133,7 @@ public class GameOverManager : NetworkBehaviour
 
 	IEnumerator Countdown()
 	{
-		int countdown = 30;
+		int countdown = 10;
 		while (countdown > 0)
 		{
 			//status.text = "JOINING... (" + countdown + ")";

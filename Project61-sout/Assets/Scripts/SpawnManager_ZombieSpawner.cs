@@ -36,6 +36,10 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour
 	}
 	
 	IEnumerator ShowMessage (float delay) {
+		if (isSpawnActivated)
+		{
+			
+		
 		WavePanel.SetActive(true);
 		waveText.text = "Wave";
 		_WaveNumb.text = _currentWave.ToString();
@@ -44,6 +48,8 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour
 		yield return new WaitForSeconds(delay);
 		WavePanel.SetActive(false);
 		Debug.Log("TextRemove");
+		}
+		
 	}
 
 	void SetWaveText()
@@ -85,6 +91,7 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour
 
 	void SpawnZombies(Vector3 spawnPos)
 	{
+		
 		int randomIndex = Random.Range(0, zombiePrefab.Length);
 		//Debug.Log("Spaw");
 		counter++;
