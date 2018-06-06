@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class GameOverManager : NetworkBehaviour
 {
-	
-	
-	
-	#region FirstImportant
+
+    public GameObject Gameover;
+
+    #region FirstImportant
 
 	public SpawnManager_ZombieSpawner wave;
 	public Cannon Canon;                    // Reference to the player's health.
@@ -69,7 +69,7 @@ public class GameOverManager : NetworkBehaviour
 	void Update ()
 	{
 		// If the player has run out of health...
-		if(Canon.currentpart == 5 && !finished)
+		if(Canon.currentpart == 5)
 		{
 			Disable(true, 0);
 		}
@@ -79,7 +79,6 @@ public class GameOverManager : NetworkBehaviour
 			Disable(false,0);
 		}
 	}
-
 	private void Disable(bool _IsWin, int _index)
 	{
 		// ... tell the animator the game is over.
@@ -91,8 +90,13 @@ public class GameOverManager : NetworkBehaviour
 		}
 		else
 		{
-			anim.SetBool("LostTheGame", true);
-		}
+            anim.SetBool("LostTheGame", true);
+            if (!finished)
+            {
+                GameObject hitsound = Instantiate(Gameover, this.transform.position, this.transform.rotation) as GameObject;
+            }
+        }
+        finished = true;
 
 		foreach (var VARIABLE in players)
 		{

@@ -37419,6 +37419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2232b8d8fb399824996972c35eb51703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Gameover: {fileID: 1888133419438424, guid: 64524b20d143db44ebdf180f84e06b86, type: 2}
   wave: {fileID: 0}
   Canon: {fileID: 2080242394}
   restartDelay: 5
