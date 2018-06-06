@@ -12,7 +12,8 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour
 
 	[SerializeField] GameObject []zombiePrefab;
 	private GameObject []zombieSpawns;
-	private int counter;
+	private int counter = 0;
+	private int qa = 0; 
 	private int numberOfZombies = 3;
 	private int maxNumberOfZombies = 17;
 	private float waveRate = 5;
@@ -92,10 +93,10 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour
 		
 		int randomIndex = Random.Range(0, zombiePrefab.Length);
 		//Debug.Log("Spaw");
-		//counter++;
-		if (nbofkills() - counter == maxNumberOfZombies)
+		counter++;
+		if (nbofkills() - qa == maxNumberOfZombies)
 		{
-			counter = nbofkills();
+			qa = nbofkills();
 			NextWave();
 			SetWaveText();
 		}
