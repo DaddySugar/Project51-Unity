@@ -13,8 +13,8 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour
 	[SerializeField] GameObject []zombiePrefab;
 	private GameObject []zombieSpawns;
 	private int counter;
-	private int numberOfZombies = 5;
-	private int maxNumberOfZombies = 25;
+	private int numberOfZombies = 3;
+	private int maxNumberOfZombies = 17;
 	private float waveRate = 5;
 	private bool isSpawnActivated = true;
 	private int _currentWave = 0;
@@ -36,9 +36,7 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour
 	}
 	
 	IEnumerator ShowMessage (float delay) {
-		if (isSpawnActivated)
-		{
-			
+
 		
 		WavePanel.SetActive(true);
 		waveText.text = "Wave";
@@ -48,7 +46,7 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour
 		yield return new WaitForSeconds(delay);
 		WavePanel.SetActive(false);
 		Debug.Log("TextRemove");
-		}
+		
 		
 	}
 
@@ -67,7 +65,7 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour
 			
 		//	SetWaveText();
 			GameObject[] zombies = GameObject.FindGameObjectsWithTag("Alien");
-			if(IsSpawnPossible(zombies.Length))
+			if(IsSpawnPossible())
 			{
 				CommenceSpawn();
 			}
@@ -94,7 +92,7 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour
 		
 		int randomIndex = Random.Range(0, zombiePrefab.Length);
 		//Debug.Log("Spaw");
-		counter++;
+		//counter++;
 		if (nbofkills() - counter == maxNumberOfZombies)
 		{
 			counter = nbofkills();
@@ -107,9 +105,10 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour
 		NetworkServer.Spawn(go);
 	}
 
-	public bool IsSpawnPossible(int aliensList)
+	public bool IsSpawnPossible()
 	{
-		if (aliensList < maxNumberOfZombies)
+		GameObject[] aa =  GameObject.FindGameObjectsWithTag("Alien");
+		if (aa.Length < maxNumberOfZombies)
 			return true;
 
 		else
@@ -119,7 +118,6 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour
 	private void NextWave()
 	{
 		_currentWave++;
-		maxNumberOfZombies += 5;
 	}
 
 	int nbofkills()
