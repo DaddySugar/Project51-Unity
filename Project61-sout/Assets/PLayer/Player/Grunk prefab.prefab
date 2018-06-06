@@ -10103,7 +10103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e81a741a6a5aa47ae2a3f5cda8a6c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 200
 --- !u!114 &114272087463578338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10145,9 +10145,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TransformSyncMode: 3
-  m_SendInterval: 0.04761905
+  m_SendInterval: 0.2
   m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
+  m_RotationSyncCompression: 2
   m_SyncSpin: 0
   m_MovementTheshold: 0.001
   m_VelocityThreshold: 0.0001

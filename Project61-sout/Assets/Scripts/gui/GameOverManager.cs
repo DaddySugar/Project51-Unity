@@ -1,15 +1,14 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
 public class GameOverManager : NetworkBehaviour
 {
-
-    public GameObject Gameover;
-
-    #region FirstImportant
+	
+	
+	
+	#region FirstImportant
 
 	public SpawnManager_ZombieSpawner wave;
 	public Cannon Canon;                    // Reference to the player's health.
@@ -69,7 +68,7 @@ public class GameOverManager : NetworkBehaviour
 	void Update ()
 	{
 		// If the player has run out of health...
-		if(Canon.currentpart == 5)
+		if(Canon.currentpart == 5 && !finished)
 		{
 			Disable(true, 0);
 		}
@@ -79,6 +78,7 @@ public class GameOverManager : NetworkBehaviour
 			Disable(false,0);
 		}
 	}
+
 	private void Disable(bool _IsWin, int _index)
 	{
 		// ... tell the animator the game is over.
@@ -90,13 +90,8 @@ public class GameOverManager : NetworkBehaviour
 		}
 		else
 		{
-            anim.SetBool("LostTheGame", true);
-            if (!finished)
-            {
-                GameObject hitsound = Instantiate(Gameover, this.transform.position, this.transform.rotation) as GameObject;
-            }
-        }
-        finished = true;
+			anim.SetBool("LostTheGame", true);
+		}
 
 		foreach (var VARIABLE in players)
 		{
@@ -125,7 +120,12 @@ public class GameOverManager : NetworkBehaviour
 		// .. increment a timer to count up to restarting.
 		restartTimer += Time.deltaTime;
 
-		StartCoroutine(Countdown(_index));
+		if (!finished)
+		{
+			finished = true; 
+			StartCoroutine(Countdown(_index));
+		}
+		
 
 		// .. if it reaches the restart delay...
 		//
@@ -138,6 +138,8 @@ public class GameOverManager : NetworkBehaviour
 
 	IEnumerator Countdown(int _index)
 	{
+		SceneManager.LoadScene(0, LoadSceneMode.Single);
+		
 		int countdown = 10;
 		while (countdown > 0)
 		{
@@ -148,7 +150,7 @@ public class GameOverManager : NetworkBehaviour
 			countdown--;
 		}
 		
-		SceneManager.LoadScene(_index);
+		
 	}
 	
 	#endregion

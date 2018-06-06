@@ -34,6 +34,8 @@ public class Player : NetworkBehaviour
     [SyncVar]
 	private int currentHealth;
 
+	private int precedentCurrentHealth;
+
 	private int precedentMaxHealth = 100;
 	private float hasFinishedDyingTime= 4f;
 	private bool hasPlayedDyingAnimation = false;
@@ -90,6 +92,7 @@ public class Player : NetworkBehaviour
 	{
 		isDead = false;
 		currentHealth = maxHealth;
+		precedentCurrentHealth = currentHealth;
 		//LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
 		
 		
@@ -114,13 +117,7 @@ public class Player : NetworkBehaviour
 				return;
 		}
 		currentHealth -= ammount;
-        if (nextsound < Time.time)
-        {
-            GameObject hitsound = Instantiate(HitSound, this.transform.position, this.transform.rotation) as GameObject;
-            nextsound = Time.time + 1f;
-        }
-
-
+        
 
 		if (currentHealth <= 1)
 		{
@@ -162,7 +159,7 @@ public class Player : NetworkBehaviour
 		
 		hasPlayedDyingAnimation = true;
 		hasFinishedDyingTime = Time.time + hasFinishedDyingTime;
-		deaths++;
+		CmdUpDeaths();
 	}
 	
 
@@ -226,6 +223,17 @@ public class Player : NetworkBehaviour
 		if (!isLocalPlayer)
 			return;
 
+		if (currentHealth != precedentCurrentHealth)
+		{
+			if (nextsound < Time.time)
+			{
+				GameObject hitsound = Instantiate(HitSound, this.transform.position, this.transform.rotation) as GameObject;
+				nextsound = Time.time + 1f;
+			}
+
+			precedentCurrentHealth = currentHealth;
+		}
+		
 		if (Input.GetKeyDown(KeyCode.K))
 		{
 			RpcTakeDamage(10);
@@ -234,6 +242,7 @@ public class Player : NetworkBehaviour
 		if (precedentMaxHealth < maxHealth)
 		{
 			currentHealth = maxHealth;
+			precedentCurrentHealth = currentHealth;
 			//LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
 
 		}
@@ -242,6 +251,8 @@ public class Player : NetworkBehaviour
 			if (currentHealth > maxHealth)
 			{
 				currentHealth = maxHealth;
+				precedentCurrentHealth = currentHealth;
+
 			}
 			//LocalHealthBarImg.fillAmount = (float) GetComponent<Player> ().currentHealth / GetComponent<Player> ().maxHealth;
 
@@ -291,6 +302,12 @@ public class Player : NetworkBehaviour
 	public void CmdsetBetray()
 	{
 		hasBetrayed = true;
+	}
+
+	[Command]
+	public void CmdUpDeaths()
+	{
+		deaths++;
 	}
 
 	[Command]
