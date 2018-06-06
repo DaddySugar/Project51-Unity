@@ -14,7 +14,7 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour
 	private GameObject []zombieSpawns;
 	private int counter;
 	private int numberOfZombies = 5;
-	private int maxNumberOfZombies = 20;
+	private int maxNumberOfZombies = 25;
 	private float waveRate = 5;
 	private bool isSpawnActivated = true;
 	private int _currentWave = 0;
@@ -44,8 +44,10 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour
 		waveText.text = "Wave";
 		_WaveNumb.text = _currentWave.ToString();
 			
+		Debug.Log("Text add");
 		yield return new WaitForSeconds(delay);
 		WavePanel.SetActive(false);
+		Debug.Log("TextRemove");
 		}
 		
 	}
@@ -93,8 +95,9 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour
 		int randomIndex = Random.Range(0, zombiePrefab.Length);
 		//Debug.Log("Spaw");
 		counter++;
-		if (counter % 20 == 1)
+		if (nbofkills() - counter == maxNumberOfZombies)
 		{
+			counter = nbofkills();
 			NextWave();
 			SetWaveText();
 		}
@@ -116,6 +119,19 @@ public class SpawnManager_ZombieSpawner : NetworkBehaviour
 	private void NextWave()
 	{
 		_currentWave++;
+		maxNumberOfZombies += 5;
+	}
+
+	int nbofkills()
+	{
+		int i = 0;
+		Player[] aaa = FindObjectsOfType<Player>();
+		foreach (var VARIABLE in aaa)
+		{
+			i += VARIABLE.kills;
+		}
+
+		return i; 
 	}
 
 }

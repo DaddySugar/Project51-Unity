@@ -71,21 +71,20 @@ public class GameOverManager : NetworkBehaviour
 		// If the player has run out of health...
 		if(Canon.currentpart == 5 && !finished)
 		{
-			Disable(true);
+			Disable(true, 0);
 		}
 		
-		if (CheckDeaths() && !finished)
+		if (CheckDeaths())
 		{
-			Disable(false);
+			Disable(false,0);
 		}
 	}
 
-	private void Disable(bool _IsWin)
+	private void Disable(bool _IsWin, int _index)
 	{
 		// ... tell the animator the game is over.
 		//anim.SetTrigger ("GameOver");
-
-		finished = true;
+		
 		if (_IsWin)
 		{
 			anim.SetBool("WonTheGame", true);
@@ -122,7 +121,7 @@ public class GameOverManager : NetworkBehaviour
 		// .. increment a timer to count up to restarting.
 		restartTimer += Time.deltaTime;
 
-		StartCoroutine(Countdown());
+		StartCoroutine(Countdown(_index));
 
 		// .. if it reaches the restart delay...
 		//
@@ -133,7 +132,7 @@ public class GameOverManager : NetworkBehaviour
 		
 	}
 
-	IEnumerator Countdown()
+	IEnumerator Countdown(int _index)
 	{
 		int countdown = 10;
 		while (countdown > 0)
@@ -145,7 +144,7 @@ public class GameOverManager : NetworkBehaviour
 			countdown--;
 		}
 		
-		SceneManager.LoadScene(levelToLoad);
+		SceneManager.LoadScene(_index);
 	}
 	
 	#endregion
